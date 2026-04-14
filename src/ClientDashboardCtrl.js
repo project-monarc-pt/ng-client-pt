@@ -4,12 +4,12 @@
 		.controller('ClientDashboardCtrl', [
 			'$scope', '$mdMedia', '$mdDialog', '$http', 'gettextCatalog', '$q', '$timeout',
 			'$stateParams', 'AnrService', 'ClientAnrService', 'ReferentialService', 'SOACategoryService',
-			'ClientSoaService', 'ClientRecommendationService', 'ChartService', ClientDashboardCtrl
+			'ClientSoaService', 'ClientRecommendationService', 'ChartService', 'ClientThemeConfig', ClientDashboardCtrl
 		]);
 
 	function ClientDashboardCtrl($scope, $mdMedia, $mdDialog, $http, gettextCatalog, $q, $timeout,
 		$stateParams, AnrService, ClientAnrService, ReferentialService, SOACategoryService,
-		ClientSoaService, ClientRecommendationService, ChartService) {
+		ClientSoaService, ClientRecommendationService, ChartService, ClientThemeConfig) {
 
 		$scope.dashboard = {
 			currentTabIndex: 0,
@@ -39,7 +39,7 @@
 				bottom: 50,
 				left: 30
 			},
-			color: ["#D6F107", "#FFBC1C", "#FD661F"],
+			color: ClientThemeConfig.charts.riskScale,
 			showLegend: false,
 			multipleYaxis: true,
 			forceDomainY: {
@@ -151,7 +151,7 @@
 			},
 			showValues: true,
 			multipleYaxis: true,
-			color: ["#D6F107", "#FFBC1C", "#FD661F"],
+			color: ClientThemeConfig.charts.riskScale,
 			forceChartMode: 'stacked',
 			rotationXAxisLabel: 45,
 			offsetXAxisLabel: 0.9,
@@ -433,7 +433,7 @@
 				left: 140
 			},
 			colorGradient: true,
-			color: ["#D6F107", "#FD661F"],
+			color: ClientThemeConfig.charts.riskScaleBinary,
 			showLegend: false,
 			sort: true,
 			xLabel: 'Number of risks',
@@ -484,7 +484,7 @@
 		const optionsCartography = {
 			xLabel: 'Likelihood',
 			yLabel: 'Impact',
-			color: ["#D6F107", "#FFBC1C", "#FD661F"],
+			color: ClientThemeConfig.charts.riskScale,
 			threshold: [],
 			onClickFunction: function(d) {
 				let field = null;
@@ -552,7 +552,7 @@
 				left: 300
 			},
 			colorGradient: true,
-			color: ["#D6F107", "#FD661F"],
+			color: ClientThemeConfig.charts.riskScaleBinary,
 			showLegend: false,
 			sort: true,
 			onClickFunction: async function(d) {
@@ -3735,7 +3735,7 @@
 							y: 4.60,
 							w: '100%',
 							h: 1.75,
-							fill: '006fba'
+							fill: ClientThemeConfig.exports.pptxHeaderFill
 						}
 					},
 					{
@@ -3744,7 +3744,7 @@
 							y: 6.35,
 							w: '100%',
 							h: 0.00,
-							line: 'FFC107',
+							line: ClientThemeConfig.exports.pptxDividerLine,
 							lineSize: 5
 						}
 					},
@@ -3754,7 +3754,7 @@
 							y: 5.10,
 							w: 1.50,
 							h: 0.65,
-							path: 'img/logo-monarc.png'
+							path: ClientThemeConfig.branding.logo
 						}
 					}
 				]
@@ -3774,7 +3774,7 @@
 							y: 6.9,
 							w: '100%',
 							h: 0.6,
-							fill: '006fba'
+							fill: ClientThemeConfig.exports.pptxHeaderFill
 						}
 					},
 					{
@@ -3783,7 +3783,7 @@
 							y: 7.0,
 							w: 0.98,
 							h: 0.4,
-							path: 'img/logo-monarc.png'
+							path: ClientThemeConfig.branding.logo
 						}
 					},
 					{
@@ -3807,7 +3807,7 @@
 							y: 0.80,
 							w: 8.80,
 							h: 0.00,
-							line: 'FFC107',
+							line: ClientThemeConfig.exports.pptxDividerLine,
 							lineSize: 1
 						}
 					},
@@ -3819,7 +3819,7 @@
 								x: 0.00,
 								y: 0.30,
 								w: '100%',
-								color: '006fba',
+								color: ClientThemeConfig.exports.pptxHeaderFill,
 								bold: true,
 								fontSize: 28,
 								align: 'center'
@@ -3834,7 +3834,7 @@
 				x: 0.00,
 				y: 2.50,
 				w: '100%',
-				color: '006fba',
+				color: ClientThemeConfig.exports.pptxHeaderFill,
 				bold: true,
 				fontSize: 44,
 				align: 'center'
@@ -3871,7 +3871,7 @@
 					let node = d3.select('#loadPptx').select("svg")
 					svgAsPngUri(node.node(), {
 						fonts: [],
-						backgroundColor: 'transparent'
+						backgroundColor: ClientThemeConfig.charts.export.transparentBackground
 					}, function(uri) {
 						slide[chart.slide].addImage({
 							data: uri,
@@ -3896,7 +3896,7 @@
 
 		$scope.exportAsPNG = function(idOfGraph, name, parametersAction = {
 			fonts: [],
-			backgroundColor: 'white'
+			backgroundColor: ClientThemeConfig.charts.export.background
 		}) {
 			let node = d3.select('#' + idOfGraph).select("svg");
 			saveSvgAsPng(node.node(), name + '.png', parametersAction);

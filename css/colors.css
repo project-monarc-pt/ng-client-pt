@@ -1,0 +1,38 @@
+:root {
+    /* Link */
+    --client-color-link-accent: #FFEB3B;
+
+    /* Brand */
+    --client-color-brand-primary: #006FBA;
+
+    /* Text */
+    --client-color-text-primary: #333333;
+    --client-color-text-primary-alt: #333;
+    --client-color-text-secondary: #555555;
+    --client-color-text-on-dark: white;
+    --client-color-text-link-inline: blue;
+
+    /* Surfaces */
+    --client-color-surface-white: white;
+    --client-color-surface-dark: #212121;
+    --client-color-surface-auth-panel: #424242;
+    --client-color-surface-disabled: #CCCCCC;
+    --client-color-surface-row-alt: rgba(1, 1, 1, 0.02);
+    --client-color-surface-row-hover: rgba(0, 0, 0, 0.07);
+
+    /* Borders */
+    --client-color-border-default: #DDDDDD;
+    --client-color-border-input: rgba(50, 50, 50, 0.7);
+
+    /* Status */
+    --client-color-success-soft: #FBFFDA;
+    --client-color-success: #4CAF50;
+
+    --client-color-info-soft: #DEF2FF;
+
+    --client-color-warning-soft: #FFE0B2;
+    --client-color-warning: #FFBC1C;
+
+    --client-color-danger-soft: #FFCDD2;
+    --client-color-danger: #FD661F;
+}

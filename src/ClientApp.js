@@ -17,7 +17,6 @@ function ($mdThemingProvider, $stateProvider, $urlRouterProvider, $resourceProvi
       // Allow loading from our assets domain.  Notice the difference between * and **.
       'https://objects.monarc.lu/**'
     ]);
-
     $mdThemingProvider.definePalette('monarcfo',{
       '50': '#c4e7ff',
       '100': '#78c8ff',

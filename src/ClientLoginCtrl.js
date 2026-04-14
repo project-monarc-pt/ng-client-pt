@@ -2,16 +2,20 @@
   angular
     .module('ClientApp')
     .controller('ClientLoginCtrl', [
-      '$scope', '$state', '$http', 'toastr', 'gettextCatalog', 'gettext', 'UserService',
+      '$scope', '$state', '$http', 'toastr', 'gettextCatalog', 'gettext', 'UserService', 'ClientThemeConfig',
       ClientLoginCtrl
     ]);
 
   /**
    * Login Controller for the Client module
    */
-  function ClientLoginCtrl($scope, $state, $http, toastr, gettextCatalog, gettext, UserService) {
+  function ClientLoginCtrl($scope, $state, $http, toastr, gettextCatalog, gettext, UserService, ClientThemeConfig) {
     $scope.isLoggingIn = false;
     $scope.pwForgotMode = false;
+    $scope.brandLogo = ClientThemeConfig.branding.logo;
+    $scope.authBackgroundStyle = {
+      'background-image': 'url(' + ClientThemeConfig.branding.authBackground + ')'
+    };
     $scope.twoFAMode = false;
     $scope.twoFANotCorrect = false;
     $scope.twoFASetUpMode = false;
