@@ -1,20 +1,22 @@
+@import url("colors.css");
+
 a {
-    color: #FFEB3B;
+    color: var(--client-color-link-accent);
 }
 md-card a {
-    color: #333333;
+    color: var(--client-color-text-primary);
 }
 
 .md-toolbar-tools {
-    color: white;
+    color: var(--client-color-text-on-dark);
 }
 
 md-card .md-toolbar-tools {
-    color: #333;
+    color: var(--client-color-text-primary-alt);
 }
 
 md-toolbar md-icon.material-icons {
-    color: white;
+    color: var(--client-color-text-on-dark);
 }
 
 .logo-cases-bg {
@@ -27,71 +29,76 @@ md-toolbar md-icon.material-icons {
 }
 
 .md-white-card {
-    background: white;
-    color: #555555;
+    background: var(--client-color-surface-white);
+    color: var(--client-color-text-secondary);
 }
 
 .md-main-content {
-    background-color: #212121; }
+    background-color: var(--client-color-surface-dark); }
+
+.client-auth-panel {
+    background: var(--client-color-surface-auth-panel);
+    z-index: 2;
+}
 
 md-list-item p {
     font-weight: normal; }
 
 md-list-item.active, md-list-item.active md-icon {
-    color: #FFEB3B; /* #006FBA; */
+    color: var(--client-color-link-accent);
 }
 
 md-progress-linear.green .md-container {
-    background: #FBFFDA;
+    background: var(--client-color-success-soft);
 }
 md-progress-linear.green .md-bar {
-    background: #4CAF50;
+    background: var(--client-color-success);
 }
 
 md-progress-linear.blue .md-container {
-    background: #DEF2FF;
+    background: var(--client-color-info-soft);
 }
 md-progress-linear.orange .md-container {
-    background: #FFE0B2;
+    background: var(--client-color-warning-soft);
 }
 md-progress-linear.orange .md-bar {
-    background: #FFBC1C;
+    background: var(--client-color-warning);
 }
 
 md-progress-linear.red .md-container {
-    background: #FFCDD2;
+    background: var(--client-color-danger-soft);
 }
 md-progress-linear.red .md-bar {
-    background: #FD661F;
+    background: var(--client-color-danger);
 }
 
 
 .md-html-table td, .md-html-table th {
-    border: 1px solid #DDDDDD;
+    border: 1px solid var(--client-color-border-default);
     padding: 8px;
 }
 
 .md-html-table td[disabled] {
-    background: #CCCCCC;
+    background: var(--client-color-surface-disabled);
 }
 
 .md-html-table tbody tr {
     transition: 0.25s background-color;
 }
 .md-html-table tbody tr:nth-child(even) {
-    background-color: rgba(1, 1, 1, 0.02);
+    background-color: var(--client-color-surface-row-alt);
 }
 .md-html-table tbody tr:hover {
-    background-color: rgba(0, 0, 0, 0.07);
+    background-color: var(--client-color-surface-row-hover);
 }
 
 .anr-kb-mgmt md-checkbox .md-icon {
-    border-color: rgba(50, 50, 50, 0.7)
+    border-color: var(--client-color-border-input)
 }
 
 .md-checkbox-enabled.md-default-theme:not(.md-checked) .md-icon,
 .md-checkbox-enabled:not(.md-checked) .md-icon{
-    border-color: #DDDDDD; /* rgb(0,111,186); */
+    border-color: var(--client-color-border-default);
 }
 
 md-sidenav.md-sidenav-left{
@@ -118,7 +125,7 @@ md-sidenav.md-sidenav-left{
 }
 
 .added-button{
-  color: blue;
+  color: var(--client-color-text-link-inline);
   background: none;
   border: none;
   font-size: 12px;
