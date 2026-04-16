@@ -3724,6 +3724,9 @@
 			let slide = [];
 			let lastSlide = 0;
 			let date = new Date();
+			let pptxFontFace = ClientThemeConfig.exports.fontFamily
+				.replace(/["']/g, '')
+				.trim();
 
 			pptx.layout = 'LAYOUT_4x3';
 
@@ -3789,18 +3792,19 @@
 					{
 						'text': {
 							text: anr['label'],
-							options: {
-								x: 0,
-								y: 6.9,
-								w: '100%',
-								h: 0.6,
-								align: 'c',
-								valign: 'm',
-								color: 'FFFEFE',
-								fontSize: 12
+								options: {
+									x: 0,
+									y: 6.9,
+									w: '100%',
+									h: 0.6,
+									align: 'c',
+									valign: 'm',
+									color: 'FFFEFE',
+									fontSize: 12,
+									fontFace: pptxFontFace
+								}
 							}
-						}
-					},
+						},
 					{
 						'line': {
 							x: 0.60,
@@ -3813,43 +3817,46 @@
 					},
 					{
 						'placeholder': {
-							options: {
-								name: 'slideTitle',
-								type: 'title',
-								x: 0.00,
-								y: 0.30,
-								w: '100%',
-								color: ClientThemeConfig.exports.pptxHeaderFill,
-								bold: true,
-								fontSize: 28,
-								align: 'center'
+								options: {
+									name: 'slideTitle',
+									type: 'title',
+									x: 0.00,
+									y: 0.30,
+									w: '100%',
+									color: ClientThemeConfig.exports.pptxHeaderFill,
+									bold: true,
+									fontSize: 28,
+									align: 'center',
+									fontFace: pptxFontFace
+								}
 							}
 						}
-					}
 				]
 			});
 
 			slide[lastSlide] = pptx.addNewSlide('TITLE_SLIDE');
-			slide[lastSlide].addText(gettextCatalog.getString('Dashboard'), {
-				x: 0.00,
-				y: 2.50,
-				w: '100%',
-				color: ClientThemeConfig.exports.pptxHeaderFill,
-				bold: true,
-				fontSize: 44,
-				align: 'center'
-			});
-			slide[lastSlide].addText(anr['label'] + '\n' +
-				anr['description'] + '\n' +
-				date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(), {
-					x: 1.50,
-					y: 5.25,
-					w: 5.5,
-					h: 0.75,
-					color: 'FFFEFE',
-					fontSize: 20,
-					valign: 'm'
+				slide[lastSlide].addText(gettextCatalog.getString('Dashboard'), {
+					x: 0.00,
+					y: 2.50,
+					w: '100%',
+					color: ClientThemeConfig.exports.pptxHeaderFill,
+					bold: true,
+					fontSize: 44,
+					align: 'center',
+					fontFace: pptxFontFace
 				});
+				slide[lastSlide].addText(anr['label'] + '\n' +
+					anr['description'] + '\n' +
+					date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(), {
+						x: 1.50,
+						y: 5.25,
+						w: 5.5,
+						h: 0.75,
+						color: 'FFFEFE',
+						fontSize: 20,
+						valign: 'm',
+						fontFace: pptxFontFace
+					});
 
 			for (chart of charts) {
 				await addChart(chart)
@@ -3858,14 +3865,15 @@
 			$scope.loadingPptx = false;
 			pptx.writeFile();
 
-			function addChart(chart) {
-				let promise = $q.defer();
-				if (chart.slide !== lastSlide) {
-					slide[chart.slide] = pptx.addNewSlide('MASTER_SLIDE');
-					slide[chart.slide].addText(chart.title, {
-						placeholder: 'slideTitle'
-					});
-				}
+				function addChart(chart) {
+					let promise = $q.defer();
+					if (chart.slide !== lastSlide) {
+						slide[chart.slide] = pptx.addNewSlide('MASTER_SLIDE');
+						slide[chart.slide].addText(chart.title, {
+							placeholder: 'slideTitle',
+							fontFace: pptxFontFace
+						});
+					}
 				chart.chart();
 				$timeout(function() {
 					let node = d3.select('#loadPptx').select("svg")
@@ -3880,13 +3888,14 @@
 							w: chart.w,
 							h: chart.h
 						});
-						slide[chart.slide].addText(chart.subtitle, {
-							x: chart.x + chart.offsetX,
-							y: chart.y + chart.offsetY,
-							w: chart.w,
-							align: 'center'
+							slide[chart.slide].addText(chart.subtitle, {
+								x: chart.x + chart.offsetX,
+								y: chart.y + chart.offsetY,
+								w: chart.w,
+								align: 'center',
+								fontFace: pptxFontFace
+							});
 						});
-					});
 					lastSlide = chart.slide;
 					promise.resolve();
 				}, 600)

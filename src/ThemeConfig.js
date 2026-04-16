@@ -22,13 +22,19 @@
         // Export template styling outside the graph itself.
         exports: {
           pptxHeaderFill: '006fba',
-          pptxDividerLine: 'FFC107'
+          pptxDividerLine: 'FFC107',
+          fontFamily: 'Arial'
         },
 
         // Shared brand assets.
         branding: {
           logo: 'img/logo-monarc.png',
           authBackground: 'img/bg-cases.png'
+        },
+
+        // Shared typography settings for JS consumers.
+        typography: {
+          fontFamily: 'Arial, "Open Sans", sans-serif'
         }
       };
     }]);
