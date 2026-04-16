@@ -23,7 +23,11 @@
         exports: {
           pptxHeaderFill: '006fba',
           pptxDividerLine: 'FFC107',
-          fontFamily: 'Arial'
+          pptxBackground: 'FFFEFE',
+          pptxTextOnHeader: 'FFFFFF',
+          pptxTextOnPrimary: 'FFFEFE',
+          
+          fontFamily: 'Arial',
         },
 
         // Shared brand assets.

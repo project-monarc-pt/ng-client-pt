@@ -3763,14 +3763,14 @@
 				]
 			});
 
-			pptx.defineSlideMaster({
-				title: 'MASTER_SLIDE',
-				bkgd: 'FFFEFE',
-				slideNumber: {
-					x: 9.00,
-					y: 7.0,
-					color: 'FFFFFF'
-				},
+				pptx.defineSlideMaster({
+					title: 'MASTER_SLIDE',
+					bkgd: ClientThemeConfig.exports.pptxBackground,
+					slideNumber: {
+						x: 9.00,
+						y: 7.0,
+						color: ClientThemeConfig.exports.pptxTextOnHeader
+					},
 				objects: [{
 						'rect': {
 							x: 0,
@@ -3799,7 +3799,7 @@
 									h: 0.6,
 									align: 'c',
 									valign: 'm',
-									color: 'FFFEFE',
+									color: ClientThemeConfig.exports.pptxTextOnPrimary,
 									fontSize: 12,
 									fontFace: pptxFontFace
 								}
@@ -3852,7 +3852,7 @@
 						y: 5.25,
 						w: 5.5,
 						h: 0.75,
-						color: 'FFFEFE',
+						color: ClientThemeConfig.exports.pptxTextOnPrimary,
 						fontSize: 20,
 						valign: 'm',
 						fontFace: pptxFontFace
