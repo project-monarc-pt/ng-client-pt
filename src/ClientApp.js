@@ -8,6 +8,7 @@ angular
 function ($mdThemingProvider, $stateProvider, $urlRouterProvider, $resourceProvider, localStorageServiceProvider,
   $httpProvider, $breadcrumbProvider, $provide, gettext, $mdAriaProvider, $mdDateLocaleProvider, $locationProvider,
   $sceDelegateProvider) {
+
     // Store the state provider to be allow controllers to inject their routes
     window.$stateProvider = $stateProvider;
 
@@ -18,39 +19,73 @@ function ($mdThemingProvider, $stateProvider, $urlRouterProvider, $resourceProvi
       'https://objects.monarc.lu/**'
     ]);
     $mdThemingProvider.definePalette('monarcfo',{
-      '50': '#c4e7ff',
-      '100': '#78c8ff',
-      '200': '#40b2ff',
-      '300': '#0094f7',
-      '400': '#0081d9',
-      '500': '#006fba',
-      '600': '#005d9b',
-      '700': '#004a7d',
-      '800': '#00385e',
-      '900': '#002640',
-      'A100': '#c4e7ff',
-      'A200': '#78c8ff',
-      'A400': '#0081d9',
-      'A700': '#004a7d',
+      '50':  '#BCBEC0',
+      '100': '#BCBEC0',
+      '200': '#939598',
+      '300': '#78909C',
+      '400': '#627D8C',
+      '500': '#308AA1',
+      '600': '#59717C',
+      '700': '#6D6F71',
+      '800': '#231F20',
+      '900': '#231F20',
+      'A100': '#78909C',
+      'A200': '#627D8C',
+      'A400': '#59717C',
+      'A700': '#231F20',
       'contrastDefaultColor': 'light',
-      'contrastDarkColors': '50 100 200 A100 A200'
+      'contrastDarkColors': '50 100 200'
     });
+
+    $mdThemingProvider.definePalette('monarcfoAccent', {
+      '50':  '#BCBEC0',
+      '100': '#939598',
+      '200': '#78909C',
+      '300': '#627D8C',
+      '400': '#59717C',
+      '500': '#627D8C',
+      '600': '#59717C',
+      '700': '#6D6F71',
+      '800': '#231F20',
+      '900': '#231F20',
+      'A100': '#78909C',
+      'A200': '#308AA1',
+      'A400': '#59717C',
+      'A700': '#231F20',
+      'contrastDefaultColor': 'light',
+      'contrastDarkColors': '50 100'
+    });
+
+    $mdThemingProvider.definePalette('monarcfoBg', {
+      '50':  '#FFFFFF',
+      '100': '#FFFFFF',
+      '200': '#BCBEC0',
+      '300': '#939598',
+      '400': '#78909C',
+      '500': '#627D8C',
+      '600': '#59717C',
+      '700': '#6D6F71',
+      '800': '#231F20',
+      '900': '#231F20',
+      'A100': '#FFFFFF',
+      'A200': '#BCBEC0',
+      'A400': '#939598',
+      'A700': '#6D6F71',
+      'contrastDefaultColor': 'light',
+      'contrastDarkColors': '50 100 200 300 A100 A200 A400'
+    });
+
+
 
     $mdThemingProvider.theme('default')
     .primaryPalette('monarcfo')
-    .accentPalette('amber')
+    .accentPalette('monarcfoAccent')
     .dark();
 
     $mdThemingProvider.theme('light')
-    .backgroundPalette('grey')
+    .backgroundPalette('monarcfoBg')
     .primaryPalette('monarcfo')
-    .accentPalette('amber');
-
-    $mdThemingProvider.theme('orange')
-    .backgroundPalette('orange')
-    .primaryPalette('amber')
-    .accentPalette('green')
-    .dark();
+    .accentPalette('monarcfoAccent');
 
     $urlRouterProvider.otherwise('/');
 

@@ -13,9 +13,6 @@
   function ClientPasswordForgottenCtrl($scope, $stateParams, $state, $http, toastr, gettextCatalog, UserService, ClientThemeConfig) {
     $scope.isTokenValid = null;
     $scope.brandLogo = ClientThemeConfig.branding.logo;
-    $scope.authBackgroundStyle = {
-      'background-image': 'url(' + ClientThemeConfig.branding.authBackground + ')'
-    };
     $scope.user = {
       password: '',
       confirm: ''

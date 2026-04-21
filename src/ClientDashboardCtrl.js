@@ -538,7 +538,8 @@
 
 		//Options for the chart that displays the compliance
 		const optionsChartCompliance = {
-			width: 650
+			width: 650,
+			color: ClientThemeConfig.charts.categoryScale
 		};
 
 		//Options for the chart that displays recommendations
@@ -3724,6 +3725,22 @@
 			let slide = [];
 			let lastSlide = 0;
 			let date = new Date();
+			let pptxAccentBarFill = ClientThemeConfig.exports.pptxAccentBarFill || ClientThemeConfig.exports.pptxHeaderFill;
+			let pptxLogoPath = ClientThemeConfig.exports.pptxLogo;
+			let slideWidth = 10.00;
+			let titleBarY = 4.60;
+			let titleBarHeight = 1.75;
+			let masterBarY = 6.90;
+			let masterBarHeight = 0.60;
+			let pptxLogoRatio = 598.932 / 440;
+			let titleLogoHeight = 1.00;
+			let titleLogoWidth = +(titleLogoHeight * pptxLogoRatio).toFixed(2);
+			let titleLogoRightEdge = 8.50;
+			let titleLogoY = +(titleBarY + ((titleBarHeight - titleLogoHeight) / 2)).toFixed(2);
+			let masterLogoHeight = 0.32;
+			let masterLogoWidth = +(masterLogoHeight * pptxLogoRatio).toFixed(2);
+			let masterLogoX = +((slideWidth - masterLogoWidth) / 2).toFixed(2);
+			let masterLogoY = +(masterBarY + ((masterBarHeight - masterLogoHeight) / 2)).toFixed(2);
 			let pptxFontFace = ClientThemeConfig.exports.fontFamily
 				.replace(/["']/g, '')
 				.trim();
@@ -3735,10 +3752,10 @@
 				objects: [{
 						'rect': {
 							x: 0.00,
-							y: 4.60,
+							y: titleBarY,
 							w: '100%',
-							h: 1.75,
-							fill: ClientThemeConfig.exports.pptxHeaderFill
+							h: titleBarHeight,
+							fill: pptxAccentBarFill
 						}
 					},
 					{
@@ -3753,11 +3770,11 @@
 					},
 					{
 						'image': {
-							x: 7.0,
-							y: 5.10,
-							w: 1.50,
-							h: 0.65,
-							path: ClientThemeConfig.branding.logo
+							x: +(titleLogoRightEdge - titleLogoWidth).toFixed(2),
+							y: titleLogoY,
+							w: titleLogoWidth,
+							h: titleLogoHeight,
+							path: pptxLogoPath
 						}
 					}
 				]
@@ -3774,19 +3791,19 @@
 				objects: [{
 						'rect': {
 							x: 0,
-							y: 6.9,
+							y: masterBarY,
 							w: '100%',
-							h: 0.6,
-							fill: ClientThemeConfig.exports.pptxHeaderFill
+							h: masterBarHeight,
+							fill: pptxAccentBarFill
 						}
 					},
 					{
 						'image': {
-							x: 0.60,
-							y: 7.0,
-							w: 0.98,
-							h: 0.4,
-							path: ClientThemeConfig.branding.logo
+							x: masterLogoX,
+							y: masterLogoY,
+							w: masterLogoWidth,
+							h: masterLogoHeight,
+							path: pptxLogoPath
 						}
 					},
 					{

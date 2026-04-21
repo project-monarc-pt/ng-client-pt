@@ -2,20 +2,17 @@
   angular
     .module('ClientApp')
     .controller('ClientLoginCtrl', [
-      '$scope', '$state', '$http', 'toastr', 'gettextCatalog', 'gettext', 'UserService', 'ClientThemeConfig',
+      '$scope', '$state', '$http', '$timeout', 'toastr', 'gettextCatalog', 'gettext', 'UserService', 'ClientThemeConfig',
       ClientLoginCtrl
     ]);
 
   /**
    * Login Controller for the Client module
    */
-  function ClientLoginCtrl($scope, $state, $http, toastr, gettextCatalog, gettext, UserService, ClientThemeConfig) {
+  function ClientLoginCtrl($scope, $state, $http, $timeout, toastr, gettextCatalog, gettext, UserService, ClientThemeConfig) {
     $scope.isLoggingIn = false;
     $scope.pwForgotMode = false;
     $scope.brandLogo = ClientThemeConfig.branding.logo;
-    $scope.authBackgroundStyle = {
-      'background-image': 'url(' + ClientThemeConfig.branding.authBackground + ')'
-    };
     $scope.twoFAMode = false;
     $scope.twoFANotCorrect = false;
     $scope.twoFASetUpMode = false;
@@ -153,5 +150,46 @@
 
     /* Load CAPTCHA on controller initialization */
     $scope.loadCaptcha();
+
+    // Sync browser autofill values into ng-model so Angular Material can float labels correctly.
+    function syncAutofillToModel() {
+      let changed = false;
+      const emailInput = document.getElementById('login-email');
+      const passwordInput = document.getElementById('login-password');
+
+      if (emailInput && emailInput.value && $scope.user.email !== emailInput.value) {
+        $scope.user.email = emailInput.value;
+        changed = true;
+      }
+
+      if (passwordInput && passwordInput.value && $scope.user.password !== passwordInput.value) {
+        $scope.user.password = passwordInput.value;
+        changed = true;
+      }
+
+      if (changed) {
+        $scope.$applyAsync();
+      }
+    }
+
+    // Some browsers apply autofill after render, so we probe for a short time window.
+    [0, 150, 300, 600, 1000, 1500, 2500, 4000].forEach(function(delay) {
+      $timeout(syncAutofillToModel, delay, false);
+    });
+
+    // Extra safety: when browser/user changes value without Angular events, resync.
+    $timeout(function bindAutofillListeners() {
+      const emailInput = document.getElementById('login-email');
+      const passwordInput = document.getElementById('login-password');
+
+      [emailInput, passwordInput].forEach(function(input) {
+        if (!input) {
+          return;
+        }
+        input.addEventListener('input', syncAutofillToModel);
+        input.addEventListener('change', syncAutofillToModel);
+        input.addEventListener('blur', syncAutofillToModel);
+      });
+    }, 0, false);
   }
 })();

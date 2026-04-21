@@ -5,10 +5,10 @@
             md-is-locked-open="sidenavIsOpen"
             md-disable-backdrop="true"
             md-whiteframe="3">
-        <div layout="row" layout-align="center center" class="md-padding">
-            <img ng-src="{{ brandLogo }}" width="70%">
+        <div layout="row" layout-align="center center" class="client-sidenav-header md-padding">
+            <img ng-src="{{ brandLogo }}" class="client-sidenav-logo">
             <span flex></span>
-            <md-button class="md-icon-button" ng-click="closeLeftSidenav();">
+            <md-button class="md-icon-button client-sidenav-close-btn" ng-click="closeLeftSidenav();">
                 <md-icon>menu</md-icon>
             </md-button>
         </div>

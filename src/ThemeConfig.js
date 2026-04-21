@@ -9,9 +9,9 @@
           surfacePrimary: '#FFFFFF',
           surfaceTransparent: 'transparent',
 
-          riskScale: ['#D6F107', '#FFBC1C', '#FD661F'],
-          riskScaleBinary: ['#D6F107', '#FD661F'],
-          riskScaleReversed: ['#FD661F', '#FFBC1C', '#D6F107'],
+          categoryScale: ['#308AA1', '#231F20', '#BCBEC0', '#78909C', '#6D6F71'],
+          riskScale: ['#BCBEC0', '#78909C', '#231F20'],
+          riskScaleBinary: ['#BCBEC0', '#231F20'],
 
           export: {
             background: '#FFFFFF',
@@ -21,19 +21,22 @@
 
         // Export template styling outside the graph itself.
         exports: {
-          pptxHeaderFill: '006fba',
-          pptxDividerLine: 'FFC107',
-          pptxBackground: 'FFFEFE',
+          pptxHeaderFill: '308AA1',
+          pptxDividerLine: '231F20',
+          pptxAccentBarFill: '308AA1',
+          pptxBackground: 'FFFFFF',
           pptxTextOnHeader: 'FFFFFF',
-          pptxTextOnPrimary: 'FFFEFE',
+          pptxTextOnPrimary: 'FFFFFF',
+          
+          pptxLogo: 'img/img/CNCS_positivo.png',
           
           fontFamily: 'Arial',
         },
 
         // Shared brand assets.
         branding: {
-          logo: 'img/logo-monarc.png',
-          authBackground: 'img/bg-cases.png'
+          logo: 'img/img/CNCS_cores.svg',
+          sidenavLogo: 'img/img/CNCS_negativo.svg',
         },
 
         // Shared typography settings for JS consumers.

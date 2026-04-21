@@ -56,7 +56,7 @@
       $scope.languageSearch = {
         value: ''
       }
-      $scope.brandLogo = ClientThemeConfig.branding.logo;
+      $scope.brandLogo = ClientThemeConfig.branding.sidenavLogo || ClientThemeConfig.branding.logo;
 
       $scope.changeLanguage = function (lang_id) {
         $scope.languageSearch.value = '';
@@ -344,7 +344,7 @@
         height: 400,
         legendSize: 0,
         positionLegend: 'top',
-        color: ClientThemeConfig.charts.riskScaleReversed,
+        color: d3.interpolateRgbBasis(ClientThemeConfig.charts.categoryScale),
         xTicks: 5
       };
 
