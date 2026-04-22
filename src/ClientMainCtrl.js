@@ -4,7 +4,7 @@
   .module('ClientApp')
   .controller('ClientMainCtrl', [
     '$scope', '$rootScope', '$state', '$mdSidenav', '$mdMedia', '$mdDialog', '$timeout', 'gettextCatalog', 'UserService',
-    'UserProfileService', 'ClientAnrService', 'StatsService', 'SystemMessageService', 'ChartService', 'toastr', '$http', '$interval', ClientMainCtrl
+    'UserProfileService', 'ClientAnrService', 'StatsService', 'SystemMessageService', 'ChartService', 'ClientThemeConfig', 'toastr', '$http', '$interval', ClientMainCtrl
   ])
   .directive('focusMe', function($timeout) {
     return {
@@ -42,7 +42,7 @@
   * Main Controller for the Client module
   */
   function ClientMainCtrl($scope, $rootScope, $state, $mdSidenav, $mdMedia, $mdDialog, $timeout, gettextCatalog, UserService,
-    UserProfileService, ClientAnrService, StatsService, SystemMessageService, ChartService, toastr, $http, $interval ) {
+    UserProfileService, ClientAnrService, StatsService, SystemMessageService, ChartService, ClientThemeConfig, toastr, $http, $interval ) {
       if (!UserService.isAuthenticated() && !UserService.reauthenticate()) {
         setTimeout(function () {
           $state.transitionTo('login');
@@ -56,6 +56,7 @@
       $scope.languageSearch = {
         value: ''
       }
+      $scope.brandLogo = ClientThemeConfig.branding.sidenavLogo || ClientThemeConfig.branding.logo;
 
       $scope.changeLanguage = function (lang_id) {
         $scope.languageSearch.value = '';
@@ -343,7 +344,7 @@
         height: 400,
         legendSize: 0,
         positionLegend: 'top',
-        color: ["#FD661F","#FFBC1C","#D6F107"],
+        color: d3.interpolateRgbBasis(ClientThemeConfig.charts.categoryScale),
         xTicks: 5
       };
 
@@ -430,7 +431,7 @@
       const optionsCartographyRisks = {
         xLabel: "Likelihood",
         yLabel: "Impact",
-        color : ["#D6F107","#FFBC1C","#FD661F"],
+        color : ClientThemeConfig.charts.riskScale,
         threshold : [8,27],
       }
 
@@ -1392,7 +1393,7 @@
 
         // EXPORT FUNCTIONS  ===========================================================
 
-        $scope.exportAsPNG = function(idOfGraph, name, parametersAction = {backgroundColor: 'white'}) {
+        $scope.exportAsPNG = function(idOfGraph, name, parametersAction = {backgroundColor: ClientThemeConfig.charts.export.background}) {
           let node = d3.select('#' + idOfGraph).select("svg");
           saveSvgAsPng(node.node(), name + '.png', parametersAction);
         }

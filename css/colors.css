@@ -1,0 +1,52 @@
+:root {
+    /* Link */
+    --client-color-link-accent: #308AA1;
+
+    /* Brand */
+    --client-color-brand-primary: #308AA1;
+    --client-color-brand-black: #231F20;
+
+    /* Text */
+    --client-color-text-primary: #231F20;
+    --client-color-text-primary-alt: #231F20;
+    --client-color-text-secondary: #6D6F71;
+    --client-color-text-disabled: #939598;
+    --client-color-text-on-dark: white;
+    --client-color-text-link-inline: #308AA1;
+    --client-color-action-emphasis: #59717C;
+    --client-color-action-delete: #308AA1;
+    --client-color-action-export: #308AA1;
+
+    /* Surfaces */
+    --client-color-surface-white: white;
+    --client-color-surface-dark: #231F20;
+    --client-color-surface-auth-panel: #59717C;
+    --client-color-surface-disabled: #BCBEC0;
+    --client-color-select-option-selected-bg: rgba(188, 190, 192, 0.22);
+    --client-color-select-option-hover-bg: rgba(188, 190, 192, 0.16);
+    --client-color-surface-row-alt: rgba(1, 1, 1, 0.02);
+    --client-color-surface-row-hover: rgba(0, 0, 0, 0.07);
+    --client-color-shadow-card-elevated: 0 8px 14px -8px rgba(35, 31, 32, 0.42), 0 4px 8px -6px rgba(35, 31, 32, 0.28);
+
+    /* Borders */
+    --client-color-border-default: #BCBEC0;
+    --client-color-border-input: rgba(35, 31, 32, 0.7);
+    --client-color-scrollbar-thumb: #939598;
+    --client-color-scrollbar-track: rgba(188, 190, 192, 0.12);
+    --client-color-scrollbar-track-border: rgba(188, 190, 192, 0.2);
+    --client-color-scrollbar-firefox-track: rgba(188, 190, 192, 0.18);
+    --client-color-sidenav-active-bg: rgba(188, 190, 192, 0.14);
+
+    /* Status */
+    --client-color-success-soft: #FBFFDA;
+    --client-color-success: #4CAF50;
+
+    --client-color-info-soft: #BCBEC0;
+
+    --client-color-warning-soft: #FFE0B2;
+    --client-color-warning: #FFBC1C;
+
+    --client-color-danger-soft: #FFCDD2;
+    --client-color-danger: #FD661F;
+    --client-color-error: #dd2c00;
+    }

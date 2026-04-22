@@ -1,100 +1,353 @@
+@import url("colors.css");
+
 a {
-    color: #FFEB3B;
+    color: var(--client-color-link-accent);
 }
 md-card a {
-    color: #333333;
+    color: var(--client-color-text-primary);
 }
 
 .md-toolbar-tools {
-    color: white;
+    color: var(--client-color-text-on-dark);
 }
 
 md-card .md-toolbar-tools {
-    color: #333;
+    color: var(--client-color-text-primary-alt);
 }
 
 md-toolbar md-icon.material-icons {
-    color: white;
+    color: var(--client-color-text-on-dark);
 }
 
-.logo-cases-bg {
-    background: url('../img/bg-cases.png') no-repeat left center;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
+/* Warn actions: destructive by default (delete/cancel/remove). */
+.md-button.md-warn,
+.md-button.md-warn md-icon,
+.md-button.md-warn .material-icons,
+a[ng-click*="delete"] md-icon,
+a[ng-click*="remove"] md-icon,
+a[ng-click*="cancel"] md-icon {
+    color: var(--client-color-action-delete) !important;
+}
+
+.md-button.md-raised.md-warn,
+.md-button.md-fab.md-warn {
+    background-color: var(--client-color-action-delete) !important;
+    color: var(--client-color-text-on-dark) !important;
+}
+
+body .md-button.md-raised.md-warn:not([disabled]):hover,
+body .md-button.md-fab.md-warn:not([disabled]):hover {
+    background-color: var(--client-color-action-emphasis) !important;
+}
+
+.md-button.md-raised.md-warn md-icon,
+.md-button.md-fab.md-warn md-icon {
+    color: var(--client-color-text-on-dark) !important;
+}
+
+/* Export/download actions use dedicated brand color. */
+md-icon.md-warn,
+.md-button[ng-click*="export"] md-icon,
+.md-button[ng-click*="download"] md-icon,
+a[ng-click*="export"] md-icon,
+a[ng-click*="download"] md-icon,
+.md-button.md-warn[ng-click*="export"],
+.md-button.md-warn[ng-click*="download"],
+.md-button.md-warn[ng-click*="export"] md-icon,
+.md-button.md-warn[ng-click*="download"] md-icon {
+    color: var(--client-color-action-export) !important;
+}
+
+/* Disabled state must override action colors (delete/export). */
+.md-button[disabled].md-warn,
+.md-button.md-disabled.md-warn,
+.md-button[disabled].md-warn .material-icons,
+.md-button.md-disabled.md-warn .material-icons,
+.md-button[disabled].md-warn md-icon,
+.md-button.md-disabled.md-warn md-icon,
+.md-button[disabled] md-icon.md-warn,
+.md-button.md-disabled md-icon.md-warn,
+.md-button[disabled][ng-click*="export"] md-icon,
+.md-button.md-disabled[ng-click*="export"] md-icon,
+.md-button[disabled][ng-click*="download"] md-icon,
+.md-button.md-disabled[ng-click*="download"] md-icon {
+    color: var(--client-color-text-disabled) !important;
+}
+
+.md-button.md-raised.md-warn[disabled],
+.md-button.md-fab.md-warn[disabled],
+.md-button.md-raised.md-warn.md-disabled,
+.md-button.md-fab.md-warn.md-disabled {
+    background-color: var(--client-color-surface-disabled) !important;
+    color: var(--client-color-text-disabled) !important;
+    opacity: 1;
+}
+
+.md-button.md-raised.md-warn[disabled] md-icon,
+.md-button.md-fab.md-warn[disabled] md-icon,
+.md-button.md-raised.md-warn.md-disabled md-icon,
+.md-button.md-fab.md-warn.md-disabled md-icon {
+    color: var(--client-color-text-disabled) !important;
 }
 
 .md-white-card {
-    background: white;
-    color: #555555;
+    background: var(--client-color-surface-white);
+    color: var(--client-color-text-secondary);
 }
 
 .md-main-content {
-    background-color: #212121; }
+    background-color: var(--client-color-surface-white); 
+}
+
+.md-main-content > [ui-view="main"].ng-scope md-card,
+.md-dialog-content md-card{
+    box-shadow: unset;
+}
+
+.client-auth-screen {
+    background-color: var(--client-color-brand-primary);
+}
+
+.client-auth-panel {
+    background: var(--client-color-surface-white);
+    color: var(--client-color-text-primary);
+    z-index: 2;
+    padding: 25px;
+    width: 100%;
+    max-width: 650px;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+.client-auth-panel .md-button {
+    color: var(--client-color-text-primary);
+    margin: 0;
+}
+
+.client-auth-panel .md-button.md-primary {
+    color: var(--client-color-brand-primary);
+}
+
+.client-brand-logo {
+    width: 250px;
+    height: auto;
+    margin: 25px;
+}
+
+.client-sidenav-logo {
+    width: 150px;
+    height: auto;
+    margin: 25px;
+}
+
+.client-sidenav-header {
+    position: relative;
+}
+
+.client-sidenav-close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    margin: 0;
+}
+
+.client-auth-panel md-input-container:not(.md-input-focused) label,
+.client-auth-panel md-input-container:not(.md-input-focused) md-icon {
+    color: var(--client-color-brand-black) !important;
+}
+
+.client-auth-panel md-input-container.md-input-focused md-icon {
+    color: var(--client-color-brand-black) !important;
+    opacity: 1 !important;
+}
+
+.client-auth-panel md-input-container.md-input-invalid md-icon,
+.client-auth-panel md-input-container.md-input-invalid.md-input-focused md-icon {
+    color: var(--client-color-error) !important;
+    opacity: 1 !important;
+}
+
+.client-auth-panel md-input-container:has(.md-input.ng-invalid.ng-dirty) md-icon,
+.client-auth-panel md-input-container:has(.md-input.ng-invalid.ng-touched) md-icon {
+    color: var(--client-color-error) !important;
+    opacity: 1 !important;
+}
+
+.client-auth-panel md-input-container.md-input-invalid .md-input,
+.client-auth-panel md-input-container.md-input-invalid.md-input-focused .md-input {
+    border-color: var(--client-color-error) !important;
+}
+
+.client-auth-panel md-input-container:not(.md-input-focused) .md-input {
+    color: var(--client-color-brand-black);
+    border-color: var(--client-color-brand-black) !important;
+}
+
+/* Error border must win over non-focused border color. */
+.client-auth-panel md-input-container .md-input.ng-invalid.ng-dirty,
+.client-auth-panel md-input-container .md-input.ng-invalid.ng-touched,
+.client-auth-panel md-input-container .md-input.ng-invalid.ng-not-empty {
+    border-color: var(--client-color-error) !important;
+}
+
+/* Keep typed text in brand black when the field is focused. */
+.client-auth-panel md-input-container.md-input-focused .md-input,
+.client-auth-panel md-input-container.md-input-has-value .md-input {
+    color: var(--client-color-brand-black) !important;
+    -webkit-text-fill-color: var(--client-color-brand-black);
+}
+
+/* Keep label visible on white auth panel while focused/filled. */
+.client-auth-panel md-input-container.md-input-focused label:not(.md-no-float):not(.md-container-ignore),
+.client-auth-panel md-input-container.md-input-has-value label:not(.md-no-float):not(.md-container-ignore),
+.client-auth-panel md-input-container.md-input-has-placeholder label:not(.md-no-float):not(.md-container-ignore) {
+    color: var(--client-color-brand-black) !important;
+    opacity: 1 !important;
+}
+
+/* Autofill fallback: force floating label even when Angular model is not updated by browser autofill. */
+.client-auth-panel md-input-container:has(input:-webkit-autofill) label:not(.md-no-float):not(.md-container-ignore) {
+    transform: translate3d(0,6px,0) scale(.75);
+    transition: transform .4s cubic-bezier(.25,.8,.25,1), width .4s cubic-bezier(.25,.8,.25,1);
+    padding-left: 3px;
+}
 
 md-list-item p {
     font-weight: normal; }
 
 md-list-item.active, md-list-item.active md-icon {
-    color: #FFEB3B; /* #006FBA; */
+    color: var(--client-color-link-accent);
 }
 
 md-progress-linear.green .md-container {
-    background: #FBFFDA;
+    background: var(--client-color-success-soft);
 }
 md-progress-linear.green .md-bar {
-    background: #4CAF50;
+    background: var(--client-color-success);
 }
 
 md-progress-linear.blue .md-container {
-    background: #DEF2FF;
+    background: var(--client-color-info-soft);
 }
 md-progress-linear.orange .md-container {
-    background: #FFE0B2;
+    background: var(--client-color-warning-soft);
 }
 md-progress-linear.orange .md-bar {
-    background: #FFBC1C;
+    background: var(--client-color-warning);
 }
 
 md-progress-linear.red .md-container {
-    background: #FFCDD2;
+    background: var(--client-color-danger-soft);
 }
 md-progress-linear.red .md-bar {
-    background: #FD661F;
+    background: var(--client-color-danger);
 }
 
 
 .md-html-table td, .md-html-table th {
-    border: 1px solid #DDDDDD;
+    border: 1px solid var(--client-color-border-default);
     padding: 8px;
 }
 
 .md-html-table td[disabled] {
-    background: #CCCCCC;
+    background: var(--client-color-surface-disabled);
 }
 
 .md-html-table tbody tr {
     transition: 0.25s background-color;
 }
 .md-html-table tbody tr:nth-child(even) {
-    background-color: rgba(1, 1, 1, 0.02);
+    background-color: var(--client-color-surface-row-alt);
 }
 .md-html-table tbody tr:hover {
-    background-color: rgba(0, 0, 0, 0.07);
+    background-color: var(--client-color-surface-row-hover);
 }
 
-.anr-kb-mgmt md-checkbox .md-icon {
-    border-color: rgba(50, 50, 50, 0.7)
+.anr-kb-mgmt md-table-container md-checkbox .md-icon {
+    border-color: var(--client-color-border-default);
+    border-width: 2px;
+    border-radius: 2px;
 }
 
-.md-checkbox-enabled.md-default-theme:not(.md-checked) .md-icon,
-.md-checkbox-enabled:not(.md-checked) .md-icon{
-    border-color: #DDDDDD; /* rgb(0,111,186); */
+.anr-kb-mgmt md-table-container md-checkbox.md-checked .md-icon,
+.anr-kb-mgmt md-table-container md-checkbox.md-indeterminate .md-icon {
+    background-color: var(--client-color-brand-primary);
+    border-color: var(--client-color-brand-primary);
 }
 
-md-sidenav.md-sidenav-left{
+.anr-kb-mgmt md-table-container md-checkbox.md-checked .md-icon:after {
+    border-color: var(--client-color-text-on-dark);
+}
+
+.anr-kb-mgmt md-table-container md-checkbox.md-indeterminate .md-icon:after {
+    background-color: var(--client-color-text-on-dark);
+}
+
+.md-checkbox-enabled.md-default-theme:not(.md-checked):not(.md-indeterminate) .md-icon,
+.md-checkbox-enabled:not(.md-checked):not(.md-indeterminate) .md-icon{
+    border-color: var(--client-color-border-default);
+}
+
+md-sidenav.md-sidenav-left {
     font-size: 1.2em;
+    background: var(--client-color-brand-black);
+    color: var(--client-color-text-on-dark);
+    scrollbar-width: thin;
+    scrollbar-color: var(--client-color-scrollbar-thumb) var(--client-color-scrollbar-firefox-track);
+}
+
+md-sidenav.md-sidenav-left::-webkit-scrollbar {
+    width: 10px;
+}
+
+md-sidenav.md-sidenav-left::-webkit-scrollbar-track {
+    background: var(--client-color-scrollbar-track);
+    border-left: 1px solid var(--client-color-scrollbar-track-border);
+}
+
+md-sidenav.md-sidenav-left::-webkit-scrollbar-thumb {
+    background: var(--client-color-scrollbar-thumb);
+    border-radius: 999px;
+    border: 2px solid var(--client-color-brand-black);
+}
+
+md-sidenav.md-sidenav-left::-webkit-scrollbar-thumb:hover {
+    background: var(--client-color-scrollbar-thumb);
+}
+
+md-sidenav.md-sidenav-left .md-button,
+md-sidenav.md-sidenav-left md-icon,
+md-sidenav.md-sidenav-left p,
+md-sidenav.md-sidenav-left a {
+    color: var(--client-color-text-on-dark);
+}
+
+md-sidenav.md-sidenav-left .anr-list-details,
+md-sidenav.md-sidenav-left .md-caption {
+    color: var(--client-color-border-default);
+}
+
+md-sidenav.md-sidenav-left .md-caption a {
+    color: var(--client-color-border-default);
+}
+
+md-sidenav.md-sidenav-left md-divider {
+    border-top-color: var(--client-color-border-default);
+    opacity: 0.45;
+}
+
+md-sidenav.md-sidenav-left md-list-item.active {
+    background: var(--client-color-sidenav-active-bg);
+    box-shadow: inset 3px 0 0 var(--client-color-brand-primary);
+}
+
+md-sidenav.md-sidenav-left md-list-item.active .md-list-item-inner {
+    background: transparent;
+}
+
+md-sidenav.md-sidenav-left md-list-item.active p,
+md-sidenav.md-sidenav-left md-list-item.active md-icon {
+    color: var(--client-color-text-on-dark);
 }
 
 #threatsChartTypeOptions{
@@ -117,9 +370,47 @@ md-sidenav.md-sidenav-left{
 }
 
 .added-button{
-  color: blue;
+  color: var(--client-color-text-link-inline);
   background: none;
   border: none;
   font-size: 12px;
   transform: translateY(-25%);
+}
+
+/* md-select options: remove click/focus background unless the option is selected. */
+.md-select-menu-container md-option:not([selected]):not([aria-selected="true"]):focus,
+.md-select-menu-container md-option:not([selected]):not([aria-selected="true"]).md-focused,
+.md-select-menu-container md-option:not([selected]):not([aria-selected="true"]).md-active {
+    background: transparent !important;
+}
+
+/* Non-selected options still need visible hover feedback. */
+.md-select-menu-container md-option:not([selected]):not([aria-selected="true"]):hover {
+    background: var(--client-color-select-option-hover-bg) !important;
+}
+
+/* Selected option keeps a background and uses emphasis text color. */
+.md-select-menu-container md-option[selected],
+.md-select-menu-container md-option[aria-selected="true"],
+.md-select-menu-container md-option.md-selected,
+.md-select-menu-container md-option[selected]:focus,
+.md-select-menu-container md-option[aria-selected="true"]:focus,
+.md-select-menu-container md-option.md-selected:focus,
+.md-select-menu-container md-option[selected].md-focused,
+.md-select-menu-container md-option[aria-selected="true"].md-focused,
+.md-select-menu-container md-option.md-selected.md-focused {
+    background: var(--client-color-select-option-selected-bg) !important;
+    color: var(--client-color-action-emphasis) !important;
+}
+
+.md-select-menu-container md-option.md-selected,
+.md-select-menu-container md-option[selected],
+.md-select-menu-container md-option[aria-selected="true"],
+.md-select-menu-container md-option.md-selected .md-text,
+.md-select-menu-container md-option[selected] .md-text,
+.md-select-menu-container md-option[aria-selected="true"] .md-text,
+.md-select-menu-container md-option.md-selected .md-icon,
+.md-select-menu-container md-option[selected] .md-icon,
+.md-select-menu-container md-option[aria-selected="true"] .md-icon {
+    color: var(--client-color-action-emphasis) !important;
 }

@@ -4,12 +4,12 @@
 		.controller('ClientDashboardCtrl', [
 			'$scope', '$mdMedia', '$mdDialog', '$http', 'gettextCatalog', '$q', '$timeout',
 			'$stateParams', 'AnrService', 'ClientAnrService', 'ReferentialService', 'SOACategoryService',
-			'ClientSoaService', 'ClientRecommendationService', 'ChartService', ClientDashboardCtrl
+			'ClientSoaService', 'ClientRecommendationService', 'ChartService', 'ClientThemeConfig', ClientDashboardCtrl
 		]);
 
 	function ClientDashboardCtrl($scope, $mdMedia, $mdDialog, $http, gettextCatalog, $q, $timeout,
 		$stateParams, AnrService, ClientAnrService, ReferentialService, SOACategoryService,
-		ClientSoaService, ClientRecommendationService, ChartService) {
+		ClientSoaService, ClientRecommendationService, ChartService, ClientThemeConfig) {
 
 		$scope.dashboard = {
 			currentTabIndex: 0,
@@ -39,7 +39,7 @@
 				bottom: 50,
 				left: 30
 			},
-			color: ["#D6F107", "#FFBC1C", "#FD661F"],
+			color: ClientThemeConfig.charts.riskScale,
 			showLegend: false,
 			multipleYaxis: true,
 			forceDomainY: {
@@ -151,7 +151,7 @@
 			},
 			showValues: true,
 			multipleYaxis: true,
-			color: ["#D6F107", "#FFBC1C", "#FD661F"],
+			color: ClientThemeConfig.charts.riskScale,
 			forceChartMode: 'stacked',
 			rotationXAxisLabel: 45,
 			offsetXAxisLabel: 0.9,
@@ -433,7 +433,7 @@
 				left: 140
 			},
 			colorGradient: true,
-			color: ["#D6F107", "#FD661F"],
+			color: ClientThemeConfig.charts.riskScaleBinary,
 			showLegend: false,
 			sort: true,
 			xLabel: 'Number of risks',
@@ -484,7 +484,7 @@
 		const optionsCartography = {
 			xLabel: 'Likelihood',
 			yLabel: 'Impact',
-			color: ["#D6F107", "#FFBC1C", "#FD661F"],
+			color: ClientThemeConfig.charts.riskScale,
 			threshold: [],
 			onClickFunction: function(d) {
 				let field = null;
@@ -538,7 +538,8 @@
 
 		//Options for the chart that displays the compliance
 		const optionsChartCompliance = {
-			width: 650
+			width: 650,
+			color: ClientThemeConfig.charts.categoryScale
 		};
 
 		//Options for the chart that displays recommendations
@@ -552,7 +553,7 @@
 				left: 300
 			},
 			colorGradient: true,
-			color: ["#D6F107", "#FD661F"],
+			color: ClientThemeConfig.charts.riskScaleBinary,
 			showLegend: false,
 			sort: true,
 			onClickFunction: async function(d) {
@@ -3724,6 +3725,25 @@
 			let slide = [];
 			let lastSlide = 0;
 			let date = new Date();
+			let pptxAccentBarFill = ClientThemeConfig.exports.pptxAccentBarFill || ClientThemeConfig.exports.pptxHeaderFill;
+			let pptxLogoPath = ClientThemeConfig.exports.pptxLogo;
+			let slideWidth = 10.00;
+			let titleBarY = 4.60;
+			let titleBarHeight = 1.75;
+			let masterBarY = 6.90;
+			let masterBarHeight = 0.60;
+			let pptxLogoRatio = 598.932 / 440;
+			let titleLogoHeight = 1.00;
+			let titleLogoWidth = +(titleLogoHeight * pptxLogoRatio).toFixed(2);
+			let titleLogoRightEdge = 8.50;
+			let titleLogoY = +(titleBarY + ((titleBarHeight - titleLogoHeight) / 2)).toFixed(2);
+			let masterLogoHeight = 0.32;
+			let masterLogoWidth = +(masterLogoHeight * pptxLogoRatio).toFixed(2);
+			let masterLogoX = +((slideWidth - masterLogoWidth) / 2).toFixed(2);
+			let masterLogoY = +(masterBarY + ((masterBarHeight - masterLogoHeight) / 2)).toFixed(2);
+			let pptxFontFace = ClientThemeConfig.exports.fontFamily
+				.replace(/["']/g, '')
+				.trim();
 
 			pptx.layout = 'LAYOUT_4x3';
 
@@ -3732,10 +3752,10 @@
 				objects: [{
 						'rect': {
 							x: 0.00,
-							y: 4.60,
+							y: titleBarY,
 							w: '100%',
-							h: 1.75,
-							fill: '006fba'
+							h: titleBarHeight,
+							fill: pptxAccentBarFill
 						}
 					},
 					{
@@ -3744,112 +3764,116 @@
 							y: 6.35,
 							w: '100%',
 							h: 0.00,
-							line: 'FFC107',
+							line: ClientThemeConfig.exports.pptxDividerLine,
 							lineSize: 5
 						}
 					},
 					{
 						'image': {
-							x: 7.0,
-							y: 5.10,
-							w: 1.50,
-							h: 0.65,
-							path: 'img/logo-monarc.png'
+							x: +(titleLogoRightEdge - titleLogoWidth).toFixed(2),
+							y: titleLogoY,
+							w: titleLogoWidth,
+							h: titleLogoHeight,
+							path: pptxLogoPath
 						}
 					}
 				]
 			});
 
-			pptx.defineSlideMaster({
-				title: 'MASTER_SLIDE',
-				bkgd: 'FFFEFE',
-				slideNumber: {
-					x: 9.00,
-					y: 7.0,
-					color: 'FFFFFF'
-				},
+				pptx.defineSlideMaster({
+					title: 'MASTER_SLIDE',
+					bkgd: ClientThemeConfig.exports.pptxBackground,
+					slideNumber: {
+						x: 9.00,
+						y: 7.0,
+						color: ClientThemeConfig.exports.pptxTextOnHeader
+					},
 				objects: [{
 						'rect': {
 							x: 0,
-							y: 6.9,
+							y: masterBarY,
 							w: '100%',
-							h: 0.6,
-							fill: '006fba'
+							h: masterBarHeight,
+							fill: pptxAccentBarFill
 						}
 					},
 					{
 						'image': {
-							x: 0.60,
-							y: 7.0,
-							w: 0.98,
-							h: 0.4,
-							path: 'img/logo-monarc.png'
+							x: masterLogoX,
+							y: masterLogoY,
+							w: masterLogoWidth,
+							h: masterLogoHeight,
+							path: pptxLogoPath
 						}
 					},
 					{
 						'text': {
 							text: anr['label'],
-							options: {
-								x: 0,
-								y: 6.9,
-								w: '100%',
-								h: 0.6,
-								align: 'c',
-								valign: 'm',
-								color: 'FFFEFE',
-								fontSize: 12
+								options: {
+									x: 0,
+									y: 6.9,
+									w: '100%',
+									h: 0.6,
+									align: 'c',
+									valign: 'm',
+									color: ClientThemeConfig.exports.pptxTextOnPrimary,
+									fontSize: 12,
+									fontFace: pptxFontFace
+								}
 							}
-						}
-					},
+						},
 					{
 						'line': {
 							x: 0.60,
 							y: 0.80,
 							w: 8.80,
 							h: 0.00,
-							line: 'FFC107',
+							line: ClientThemeConfig.exports.pptxDividerLine,
 							lineSize: 1
 						}
 					},
 					{
 						'placeholder': {
-							options: {
-								name: 'slideTitle',
-								type: 'title',
-								x: 0.00,
-								y: 0.30,
-								w: '100%',
-								color: '006fba',
-								bold: true,
-								fontSize: 28,
-								align: 'center'
+								options: {
+									name: 'slideTitle',
+									type: 'title',
+									x: 0.00,
+									y: 0.30,
+									w: '100%',
+									color: ClientThemeConfig.exports.pptxHeaderFill,
+									bold: true,
+									fontSize: 28,
+									align: 'center',
+									fontFace: pptxFontFace
+								}
 							}
 						}
-					}
 				]
 			});
 
 			slide[lastSlide] = pptx.addNewSlide('TITLE_SLIDE');
-			slide[lastSlide].addText(gettextCatalog.getString('Dashboard'), {
-				x: 0.00,
-				y: 2.50,
-				w: '100%',
-				color: '006fba',
-				bold: true,
-				fontSize: 44,
-				align: 'center'
-			});
-			slide[lastSlide].addText(anr['label'] + '\n' +
-				anr['description'] + '\n' +
-				date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(), {
-					x: 1.50,
-					y: 5.25,
-					w: 5.5,
-					h: 0.75,
-					color: 'FFFEFE',
-					fontSize: 20,
-					valign: 'm'
+				slide[lastSlide].addText(gettextCatalog.getString('Dashboard'), {
+					x: 0.00,
+					y: 2.50,
+					w: '100%',
+					color: ClientThemeConfig.exports.pptxHeaderFill,
+					bold: true,
+					fontSize: 44,
+					align: 'center',
+					fontFace: pptxFontFace
 				});
+				slide[lastSlide].addText(anr['label'] + '\n' +
+					anr['description'] + '\n' +
+					date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(), {
+						x: 1.50,
+						y: 5.25,
+						w: 5.5,
+						h: 0.75,
+						color: ClientThemeConfig.exports.pptxTextOnPrimary,
+						fontSize: 20,
+						valign: 'm',
+						fontFace: pptxFontFace
+					});
 
 			for (chart of charts) {
 				await addChart(chart)
@@ -3858,20 +3882,21 @@
 			$scope.loadingPptx = false;
 			pptx.writeFile();
 
-			function addChart(chart) {
-				let promise = $q.defer();
-				if (chart.slide !== lastSlide) {
-					slide[chart.slide] = pptx.addNewSlide('MASTER_SLIDE');
-					slide[chart.slide].addText(chart.title, {
-						placeholder: 'slideTitle'
-					});
-				}
+				function addChart(chart) {
+					let promise = $q.defer();
+					if (chart.slide !== lastSlide) {
+						slide[chart.slide] = pptx.addNewSlide('MASTER_SLIDE');
+						slide[chart.slide].addText(chart.title, {
+							placeholder: 'slideTitle',
+							fontFace: pptxFontFace
+						});
+					}
 				chart.chart();
 				$timeout(function() {
 					let node = d3.select('#loadPptx').select("svg")
 					svgAsPngUri(node.node(), {
 						fonts: [],
-						backgroundColor: 'transparent'
+						backgroundColor: ClientThemeConfig.charts.export.transparentBackground
 					}, function(uri) {
 						slide[chart.slide].addImage({
 							data: uri,
@@ -3880,13 +3905,14 @@
 							w: chart.w,
 							h: chart.h
 						});
-						slide[chart.slide].addText(chart.subtitle, {
-							x: chart.x + chart.offsetX,
-							y: chart.y + chart.offsetY,
-							w: chart.w,
-							align: 'center'
+							slide[chart.slide].addText(chart.subtitle, {
+								x: chart.x + chart.offsetX,
+								y: chart.y + chart.offsetY,
+								w: chart.w,
+								align: 'center',
+								fontFace: pptxFontFace
+							});
 						});
-					});
 					lastSlide = chart.slide;
 					promise.resolve();
 				}, 600)
@@ -3896,7 +3922,7 @@
 
 		$scope.exportAsPNG = function(idOfGraph, name, parametersAction = {
 			fonts: [],
-			backgroundColor: 'white'
+			backgroundColor: ClientThemeConfig.charts.export.background
 		}) {
 			let node = d3.select('#' + idOfGraph).select("svg");
 			saveSvgAsPng(node.node(), name + '.png', parametersAction);

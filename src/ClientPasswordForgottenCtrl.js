@@ -3,15 +3,16 @@
   angular
   .module('ClientApp')
   .controller('ClientPasswordForgottenCtrl', [
-    '$scope', '$stateParams', '$state', '$http', 'toastr', 'gettextCatalog', 'UserService',
+    '$scope', '$stateParams', '$state', '$http', 'toastr', 'gettextCatalog', 'UserService', 'ClientThemeConfig',
     ClientPasswordForgottenCtrl
   ]);
 
   /**
   * Password Forgotten Controller for the Client module
   */
-  function ClientPasswordForgottenCtrl($scope, $stateParams, $state, $http, toastr, gettextCatalog, UserService) {
+  function ClientPasswordForgottenCtrl($scope, $stateParams, $state, $http, toastr, gettextCatalog, UserService, ClientThemeConfig) {
     $scope.isTokenValid = null;
+    $scope.brandLogo = ClientThemeConfig.branding.logo;
     $scope.user = {
       password: '',
       confirm: ''

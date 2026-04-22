@@ -1,22 +1,20 @@
-<div class="logo-cases-bg"></div>
-
-<div layout="row" layout-align="center center" class="md-main-content" ng-controller="ClientLoginCtrl" flex>
-  <div layout="column" flex flex-gt-sm="50" flex-gt-md="40" class="md-whiteframe-12dp" style="background: #424242; z-index:2" ng-if="!pwForgotMode">
+<div layout="row" layout-align="center center" class="md-main-content client-auth-screen" ng-controller="ClientLoginCtrl" flex>
+  <div layout="column" flex class="md-whiteframe-12dp client-auth-panel" ng-if="!pwForgotMode">
     <div layout-align="center center" layout="row" class="md-padding">
-      <img src="img/logo-monarc.png" style="width: 30% ;margin: 10px 0 0 0" >
+      <img ng-src="{{ brandLogo }}" class="client-brand-logo">
     </div>
 
-    <form layout="column" class="md-padding" ng-submit="login()">
+    <form layout="column" class="md-padding" ng-submit="login()" autocomplete="on">
       <md-input-container flex ng-hide="twoFAMode || recoveryCodeMode || twoFANotCorrect">
         <label translate>E-mail</label>
         <md-icon>email</md-icon>
-        <input ng-model="user.email" type="email" ng-disabled="isLoggingIn" autofocus>
+        <input id="login-email" ng-model="user.email" type="email" ng-disabled="isLoggingIn" autocomplete="username" autofocus>
       </md-input-container>
 
       <md-input-container flex ng-hide="twoFAMode || recoveryCodeMode || twoFANotCorrect">
         <label translate>Password</label>
         <md-icon>vpn_key</md-icon>
-        <input name="password" ng-model="user.password" type="password" ng-disabled="isLoggingIn">
+        <input id="login-password" name="password" ng-model="user.password" type="password" ng-disabled="isLoggingIn" autocomplete="current-password">
       </md-input-container>
 
       <md-input-container class="md-block md-input-focused" style="margin-top:10px" flex ng-hide="!isCaptchaActivated || twoFAMode || recoveryCodeMode || twoFANotCorrect">
@@ -66,9 +64,9 @@
     </form>
   </div>
 
-  <div layout="column" flex flex-gt-sm="50" flex-gt-md="40" class="md-whiteframe-12dp" style="background: #424242; z-index:2" ng-if="pwForgotMode">
+  <div layout="column" flex class="md-whiteframe-12dp client-auth-panel" ng-if="pwForgotMode">
     <div layout-align="center center" layout="row" class="md-padding">
-      <img src="img/logo-monarc.png" style="width: 30% ;margin: 10px 0 0 0">
+      <img ng-src="{{ brandLogo }}" class="client-brand-logo">
     </div>
 
     <form layout="column" class="md-padding" ng-submit="passwordForgottenImpl()">
@@ -79,7 +77,7 @@
       <md-input-container flex>
         <label translate>E-mail</label>
         <md-icon>email</md-icon>
-        <input ng-model="user.email" type="email" ng-disabled="isLoggingIn">
+        <input ng-model="user.email" type="email" ng-disabled="isLoggingIn" autocomplete="email">
       </md-input-container>
 
       <div layout="row">
