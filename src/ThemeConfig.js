@@ -28,15 +28,15 @@
           pptxTextOnHeader: 'FFFFFF',
           pptxTextOnPrimary: 'FFFFFF',
           
-          pptxLogo: 'img/img/CNCS_positivo.png',
+          pptxLogo: 'img/CNCS_positivo.png',
           
           fontFamily: 'Arial',
         },
 
         // Shared brand assets.
         branding: {
-          logo: 'img/img/CNCS_cores.svg',
-          sidenavLogo: 'img/img/CNCS_negativo.svg',
+          logo: 'img/CNCS_cores.svg',
+          sidenavLogo: 'img/CNCS_negativo.svg',
         },
 
         // Shared typography settings for JS consumers.
