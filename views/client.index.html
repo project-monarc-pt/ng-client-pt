@@ -44,7 +44,7 @@
 
         <md-divider></md-divider>
 
-        <p class="md-caption txtcenter">
+        <p class="md-caption txtcenter client-sidenav-copyright">
             Copyright 2012 - {{ currentYear }}
             <a href="https://www.nc3.lu" title="NC3 Website" target="_blank" rel="noopener noreferrer">
               NC3
@@ -55,7 +55,7 @@
              </a>
            </span>
         </p>
-        <p class="md-caption txtcenter">
+        <p class="md-caption txtcenter client-sidenav-version">
           <a href="https://www.monarc.lu" title="MONARC Website" target="_blank" rel="noopener noreferrer">
             MONARC
           </a>
@@ -69,6 +69,13 @@
                 Close message
             </md-button>
         </p>
+
+        <div class="client-sidenav-footer-logo-block">
+            <md-divider></md-divider>
+            <div class="client-sidenav-footer-logo-wrapper" layout="row" layout-align="center center">
+                <img ng-src="{{ sidenavFooterLogo }}" alt="MONARC logo" class="client-sidenav-footer-logo">
+            </div>
+        </div>
 
     </md-sidenav>
     <md-content layout="column" class="md-main-content" flex>

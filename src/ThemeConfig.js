@@ -37,6 +37,7 @@
         branding: {
           logo: 'img/CNCS_cores.svg',
           sidenavLogo: 'img/CNCS_negativo.svg',
+          sidenavFooterLogo: 'img/NC3_Logo_MONARC_negativo.svg',
         },
 
         // Shared typography settings for JS consumers.

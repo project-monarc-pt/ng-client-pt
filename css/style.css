@@ -69,10 +69,20 @@
     margin: 0;
 }
 
+.client-sidenav-footer-logo-block {
+    margin-top: auto;
+}
+
+.client-sidenav-footer-logo-wrapper {
+    padding: 15px 8px;
+}
+
 md-sidenav.md-sidenav-left {
     font-size: 1.2em;
     background: var(--client-color-brand-black);
     color: var(--client-color-text-on-dark);
+    display: flex;
+    flex-direction: column;
     scrollbar-width: thin;
     scrollbar-color: var(--client-color-scrollbar-thumb) var(--client-color-scrollbar-firefox-track);
 }
@@ -112,9 +122,22 @@ md-sidenav.md-sidenav-left .md-caption a {
     color: var(--client-color-border-default);
 }
 
+md-sidenav.md-sidenav-left .client-sidenav-copyright {
+    margin-top: 20px;
+}
+
+md-sidenav.md-sidenav-left .client-sidenav-version {
+    margin-bottom: 20px;
+}
+
 md-sidenav.md-sidenav-left md-divider {
-    border-top-color: var(--client-color-border-default);
-    opacity: 0.45;
+    border-color: var(--client-color-divider-on-dark);
+    opacity: 1;
+}
+
+.client-sidenav-footer-logo {
+    width: 110px;
+    height: auto;
 }
 
 md-sidenav.md-sidenav-left md-list-item.active {

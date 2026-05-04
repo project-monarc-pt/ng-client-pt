@@ -57,6 +57,7 @@
         value: ''
       }
       $scope.brandLogo = ClientThemeConfig.branding.sidenavLogo || ClientThemeConfig.branding.logo;
+      $scope.sidenavFooterLogo = ClientThemeConfig.branding.sidenavFooterLogo;
 
       $scope.changeLanguage = function (lang_id) {
         $scope.languageSearch.value = '';

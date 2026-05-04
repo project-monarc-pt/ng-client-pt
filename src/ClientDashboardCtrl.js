@@ -3721,13 +3721,88 @@
 				});
 			}
 
+			function roundPptx(value) {
+				return +(Math.round((Number(value) + Number.EPSILON) * 100) / 100).toFixed(2);
+			}
+
+			function truncateFooterTitle(text, maxChars = 90) {
+				let normalized = (text || '').toString().trim();
+				if (normalized.length <= maxChars) {
+					return normalized;
+				}
+				return normalized.slice(0, maxChars - 3).trimEnd() + '...';
+			}
+
+			function centerChartsInsideSafeArea(items, safeArea) {
+				if (!Array.isArray(items) || items.length === 0) {
+					return;
+				}
+
+				const subtitleHeight = 0.35;
+				const bySlide = {};
+
+				items.forEach(function(item) {
+					if (!bySlide[item.slide]) {
+						bySlide[item.slide] = [];
+					}
+					bySlide[item.slide].push(item);
+				});
+
+				Object.keys(bySlide).forEach(function(slideKey) {
+					const slideItems = bySlide[slideKey];
+					let minX = Number.POSITIVE_INFINITY;
+					let minY = Number.POSITIVE_INFINITY;
+					let maxX = Number.NEGATIVE_INFINITY;
+					let maxY = Number.NEGATIVE_INFINITY;
+
+					slideItems.forEach(function(item) {
+						const offsetX = Number(item.offsetX || 0);
+						const offsetY = Number(item.offsetY || 0);
+						const subtitleX = Number(item.x) + offsetX;
+						const subtitleY = Number(item.y) + offsetY;
+						const subtitleW = Number(item.w);
+						const imageMinX = Number(item.x);
+						const imageMinY = Number(item.y);
+						const imageMaxX = Number(item.x) + Number(item.w);
+						const imageMaxY = Number(item.y) + Number(item.h);
+
+						minX = Math.min(minX, imageMinX, subtitleX);
+						minY = Math.min(minY, imageMinY, subtitleY);
+						maxX = Math.max(maxX, imageMaxX, subtitleX + subtitleW);
+						maxY = Math.max(maxY, imageMaxY, subtitleY + subtitleHeight);
+					});
+
+					const groupW = maxX - minX;
+					const groupH = maxY - minY;
+					if (groupW <= 0 || groupH <= 0) {
+						return;
+					}
+
+					const scaleX = safeArea.w / groupW;
+					const scaleY = safeArea.h / groupH;
+					const scale = Math.min(1, scaleX, scaleY);
+					const scaledW = groupW * scale;
+					const scaledH = groupH * scale;
+					const targetX = safeArea.x + ((safeArea.w - scaledW) / 2);
+					const targetY = safeArea.y + ((safeArea.h - scaledH) / 2);
+
+					slideItems.forEach(function(item) {
+						item.x = roundPptx(targetX + ((Number(item.x) - minX) * scale));
+						item.y = roundPptx(targetY + ((Number(item.y) - minY) * scale));
+						item.w = roundPptx(Number(item.w) * scale);
+						item.h = roundPptx(Number(item.h) * scale);
+						item.offsetX = roundPptx(Number(item.offsetX || 0) * scale);
+						item.offsetY = roundPptx(Number(item.offsetY || 0) * scale);
+					});
+				});
+			}
+
 			let pptx = new PptxGenJS();
 			let slide = [];
 			let lastSlide = 0;
 			let date = new Date();
 			let pptxAccentBarFill = ClientThemeConfig.exports.pptxAccentBarFill || ClientThemeConfig.exports.pptxHeaderFill;
 			let pptxLogoPath = ClientThemeConfig.exports.pptxLogo;
-			let slideWidth = 10.00;
 			let titleBarY = 4.60;
 			let titleBarHeight = 1.75;
 			let masterBarY = 6.90;
@@ -3737,50 +3812,56 @@
 			let titleLogoWidth = +(titleLogoHeight * pptxLogoRatio).toFixed(2);
 			let titleLogoRightEdge = 8.50;
 			let titleLogoY = +(titleBarY + ((titleBarHeight - titleLogoHeight) / 2)).toFixed(2);
-			let masterLogoHeight = 0.32;
-			let masterLogoWidth = +(masterLogoHeight * pptxLogoRatio).toFixed(2);
-			let masterLogoX = +((slideWidth - masterLogoWidth) / 2).toFixed(2);
-			let masterLogoY = +(masterBarY + ((masterBarHeight - masterLogoHeight) / 2)).toFixed(2);
+			let contentSafeArea = {
+				x: 0.60,
+				y: 0.90,
+				w: 8.80,
+				h: +(masterBarY - 0.90 - 0.10).toFixed(2)
+			};
+			let footerTitle = truncateFooterTitle(anr['label']);
 			let pptxFontFace = ClientThemeConfig.exports.fontFamily
 				.replace(/["']/g, '')
 				.trim();
 
+			centerChartsInsideSafeArea(charts, contentSafeArea);
+
 			pptx.layout = 'LAYOUT_4x3';
 
 			pptx.defineSlideMaster({
-				title: 'TITLE_SLIDE',
-				objects: [{
-						'rect': {
-							x: 0.00,
-							y: titleBarY,
-							w: '100%',
-							h: titleBarHeight,
-							fill: pptxAccentBarFill
+					title: 'TITLE_SLIDE',
+					objects: [
+						{
+							'rect': {
+								x: 0.00,
+								y: titleBarY,
+								w: '100%',
+								h: titleBarHeight,
+								fill: pptxAccentBarFill
+							}
+						},
+						{
+							'line': {
+								x: 0.00,
+								y: 6.35,
+								w: '100%',
+								h: 0.00,
+								line: ClientThemeConfig.exports.pptxDividerLine,
+								lineSize: 5
+							}
+						},
+						{
+							'image': {
+								x: +(titleLogoRightEdge - titleLogoWidth).toFixed(2),
+								y: titleLogoY,
+								w: titleLogoWidth,
+								h: titleLogoHeight,
+								path: pptxLogoPath
+							}
 						}
-					},
-					{
-						'line': {
-							x: 0.00,
-							y: 6.35,
-							w: '100%',
-							h: 0.00,
-							line: ClientThemeConfig.exports.pptxDividerLine,
-							lineSize: 5
-						}
-					},
-					{
-						'image': {
-							x: +(titleLogoRightEdge - titleLogoWidth).toFixed(2),
-							y: titleLogoY,
-							w: titleLogoWidth,
-							h: titleLogoHeight,
-							path: pptxLogoPath
-						}
-					}
-				]
-			});
+					]
+				});
 
-				pptx.defineSlideMaster({
+			pptx.defineSlideMaster({
 					title: 'MASTER_SLIDE',
 					bkgd: ClientThemeConfig.exports.pptxBackground,
 					slideNumber: {
@@ -3788,52 +3869,45 @@
 						y: 7.0,
 						color: ClientThemeConfig.exports.pptxTextOnHeader
 					},
-				objects: [{
-						'rect': {
-							x: 0,
-							y: masterBarY,
-							w: '100%',
-							h: masterBarHeight,
-							fill: pptxAccentBarFill
-						}
-					},
-					{
-						'image': {
-							x: masterLogoX,
-							y: masterLogoY,
-							w: masterLogoWidth,
-							h: masterLogoHeight,
-							path: pptxLogoPath
-						}
-					},
-					{
-						'text': {
-							text: anr['label'],
+					objects: [
+						{
+							'rect': {
+								x: 0,
+								y: masterBarY,
+								w: '100%',
+								h: masterBarHeight,
+								fill: pptxAccentBarFill
+							}
+						},
+						{
+							'text': {
+								text: footerTitle,
 								options: {
-									x: 0,
+									x: contentSafeArea.x,
 									y: 6.9,
-									w: '100%',
+									w: contentSafeArea.w,
 									h: 0.6,
 									align: 'c',
 									valign: 'm',
 									color: ClientThemeConfig.exports.pptxTextOnPrimary,
 									fontSize: 12,
-									fontFace: pptxFontFace
+									fontFace: pptxFontFace,
+									fit: 'shrink'
 								}
 							}
 						},
-					{
-						'line': {
-							x: 0.60,
-							y: 0.80,
-							w: 8.80,
-							h: 0.00,
-							line: ClientThemeConfig.exports.pptxDividerLine,
-							lineSize: 1
-						}
-					},
-					{
-						'placeholder': {
+						{
+							'line': {
+								x: 0.60,
+								y: 0.80,
+								w: 8.80,
+								h: 0.00,
+								line: ClientThemeConfig.exports.pptxDividerLine,
+								lineSize: 1
+							}
+						},
+						{
+							'placeholder': {
 								options: {
 									name: 'slideTitle',
 									type: 'title',
@@ -3848,52 +3922,54 @@
 								}
 							}
 						}
-				]
-			});
+					]
+				});
 
 			slide[lastSlide] = pptx.addNewSlide('TITLE_SLIDE');
-				slide[lastSlide].addText(gettextCatalog.getString('Dashboard'), {
-					x: 0.00,
-					y: 2.50,
-					w: '100%',
-					color: ClientThemeConfig.exports.pptxHeaderFill,
-					bold: true,
-					fontSize: 44,
-					align: 'center',
+			slide[lastSlide].addText(gettextCatalog.getString('Dashboard'), {
+				x: 0.00,
+				y: 2.50,
+				w: '100%',
+				color: ClientThemeConfig.exports.pptxHeaderFill,
+				bold: true,
+				fontSize: 44,
+				align: 'center',
+				fontFace: pptxFontFace
+			});
+			slide[lastSlide].addText(anr['label'] + '\n' +
+				anr['description'] + '\n' +
+				date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(), {
+					x: 1.50,
+					y: 5.25,
+					w: 5.5,
+					h: 0.75,
+					color: ClientThemeConfig.exports.pptxTextOnPrimary,
+					fontSize: 20,
+					valign: 'm',
 					fontFace: pptxFontFace
 				});
-				slide[lastSlide].addText(anr['label'] + '\n' +
-					anr['description'] + '\n' +
-					date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(), {
-						x: 1.50,
-						y: 5.25,
-						w: 5.5,
-						h: 0.75,
-						color: ClientThemeConfig.exports.pptxTextOnPrimary,
-						fontSize: 20,
-						valign: 'm',
-						fontFace: pptxFontFace
-					});
 
-			for (chart of charts) {
-				await addChart(chart)
-			};
+			for (const chart of charts) {
+				await addChart(chart);
+			}
 
 			$scope.loadingPptx = false;
 			pptx.writeFile();
 
-				function addChart(chart) {
-					let promise = $q.defer();
-					if (chart.slide !== lastSlide) {
-						slide[chart.slide] = pptx.addNewSlide('MASTER_SLIDE');
-						slide[chart.slide].addText(chart.title, {
-							placeholder: 'slideTitle',
-							fontFace: pptxFontFace
-						});
-					}
+			function addChart(chart) {
+				let promise = $q.defer();
+
+				if (chart.slide !== lastSlide) {
+					slide[chart.slide] = pptx.addNewSlide('MASTER_SLIDE');
+					slide[chart.slide].addText(chart.title, {
+						placeholder: 'slideTitle',
+						fontFace: pptxFontFace
+					});
+				}
+
 				chart.chart();
 				$timeout(function() {
-					let node = d3.select('#loadPptx').select("svg")
+					let node = d3.select('#loadPptx').select("svg");
 					svgAsPngUri(node.node(), {
 						fonts: [],
 						backgroundColor: ClientThemeConfig.charts.export.transparentBackground
@@ -3905,17 +3981,21 @@
 							w: chart.w,
 							h: chart.h
 						});
-							slide[chart.slide].addText(chart.subtitle, {
-								x: chart.x + chart.offsetX,
-								y: chart.y + chart.offsetY,
-								w: chart.w,
-								align: 'center',
-								fontFace: pptxFontFace
-							});
+						slide[chart.slide].addText(chart.subtitle, {
+							x: chart.x + chart.offsetX,
+							y: chart.y + chart.offsetY,
+							w: chart.w,
+							h: 0.35,
+							align: 'center',
+							valign: 'middle',
+							fit: 'shrink',
+							wrap: false,
+							fontFace: pptxFontFace
 						});
+					});
 					lastSlide = chart.slide;
 					promise.resolve();
-				}, 600)
+				}, 600);
 				return promise.promise;
 			}
 		}

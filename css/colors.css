@@ -17,7 +17,8 @@
     --client-color-scrollbar-track-border: rgba(188, 190, 192, 0.2);
     --client-color-scrollbar-firefox-track: rgba(188, 190, 192, 0.18);
     --client-color-sidenav-active-bg: rgba(188, 190, 192, 0.14);
-
+    --client-color-divider-on-dark: rgba(255, 255, 255, 0.12);
+    
     /* Status */
     --client-color-error: #C0392B;
 }
