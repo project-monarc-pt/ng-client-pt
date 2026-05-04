@@ -120,7 +120,7 @@ msgstr "Histórico de ações"
 
 #: views/dialogs/activate.2FA.html:5
 msgid "Activate two-factor authentication"
-msgstr "Ativar a autenticação de dois factores"
+msgstr "Ativar a autenticação de dois fatores"
 
 #: ../ng_anr/src/AnrObjectCtrl.js:682 src/ClientAccountCtrl.js:261
 msgid "Activation MOSP account"
@@ -178,7 +178,7 @@ msgstr "Adicionar um controlo"
 #: views/client.admin.deliveriesmodels.html:8
 #: views/dialogs/create.deliverymodel.html:5
 msgid "Add a deliverable template"
-msgstr "Adicionar um modelo entregável"
+msgstr "Adicionar um Template de entregável"
 
 #: ../ng_anr/views/anr.ropa.html:212
 msgid "Add a joint controller"
@@ -266,7 +266,7 @@ msgstr "Adicionar uma categoria inteira"
 #: ../ng_anr/views/_anr.riskanalysis.html:57 ../ng_anr/views/add.objlib.html:45
 #: ../ng_anr/views/add.objlib.html:5 ../ng_anr/views/create.objlibs.html:5
 msgid "Add an asset"
-msgstr "Adicionar um bem"
+msgstr "Adicionar um ativo"
 
 #: ../ng_anr/views/context.instance.html:33
 msgid "Add an asset context field"
@@ -274,7 +274,7 @@ msgstr "Adicionar um campo de contexto de ativos"
 
 #: ../ng_anr/views/create.assets.html:5
 msgid "Add an asset type"
-msgstr "Adicionar um tipo de ativo"
+msgstr "Adicionar um tipo de ativos"
 
 #: ../ng_anr/views/anr.ropa.html:439
 msgid "Add an international transfer"
@@ -343,7 +343,7 @@ msgstr "Todos (não filtrado)"
 
 #: ../ng_anr/views/_gettext_caveats.html:52
 msgid "All asset models must not be regulator"
-msgstr "Todos os modelos de bens não devem ser reguladores"
+msgstr "Todos os modelos de ativos não devem ser reguladores"
 
 #: ../ng_anr/views/anr.dashboard.html:128
 #: ../ng_anr/views/anr.dashboard.html:170
@@ -352,7 +352,7 @@ msgstr "Todos os modelos de bens não devem ser reguladores"
 #: ../ng_anr/views/anr.dashboard.html:269 ../ng_anr/views/anr.dashboard.html:30
 #: ../ng_anr/views/anr.dashboard.html:60 ../ng_anr/views/anr.dashboard.html:98
 msgid "All assets"
-msgstr "Todos os bens"
+msgstr "Todos os ativos"
 
 #: ../ng_anr/views/anr.soa.html:17
 msgid "All categories"
@@ -377,7 +377,7 @@ msgstr ""
 
 #: src/ErrorService.js:11
 msgid "An error occurred while fetching {{ thing }}: {{status}}"
-msgstr "Ocorreu um erro enquanto se buscava {{ thing }}: {{status}}"
+msgstr "Ocorreu um erro na obtenção de {{ thing }}: {{status}}"
 
 #: ../ng_anr/src/ImportFileDialogCtrl.js:1172
 #: ../ng_anr/src/ImportFileDialogCtrl.js:1490
@@ -416,11 +416,11 @@ msgstr "Abril"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:340
 msgid "Are you sure you want to delete asset type?"
-msgstr "Tem a certeza de que quer eliminar o tipo de bens?"
+msgstr "Tem a certeza de que quer eliminar o tipo de ativos?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1915
 msgid "Are you sure you want to delete asset?"
-msgstr "Tem a certeza de que quer eliminar bens?"
+msgstr "Tem a certeza de que quer eliminar ativos?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:3857
 msgid "Are you sure you want to delete category?"
@@ -432,7 +432,7 @@ msgstr "Tem a certeza de que quer eliminar o controlo?"
 
 #: src/DeliveriesModelsCtrl.js:70
 msgid "Are you sure you want to delete document?"
-msgstr "Tem a certeza de que quer apagar um documento?"
+msgstr "Tem a certeza de que quer eliminar um documento?"
 
 #: ../ng_anr/src/AnrRopaCtrl.js:705
 msgid "Are you sure you want to delete international transfer?"
@@ -440,7 +440,7 @@ msgstr "Tem a certeza de que quer eliminar a transferência internacional?"
 
 #: ../ng_anr/src/AnrRopaCtrl.js:559
 msgid "Are you sure you want to delete personal data category?"
-msgstr "Tem a certeza de que pretende apagar a categoria de dados pessoais?"
+msgstr "Tem a certeza de que pretende eliminar a categoria de dados pessoais?"
 
 #: ../ng_anr/src/AnrRopaCtrl.js:636
 msgid "Are you sure you want to delete recipient?"
@@ -457,7 +457,7 @@ msgstr "Tem a certeza de que quer eliminar a recomendação?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1206
 msgid "Are you sure you want to delete referential?"
-msgstr "Tem a certeza de que quer apagar os referenciais?"
+msgstr "Tem a certeza de que quer eliminar os referenciais?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:2382
 msgid "Are you sure you want to delete risk?"
@@ -465,15 +465,15 @@ msgstr "Tem a certeza de que quer eliminar o risco?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:2106
 msgid "Are you sure you want to delete tag?"
-msgstr "Tem a certeza de que quer apagar a etiqueta?"
+msgstr "Tem a certeza de que quer eliminar a etiqueta?"
 
 #: ../ng_anr/src/AnrObjectInstanceCtrl.js:439
 msgid "Are you sure you want to delete the asset context field?"
-msgstr "Tem a certeza de que quer apagar o campo de contexto de bens?"
+msgstr "Tem a certeza de que quer eliminar o campo de contexto de ativos?"
 
 #: ../ng_anr/src/AnrRopaCtrl.js:228
 msgid "Are you sure you want to delete the processing?"
-msgstr "Tem a certeza de que quer apagar o processamento?"
+msgstr "Tem a certeza de que quer eliminar o processamento?"
 
 #: src/ClientMainCtrl.js:159
 msgid "Are you sure you want to delete the risk analysis?"
@@ -481,27 +481,23 @@ msgstr "Tem a certeza de que quer eliminar a análise de risco?"
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:3782
 msgid "Are you sure you want to delete the {{count}} scales selected ?"
-msgstr "Tem a certeza de que quer apagar as escalas {{count}} selecionadas ?"
+msgstr "Tem a certeza de que quer eliminar as {{count}} escalas selecionadas ?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:365
 msgid "Are you sure you want to delete the {{count}} selected asset type(s)?"
-msgstr ""
-"Tem a certeza de que quer apagar o(s) {{count}} tipo(s) de ativo(s) "
-"selecionado(s)?"
+msgstr "Tem a certeza de que quer eliminar o(s) {{count}} tipo(s) de ativo(s) selecionado(s)?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1940
 msgid "Are you sure you want to delete the {{count}} selected asset(s)?"
-msgstr ""
-"Tem a certeza de que quer apagar o(s) {{count}} bem(s) selecionado(s)?"
+msgstr "Tem a certeza de que quer eliminar o(s) {{count}} ativo(s) selecionado(s)?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1362
 msgid "Are you sure you want to delete the {{count}} selected controls?"
-msgstr "Tem a certeza de que quer apagar os {{count}} controlos selecionados?"
+msgstr "Tem a certeza de que quer eliminar os {{count}} controlos selecionados?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:2813
 msgid "Are you sure you want to delete the {{count}} selected recommendations?"
-msgstr ""
-"Tem a certeza de que quer apagar as {{count}} recomendações selecionadas?"
+msgstr "Tem a certeza de que quer eliminar as {{count}} recomendações selecionadas?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1692 ../ng_anr/src/AnrKbMgmtCtrl.js:2405
 msgid "Are you sure you want to delete the {{count}} selected risk(s)?"
@@ -510,8 +506,7 @@ msgstr ""
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:2131
 msgid "Are you sure you want to delete the {{count}} selected tag(s)?"
-msgstr ""
-"Tem a certeza de que quer apagar a(s) {{count}} etiqueta(s) selecionada(s)?"
+msgstr "Tem a certeza de que quer eliminar a(s) {{count}} etiqueta(s) selecionada(s)?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:645
 msgid "Are you sure you want to delete the {{count}} selected threat(s)?"
@@ -520,12 +515,11 @@ msgstr ""
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:900
 msgid "Are you sure you want to delete the {{count}} selected vulnerabilites?"
-msgstr ""
-"Tem a certeza de que quer eliminar os {{count}} vulnerabilites selecionados?"
+msgstr "Tem a certeza de que quer eliminar as {{count}} vulnerabilidades selecionadas?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:3178
 msgid "Are you sure you want to delete theme?"
-msgstr "Tem a certeza de que quer apagar o tema?"
+msgstr "Tem a certeza de que quer eliminar o tema?"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1669
 msgid "Are you sure you want to delete this risk?"
@@ -553,7 +547,7 @@ msgstr "Tem a certeza de querer destacar o ator?"
 
 #: ../ng_anr/src/InstanceService.js:4
 msgid "Are you sure you want to detach asset?"
-msgstr "Tem a certeza de querer destacar bens?"
+msgstr "Tem a certeza de querer destacar o ativo?"
 
 #: ../ng_anr/src/RiskRecommendationPartialCtrl.js:103
 msgid "Are you sure you want to detach recommendation ?"
@@ -561,7 +555,7 @@ msgstr "Tem a certeza de que quer destacar a recomendação?"
 
 #: src/ClientAccountCtrl.js:130
 msgid "Are you sure you want to disable two-factor authentication?"
-msgstr "Tem a certeza de que quer desativar a autenticação de dois factores?"
+msgstr "Tem a certeza de que quer desativar a autenticação de dois fatores?"
 
 #: src/ClientAccountCtrl.js:171
 msgid "Are you sure you want to generate new recovery codes ?"
@@ -600,7 +594,7 @@ msgstr "Valor ascendente"
 #: src/ClientDashboardCtrl.js:3009 src/ClientDashboardCtrl.js:3076
 #: src/ClientDashboardCtrl.js:3654
 msgid "Asset"
-msgstr "Bens"
+msgstr "Ativos"
 
 #: ../ng_anr/views/anr.instance.html:16 ../ng_anr/views/object.html:22
 msgid "Asset actions"
@@ -608,7 +602,7 @@ msgstr "Ações patrimoniais"
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:2062
 msgid "Asset added successfully"
-msgstr "Bens adicionados com sucesso"
+msgstr "Ativos adicionados com sucesso"
 
 #: ../ng_anr/views/anr.instance.html:37 ../ng_anr/views/context.instance.html:5
 msgid "Asset context"
@@ -617,7 +611,7 @@ msgstr "Contexto do ativo"
 #: ../ng_anr/views/create.objlibs.html:18
 #: ../ng_anr/views/import.instance.html:5 ../ng_anr/views/import.object.html:5
 msgid "Asset import center"
-msgstr "Centro de importação de bens"
+msgstr "Centro de importação de ativos"
 
 #: ../ng_anr/views/_gettext_caveats.html:27
 #: ../ng_anr/views/_gettext_caveats.html:57
@@ -627,26 +621,26 @@ msgstr "O ativo não está nesta análise de risco"
 #: ../ng_anr/views/_gettext_caveats.html:58
 #: ../ng_anr/views/_gettext_caveats.html:70
 msgid "Asset not exist"
-msgstr "O bem não existe"
+msgstr "O ativo não existe"
 
 #: ../ng_anr/views/import.instance.html:35
 #: ../ng_anr/views/import.object.html:43
 msgid "Asset password (if any)"
-msgstr "Palavra-passe de bens (se existir)"
+msgstr "Palavra-passe do ativo (se existir)"
 
 #: ../ng_anr/views/_object.composition.html:42
 msgid "Asset replica(s) in models"
-msgstr "Réplica(s) de bens em modelos"
+msgstr "Réplica(s) de ativos em modelos"
 
 #: ../ng_anr/views/_gettext_caveats.html:61
 #: ../ng_anr/views/_gettext_caveats.html:64
 msgid "Asset to export is required"
-msgstr "É necessário bens para exportar"
+msgstr "É necessário ativos para exportar"
 
 #: ../ng_anr/views/create.amvs.html:46 ../ng_anr/views/create.objlibs.html:136
 #: ../ng_anr/views/import.asset.html:37 ../ng_anr/views/import.object.html:67
 msgid "Asset type"
-msgstr "Tipo de bens"
+msgstr "Tipo de ativos"
 
 #: ../ng_anr/views/_gettext_caveats.html:49
 msgid "Asset type can't be primary"
@@ -655,7 +649,7 @@ msgstr "O tipo de ativo não pode ser primário"
 #: ../ng_anr/src/ImportFileDialogCtrl.js:1178
 #: ../ng_anr/src/ImportFileDialogCtrl.js:1496
 msgid "Asset type code must exist in the Knowledge Base"
-msgstr "O código do tipo de bens deve existir na Base de Conhecimentos"
+msgstr "O código do tipo de ativos deve existir na Base de Conhecimentos"
 
 #: ../ng_anr/views/_gettext_caveats.html:50
 msgid "Asset type mode can't be null"
@@ -667,16 +661,16 @@ msgstr "Tipo de ativo não encontrado"
 
 #: ../ng_anr/views/anr.risksplan.history.html:31
 msgid "Asset type:"
-msgstr "Tipo de bens:"
+msgstr "Tipo de ativos:"
 
 #: ../ng_anr/views/_anr.kbmgmt.html:4 ../ng_anr/views/_anr.kbmgmt.html:7
 msgid "Asset types"
-msgstr "Tipos de bens"
+msgstr "Tipos de ativos"
 
 #: ../ng_anr/views/_object.composition.html:64
 #: ../ng_anr/views/detach.objlibs.html:38
 msgid "Asset used in the risks analysis"
-msgstr "Bens utilizados na análise de riscos"
+msgstr "Ativo utilizado na análise de riscos"
 
 #: ../ng_anr/views/_gettext_caveats.html:71
 msgid "Asset's model must not be regulator"
@@ -686,11 +680,11 @@ msgstr "O modelo do ativo não deve ser regulador"
 #: ../ng_anr/views/create.amvs.html:60
 #: ../ng_anr/views/validate.recommendation.html:17
 msgid "Asset:"
-msgstr "Bens:"
+msgstr "Ativos:"
 
 #: ../ng_anr/views/_anr.riskanalysis.html:44
 msgid "Assets library"
-msgstr "Biblioteca de bens"
+msgstr "Biblioteca de ativos"
 
 #: src/ClientMainCtrl.js:575
 msgid "At least one risk analysis must be selected"
@@ -722,7 +716,7 @@ msgstr "Agosto"
 
 #: views/client.account.html:100
 msgid "Authenticator App"
-msgstr "Aplicativo Autenticador"
+msgstr "App de Autenticação"
 
 #: ../ng_anr/views/snapshots.html:31
 msgid "Author"
@@ -760,7 +754,7 @@ msgstr "Voltar à lista"
 
 #: ../ng_anr/views/_gettext_caveats.html:28
 msgid "Bad mode for this asset or models attached to asset type incoherent"
-msgstr "Modo errado para este bem ou modelos ligados ao tipo de bem incoerente"
+msgstr "Modo errado para este ativo, ou modelos ligados ao tipo de ativo incoerentes"
 
 #: ../ng_anr/views/import.soa.html:17
 msgid "Before importing"
@@ -782,7 +776,7 @@ msgstr "Por"
 #: ../ng_anr/views/import.instance.html:17
 #: ../ng_anr/views/import.object.html:17
 msgid "By duplicating"
-msgstr "Por Duplicação"
+msgstr "Por duplicação"
 
 #: ../ng_anr/views/import.instance.html:18
 #: ../ng_anr/views/import.object.html:18
@@ -791,7 +785,7 @@ msgstr "Por fusão"
 
 #: ../ng_anr/src/AnrSoaSheetCtrl.js:47 ../ng_anr/views/_table_risks.html:54
 msgid "C Impact"
-msgstr "C Impato"
+msgstr "C Impacto"
 
 #: ../ng_anr/views/_anr.kbmgmt.html:130
 msgid "CIA"
@@ -803,7 +797,7 @@ msgstr "CO"
 
 #: ../ng_anr/views/import.object.html:28
 msgid "CSV file"
-msgstr "ficheiro CSV"
+msgstr "Ficheiro CSV"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1213 ../ng_anr/src/AnrKbMgmtCtrl.js:1342
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1369 ../ng_anr/src/AnrKbMgmtCtrl.js:1674
@@ -927,7 +921,7 @@ msgstr "Tipo de gráfico"
 
 #: ../ng_anr/views/snapshots.html:46
 msgid "Check"
-msgstr "Verifique"
+msgstr "Consultar"
 
 #: ../ng_anr/views/__external_translate.html:26
 msgid "Chinese"
@@ -1187,7 +1181,7 @@ msgstr "Criar um risco específico"
 
 #: ../ng_anr/views/add.objlib.html:48
 msgid "Create an asset"
-msgstr "Criar um bem"
+msgstr "Criar um ativo"
 
 #: ../ng_anr/views/interviews.html:34
 msgid "Create an interview"
@@ -1217,7 +1211,7 @@ msgstr "Criado por"
 
 #: views/client.index.html:35
 msgid "Creating risk analysis..."
-msgstr "Criando análises de risco..."
+msgstr "A criar a análise de risco..."
 
 #: ../ng_anr/views/anr.ropa.html:80
 msgid "Creation date"
@@ -1311,7 +1305,7 @@ msgstr "Dados em falta"
 
 #: ../ng_anr/views/anr.ropa.html:146 ../ng_anr/views/anr.ropa.html:571
 msgid "Data protection officer"
-msgstr "Responsável pela protecção de dados"
+msgstr "Responsável pela proteção de dados"
 
 #: ../ng_anr/views/interviews.html:45 ../ng_anr/views/snapshots.html:30
 #: src/ClientMainCtrl.js:1412 src/ClientMainCtrl.js:1417
@@ -1385,7 +1379,7 @@ msgstr "Eliminar transferência internacional"
 
 #: ../ng_anr/views/anr.ropa.html:361
 msgid "Delete personal data"
-msgstr "Apagar dados pessoais"
+msgstr "Eliminar dados pessoais"
 
 #: ../ng_anr/views/anr.ropa.html:64
 msgid "Delete processing"
@@ -1401,24 +1395,24 @@ msgstr "Eliminar conjunto de recomendações"
 
 #: ../ng_anr/views/_anr.kbmgmt.html:253
 msgid "Delete referential"
-msgstr "Apagar referencial"
+msgstr "Eliminar referencial"
 
 #: ../ng_anr/views/anr.home.html:40
 msgid "Delete risk analysis"
-msgstr "Eliminar a análise de risco"
+msgstr "Eliminar análise de risco"
 
 #: ../ng_anr/views/_anr.evalscales.html:343
 #: ../ng_anr/views/_anr.evalscales.html:70 ../ng_anr/views/delete.scale.html:4
 msgid "Delete scales"
-msgstr "Apagar as escalas"
+msgstr "Eliminar escalas"
 
 #: ../ng_anr/src/AnrObjectInstanceCtrl.js:305
 msgid "Delete specific information risk"
-msgstr "Eliminar o risco específico de informação"
+msgstr "Eliminar risco específico de informação"
 
 #: ../ng_anr/src/AnrObjectInstanceCtrl.js:327
 msgid "Delete specific operational risk"
-msgstr "Eliminar o risco operacional específico"
+msgstr "Eliminar risco operacional específico"
 
 #: views/client.account.html:136
 msgid "Delete your account"
@@ -1443,41 +1437,40 @@ msgstr "Eliminação bem sucedida"
 
 #: ../ng_anr/views/deliverable.evalcontext.html:5
 msgid "Deliverable"
-msgstr "Entregue em"
+msgstr "Entregável"
 
 #: ../ng_anr/views/_gettext_caveats.html:13
 msgid "Deliverable template for Implementation plan"
-msgstr "Modelo de entrega do plano de implementação"
+msgstr "Template de entregável do plano de implementação"
 
 #: ../ng_anr/views/_gettext_caveats.html:14
 msgid "Deliverable template for Statement of applicability"
-msgstr "Modelo de entrega para declaração de aplicabilidade"
+msgstr "Template de entregável para declaração de aplicabilidade"
 
 #: ../ng_anr/views/_gettext_caveats.html:16
 msgid "Deliverable template for all record of processing activities"
-msgstr ""
-"Modelo entregável para todos os registos de atividades de processamento"
+msgstr "Template de entregável para todos os registos de atividades de processamento"
 
 #: ../ng_anr/views/_gettext_caveats.html:10
 msgid "Deliverable template for context validation"
-msgstr "Modelo entregável para validação do contexto"
+msgstr "Template de entregável para validação do contexto"
 
 #: ../ng_anr/views/_gettext_caveats.html:12
 msgid "Deliverable template for final report"
-msgstr "Modelo entregável para o relatório final"
+msgstr "Template de entregável para o relatório final"
 
 #: ../ng_anr/views/_gettext_caveats.html:11
 msgid "Deliverable template for model validation"
-msgstr "Modelo entregável para validação do modelo"
+msgstr "Template de entregável para validação do modelo"
 
 #: ../ng_anr/views/_gettext_caveats.html:15
 msgid "Deliverable template for record of processing activities"
-msgstr "Modelo entregável para registo das atividades de processamento"
+msgstr "Template de entregável para registo das atividades de processamento"
 
 #: src/ClientApp.js:182 views/client.admin.deliveriesmodels.html:5
 #: views/client.index.html:91
 msgid "Deliverable templates"
-msgstr "Modelos de entrega"
+msgstr "Templates de entregável"
 
 #: ../ng_anr/views/anr.layout.html:113
 msgid "Deliverable:"
@@ -1549,16 +1542,16 @@ msgstr "Destacar"
 #: ../ng_anr/views/_gettext_caveats.html:7
 #: ../ng_anr/views/_gettext_caveats.html:93
 msgid "Detach asset"
-msgstr "Desprender ativo"
+msgstr "Destacar ativo"
 
 #: ../ng_anr/src/AnrObjectCtrl.js:568 ../ng_anr/src/AnrObjectCtrl.js:570
 #: ../ng_anr/src/AnrObjectCtrl.js:87 ../ng_anr/src/AnrObjectCtrl.js:89
 msgid "Detach component"
-msgstr "Desprender componente"
+msgstr "Destacar componente"
 
 #: ../ng_anr/views/anr.ropa.html:137
 msgid "Detach controller"
-msgstr "Desacoplar controlador"
+msgstr "Destacar controlador"
 
 #: ../ng_anr/views/anr.ropa.html:168 ../ng_anr/views/anr.ropa.html:594
 msgid "Detach data protection officer"
@@ -1566,15 +1559,15 @@ msgstr "Destacar o responsável pela protecção de dados"
 
 #: ../ng_anr/views/anr.ropa.html:238 ../ng_anr/views/anr.ropa.html:269
 msgid "Detach joint controller"
-msgstr "Desprender o controlador conjunto"
+msgstr "Destacar o controlador conjunto"
 
 #: ../ng_anr/views/anr.ropa.html:493
 msgid "Detach processor"
-msgstr "Processador de separação"
+msgstr "Destacar processador"
 
 #: ../ng_anr/views/anr.ropa.html:199 ../ng_anr/views/anr.ropa.html:562
 msgid "Detach representative"
-msgstr "Representante de Destacamento"
+msgstr "Destacar representante"
 
 #: views/client.admin.accesslog.html:33
 msgid "Details"
@@ -1586,7 +1579,7 @@ msgstr "Desativar"
 
 #: src/ClientAccountCtrl.js:129 views/client.account.html:105
 msgid "Disable two-factor authentication"
-msgstr "Desativar a autenticação de dois factores"
+msgstr "Desativar a autenticação de dois fatores"
 
 #: ../ng_anr/views/anr.dashboard.html:106
 #: ../ng_anr/views/anr.dashboard.html:178
@@ -1611,15 +1604,15 @@ msgstr "Mostrar os riscos atuais por"
 
 #: views/settings.globalDashboard.html:18
 msgid "Display on dashboard"
-msgstr "Afixação no tablier"
+msgstr "Mostrar no dashboard"
 
 #: views/settings.globalDashboard.html:18
 msgid "Display or hide from the global dashboard"
-msgstr "Exibir ou esconder-se do tablier global"
+msgstr "Mostrar ou esconder do dashboard global"
 
 #: ../ng_anr/views/anr.dashboard.html:440
 msgid "Display recommendations by"
-msgstr "Exibir recomendações por"
+msgstr "Mostrar recomendações por"
 
 #: ../ng_anr/views/anr.dashboard.html:235
 msgid "Display residual operational risks by"
@@ -1628,11 +1621,11 @@ msgstr "Mostrar os riscos operacionais residuais por"
 #: ../ng_anr/views/anr.dashboard.html:94 views/client.project.html:123
 #: views/client.project.html:241
 msgid "Display residual risks by"
-msgstr "Exibir riscos residuais por"
+msgstr "Mostrar riscos residuais por"
 
 #: ../ng_anr/views/anr.dashboard.html:305 views/client.project.html:299
 msgid "Display threats by"
-msgstr "Exibir ameaças por"
+msgstr "Mostrar ameaças por"
 
 #: ../ng_anr/views/anr.dashboard.html:125
 #: ../ng_anr/views/anr.dashboard.html:197
@@ -1651,7 +1644,7 @@ msgstr "Concorda em partilhar as estatísticas?"
 #: ../ng_anr/src/ImportFileDialogCtrl.js:753
 msgid "Do you want to create new {{externalItem}} ?"
 msgid_plural "Do you want to create {{count}} new {{pluralExtItem}} ?"
-msgstr[0] "Quer criar um novo {{externalItem}} ?"
+msgstr[0] "Quer criar novo {{externalItem}} ?"
 msgstr[1] "Quer criar {{count}} novo {{pluralExtItem}} ?"
 
 #: ../ng_anr/views/deliverable.evalcontext.html:45
@@ -1670,7 +1663,7 @@ msgstr "Mapa de Donuts"
 
 #: ../ng_anr/views/deliverable.evalcontext.html:17
 msgid "Draft"
-msgstr "Projecto"
+msgstr "Draft"
 
 #: views/dialogs/create.deliverymodel.html:58
 msgid "Drop your DOCX file in this zone, or click here to select a file"
@@ -1680,7 +1673,7 @@ msgstr ""
 
 #: ../ng_anr/views/object.html:33
 msgid "Duplicate asset"
-msgstr "Duplicação de bens"
+msgstr "Duplicar ativo"
 
 #: ../ng_anr/src/AnrObjectCtrl.js:389 src/ClientMainCtrl.js:149
 msgid "Duplication successful"
@@ -1725,23 +1718,23 @@ msgstr "Editar tipo de ativo"
 #: ../ng_anr/views/create.categories.html:6
 #: ../ng_anr/views/create.objlibs.categories.html:6
 msgid "Edit category"
-msgstr "Categoria de edição"
+msgstr "Editar categoria"
 
 #: ../ng_anr/views/create.objlibs.node.html:6
 msgid "Edit component"
-msgstr "Componente de edição"
+msgstr "Editar componente"
 
 #: ../ng_anr/views/create.measures.html:6
 msgid "Edit control"
-msgstr "Controlo de edição"
+msgstr "Editar controlo"
 
 #: views/dialogs/create.deliverymodel.html:6
 msgid "Edit deliverable template"
-msgstr "Editar modelo entregável"
+msgstr "Editar template de entregável"
 
 #: ../ng_anr/views/anr.instance.html:22 ../ng_anr/views/create.instance.html:5
 msgid "Edit impacts"
-msgstr "Editar impatos"
+msgstr "Editar impactos"
 
 #: ../ng_anr/views/interviews.html:35
 msgid "Edit interview"
@@ -1771,7 +1764,7 @@ msgstr "Editar análise de risco"
 
 #: ../ng_anr/views/create.specrisk.html:6
 msgid "Edit specific information risk"
-msgstr "Editar risco específico de informação"
+msgstr "Editar risco de informação específico"
 
 #: ../ng_anr/views/create.specriskop.html:6
 msgid "Edit specific operational risk"
@@ -1779,7 +1772,7 @@ msgstr "Editar risco operacional específico"
 
 #: ../ng_anr/views/create.tags.html:6
 msgid "Edit tag"
-msgstr "Etiqueta de edição"
+msgstr "Editar etiqueta"
 
 #: ../ng_anr/views/create.themes.html:6
 msgid "Edit theme"
@@ -1840,7 +1833,7 @@ msgstr "Inglês"
 
 #: views/dialogs/activate.2FA.html:27
 msgid "Enter the token from your two-factor application."
-msgstr "Introduza o símbolo da sua aplicação de dois factores."
+msgstr "Introduza o token da sua app de autenticação."
 
 #: ../ng_anr/views/_gettext_caveats.html:23
 msgid "Entity does not exist"
@@ -1858,11 +1851,11 @@ msgstr "Erro"
 
 #: src/ClientAccountCtrl.js:141
 msgid "Error when disabling two-factor authentication."
-msgstr "Erro ao desativar a autenticação de dois factores."
+msgstr "Erro ao desativar a autenticação de dois fatores."
 
 #: src/ClientAccountCtrl.js:119 src/ClientAccountCtrl.js:326
 msgid "Error when enabling two-factor authentication."
-msgstr "Erro ao ativar a autenticação de dois factores."
+msgstr "Erro ao ativar a autenticação de dois fatores."
 
 #: src/ClientAccountCtrl.js:209
 msgid "Error when generating recovery codes."
@@ -1900,7 +1893,7 @@ msgstr "Exemplo: Categoria1/ Categoria2/ Categoria3"
 
 #: ../ng_anr/views/import.file.html:171
 msgid "Ex: Tag1/Tag2/Tag3"
-msgstr "Exemplo: Tag1/Tag2/Tag3"
+msgstr "Exemplo: Etiqueta1/Etiqueta2/Etiqueta3"
 
 #: ../ng_anr/views/import.file.html:189 ../ng_anr/views/import.record.html:104
 #: ../ng_anr/views/import.record.html:70
@@ -2205,11 +2198,11 @@ msgstr "Ativos globais"
 
 #: views/client.project.html:46 views/dialogs/create.user.html:50
 msgid "Global dashboard"
-msgstr "Painel de bordo global"
+msgstr "Dashboard global"
 
 #: views/settings.globalDashboard.html:5
 msgid "Global dashboard settings"
-msgstr "Definições globais do painel de instrumentos"
+msgstr "Definições do dashboard global"
 
 #: ../ng_anr/src/Charts/DonutChartService.js:88
 #: ../ng_anr/src/Charts/RadarChartService.js:62
@@ -2279,7 +2272,7 @@ msgstr "Carta informática Condições de utilização Termos e condições gera
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:1171
 msgid "Identification of assets, vulnerabilities and impacts appreciation"
-msgstr "Identificação de bens, vulnerabilidades e avaliação de impactos"
+msgstr "Identificação de ativos, vulnerabilidades e avaliação de impactos"
 
 #: ../ng_anr/views/import.soa.html:22
 msgid "If there is a multiple matching:"
@@ -2326,15 +2319,15 @@ msgstr "Critérios de impato"
 
 #: ../ng_anr/views/_anr.evalscales.html:82
 msgid "Impacts"
-msgstr "Impatos"
+msgstr "Impactos"
 
 #: ../ng_anr/views/_anr.evalscales.html:29
 msgid "Impacts and consequences scale:"
-msgstr "Impatos e escala de consequências:"
+msgstr "Impactos e escala de consequências:"
 
 #: ../ng_anr/views/_anr.evalscales.html:315
 msgid "Impacts scale:"
-msgstr "Escala de impatos:"
+msgstr "Escala de impactos:"
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:1204
 msgid "Implementation Plan"
@@ -2414,7 +2407,7 @@ msgstr "Importar uma vulnerabilidade do MOSP"
 
 #: ../ng_anr/views/import.object.mosp.html:5
 msgid "Import an asset from MOSP"
-msgstr "Importar um bem do MOSP"
+msgstr "Importar um ativo do MOSP"
 
 #: ../ng_anr/views/import.asset.html:5
 msgid "Import an asset type from MOSP"
@@ -2430,7 +2423,7 @@ msgstr "Análise das importações"
 
 #: ../ng_anr/views/import.object.html:89
 msgid "Import asset"
-msgstr "Importar bens"
+msgstr "Importar ativo"
 
 #: ../ng_anr/views/import.file.html:39 ../ng_anr/views/import.instance.html:42
 #: ../ng_anr/views/import.record.html:35
@@ -2443,7 +2436,7 @@ msgstr "Importar ficheiro"
 #: ../ng_anr/views/create.referentials.html:17
 #: ../ng_anr/views/create.threats.html:22 ../ng_anr/views/create.vulns.html:22
 msgid "Import from MOSP"
-msgstr "Importação do MOSP"
+msgstr "Importar a partir do MOSP"
 
 #: ../ng_anr/views/create.amvs.html:18 ../ng_anr/views/create.amvs.html:28
 #: ../ng_anr/views/create.assets.html:18 ../ng_anr/views/create.assets.html:28
@@ -2458,11 +2451,11 @@ msgstr "Importação do MOSP"
 #: ../ng_anr/views/create.threats.html:28 ../ng_anr/views/create.vulns.html:18
 #: ../ng_anr/views/create.vulns.html:28
 msgid "Import from file"
-msgstr "Importação de ficheiro"
+msgstr "Importar a partir de ficheiro"
 
 #: ../ng_anr/views/anr.soa.html:36
 msgid "Import from other referential"
-msgstr "Importação de outros referenciais"
+msgstr "Importar a partir de outros referenciais"
 
 #: ../ng_anr/views/import.instance.html:16
 #: ../ng_anr/views/import.object.html:16
@@ -2471,7 +2464,7 @@ msgstr "Método de importação:"
 
 #: ../ng_anr/src/AnrSoaCtrl.js:241
 msgid "Import successful"
-msgstr "Importar com sucesso"
+msgstr "Importação com sucesso"
 
 #: ../ng_anr/views/_anr.kbmgmt.html:674 ../ng_anr/views/anr.dashboard.html:444
 #: ../ng_anr/views/create.recommendation-kbase.html:43
@@ -2500,7 +2493,7 @@ msgstr "Em curso"
 #: ../ng_anr/views/_object.composition.html:35
 #: ../ng_anr/views/detach.objlibs.html:19
 msgid "In the library, this asset is a direct component of :"
-msgstr "Na biblioteca, este bem é uma componente direta de :"
+msgstr "Na biblioteca, este ativo é uma componente direta de :"
 
 #: ../ng_anr/src/AnrSoaCtrl.js:256 ../ng_anr/views/anr.soa.html:47
 #: ../ng_anr/views/import.soa.html:40
@@ -2741,7 +2734,7 @@ msgstr "Lista de categorias:"
 
 #: ../ng_anr/views/import.object.html:55
 msgid "List of common MONARC assets"
-msgstr "Lista de bens comuns MONARC"
+msgstr "Lista de ativos comuns MONARC"
 
 #: views/dialogs/create.anr.html:20
 msgid "List of risks models"
@@ -2757,7 +2750,7 @@ msgstr "Lista de temas:"
 
 #: ../ng_anr/views/add.objlib.html:15
 msgid "Loading library ..."
-msgstr "Biblioteca de carregamentos ..."
+msgstr "A carregar biblioteca ..."
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1758 ../ng_anr/views/create.objlibs.html:68
 msgid "Local"
@@ -2774,7 +2767,7 @@ msgstr "Iniciar Sessão"
 
 #: views/client.index.html:124
 msgid "Logout"
-msgstr "Sair"
+msgstr "Terminar sessão"
 
 #: src/ClientMainCtrl.js:1367 src/ClientMainCtrl.js:1370
 msgid "Low risks"
@@ -2872,12 +2865,12 @@ msgstr "Nível máximo de risco associado"
 #: src/ClientDashboardCtrl.js:2856 src/ClientDashboardCtrl.js:2872
 #: src/ClientDashboardCtrl.js:2892 src/ClientDashboardCtrl.js:2908
 msgid "Max. current risk average"
-msgstr "Média máxima de risco atual"
+msgstr "Média de risco atual máxima"
 
 #: src/ClientDashboardCtrl.js:2860 src/ClientDashboardCtrl.js:2874
 #: src/ClientDashboardCtrl.js:2896 src/ClientDashboardCtrl.js:2910
 msgid "Max. residual risk average"
-msgstr "Média máxima de risco residual"
+msgstr "Média de risco residual máxima"
 
 #: src/ClientApp.js:67 src/ClientApp.js:81
 msgid "May"
@@ -3030,7 +3023,7 @@ msgstr "Sem acesso"
 #: ../ng_anr/views/create.objlibs.html:220 ../ng_anr/views/import.asset.html:43
 #: ../ng_anr/views/import.object.mosp.html:44
 msgid "No asset matching your search was found"
-msgstr "Não foi encontrado nenhum bem que corresponda à sua pesquisa"
+msgstr "Não foi encontrado nenhum ativo que corresponda à sua pesquisa"
 
 #: ../ng_anr/views/create.amvs.html:52 ../ng_anr/views/create.objlibs.html:142
 msgid "No asset type matching your search was found"
@@ -3118,7 +3111,7 @@ msgstr "Não foi encontrado qualquer risco que correspondesse à sua pesquisa"
 
 #: ../ng_anr/views/__external_translate.html:7
 msgid "No target risks specified in your risk analysis yet"
-msgstr "Nenhum risco alvo especificado na sua análise de risco ainda"
+msgstr "Não foi especificado nenhum risco alvo na sua análise de risco"
 
 #: ../ng_anr/views/create.threats.html:84
 msgid "No theme matching your search was found. Click on"
@@ -3132,7 +3125,7 @@ msgstr "Não foi encontrada nenhuma ameaça correspondente à sua pesquisa"
 
 #: ../ng_anr/views/trends.evalcontext.html:50
 msgid "No threats are listed in your analysis."
-msgstr "Nenhuma ameaça é listada na sua análise."
+msgstr "Nenhuma ameaça listada na sua análise."
 
 #: ../ng_anr/views/create.amvs.html:104 ../ng_anr/views/create.specrisk.html:56
 #: ../ng_anr/views/import.vulnerability.html:43
@@ -3206,12 +3199,12 @@ msgstr "Outubro"
 
 #: ../ng_anr/views/_gettext_caveats.html:51
 msgid "One model must be common to asset, threat and vulnerability"
-msgstr "Um modelo deve ser comum a bens, ameaças e vulnerabilidade"
+msgstr "Um modelo deve ser comum a ativos, ameaças e vulnerabilidade"
 
 #: ../ng_anr/views/import.instance.html:22
 #: ../ng_anr/views/import.object.html:22
 msgid "Only global assets can be imported by merge."
-msgstr "Apenas os bens globais podem ser importados por fusão."
+msgstr "Apenas os ativos globais podem ser importados por fusão."
 
 #: ../ng_anr/views/_gettext_caveats.html:95
 msgid "Only one guide by category"
@@ -3232,7 +3225,7 @@ msgstr "Apenas uma etiqueta a ligar"
 
 #: ../ng_anr/views/_table_risks.html:130
 msgid "Open risk sheet"
-msgstr "Ficha de risco em aberto"
+msgstr "Abrir a folha de risco"
 
 #: ../ng_anr/views/anr.risksplan.html:5
 msgid "Open the implementation history"
@@ -3240,7 +3233,7 @@ msgstr "Abrir o histórico de implementação"
 
 #: src/ClientMainCtrl.js:1405 src/ClientMainCtrl.js:1430
 msgid "Oper. Risks - daily values"
-msgstr "Oper. Riscos - valores diários"
+msgstr "Riscos oper. - valores diários"
 
 #: ../ng_anr/src/RiskRecommendationPartialCtrl.js:116
 #: ../ng_anr/src/RiskRecommendationPartialCtrl.js:139
@@ -3377,7 +3370,7 @@ msgstr ""
 
 #: src/ClientLoginCtrl.js:84
 msgid "Please configure two-factor authentication."
-msgstr "Por favor, configure a autenticação de dois factores."
+msgstr "Por favor, configure a autenticação de dois fatores."
 
 #: views/login.html:62
 msgid ""
@@ -3389,7 +3382,7 @@ msgstr ""
 
 #: src/ClientLoginCtrl.js:82
 msgid "Please enter your two-factor authentication token."
-msgstr "Por favor introduza o seu código de autenticação de dois factores."
+msgstr "Por favor introduza o seu token de autenticação de dois fatores."
 
 #: views/login.html:25
 msgid "Please scan the QRCode and enter the verification code."
@@ -3426,7 +3419,7 @@ msgstr "Anterior"
 
 #: ../ng_anr/views/create.objlibs.html:214
 msgid "Previous asset..."
-msgstr "Bem anterior..."
+msgstr "Ativo anterior..."
 
 #: ../ng_anr/views/create.objlibs.categories.html:59
 msgid "Previous category"
@@ -3442,7 +3435,7 @@ msgstr "Primário"
 
 #: ../ng_anr/views/__external_translate.html:33
 msgid "Primary assets"
-msgstr "Bens primários"
+msgstr "Ativos primários"
 
 #: ../ng_anr/views/create.recommendation-kbase.html:48
 #: ../ng_anr/views/create.recommendation.html:72
@@ -3494,11 +3487,11 @@ msgstr "Publicar"
 
 #: ../ng_anr/views/object.html:43 ../ng_anr/views/publish.object.html:5
 msgid "Publish asset in MOSP"
-msgstr "Publicar bens no MOSP"
+msgstr "Publicar ativo no MOSP"
 
 #: ../ng_anr/views/anr.ropa.html:88
 msgid "Purpose(s)"
-msgstr "Finalidade(ões)"
+msgstr "Finalidade(s)"
 
 #: ../ng_anr/src/AnrSoaSheetCtrl.js:54 ../ng_anr/views/_table_risks.html:103
 #: ../ng_anr/views/anr.dashboard.risks.html:33
@@ -3603,10 +3596,7 @@ msgstr "Códigos de recuperação"
 msgid ""
 "Recovery codes can be used to access your account in the event you lose "
 "access to your two-factor method."
-msgstr ""
-"Os códigos de recuperação podem ser utilizados para aceder à sua conta no "
-"caso de perder o acesso ao seu método de dois factores."
-
+msgstr "Os códigos de recuperação podem ser utilizados para aceder à sua conta no caso de perder o acesso ao seu método de autenticação de dois fatores."
 #: views/client.account.html:109
 msgid "Recovery options"
 msgstr "Opções de recuperação"
@@ -3651,7 +3641,7 @@ msgstr ""
 
 #: views/client.account.html:114
 msgid "Remaining recovery codes: {{ user.remainingRecoveryCodes }}."
-msgstr "Restantes códigos de recuperação: {{ user.remainingRecoveryCodes }}."
+msgstr "Códigos de recuperação restantes: {{ user.remainingRecoveryCodes }}."
 
 #: ../ng_anr/views/import.soa.html:41
 msgid "Remarks"
@@ -3899,10 +3889,7 @@ msgstr "Guardar alterações"
 msgid ""
 "Scan the QR code with your two-factor application and enter the token in the "
 "input."
-msgstr ""
-"Digitalize o código QR com a sua aplicação de dois factores e introduza o "
-"token."
-
+msgstr "Digitalize o código QR com a sua app de autenticação e introduza o token."
 #: ../ng_anr/views/create.objlibs.html:65
 msgid "Scope"
 msgstr "Âmbito"
@@ -3934,7 +3921,7 @@ msgstr "Pesquise uma recomendação para criar uma a partir de uma já existente
 #: ../ng_anr/views/_anr.riskanalysis.html:53
 #: ../ng_anr/views/import.object.html:58
 msgid "Search an asset..."
-msgstr "Pesquisar um bem..."
+msgstr "Pesquisar um ativo..."
 
 #: ../ng_anr/views/_anr.kbmgmt.html:170 ../ng_anr/views/_anr.kbmgmt.html:18
 #: ../ng_anr/views/_anr.kbmgmt.html:270 ../ng_anr/views/_anr.kbmgmt.html:345
@@ -3977,7 +3964,7 @@ msgstr "Referenciais de segurança"
 
 #: ../ng_anr/views/anr.instance.html:42
 msgid "See asset in the library"
-msgstr "Ver bens na biblioteca"
+msgstr "Ver ativos na biblioteca"
 
 #: ../ng_anr/views/create.recommendation-kbase.html:29
 #: ../ng_anr/views/create.recommendation.html:35
@@ -4100,11 +4087,7 @@ msgid ""
 "Some of the risks of your analysis, your library, or your trends assessment "
 "have already been assessed. This being done, you may not edit the scales "
 "values."
-msgstr ""
-"Alguns dos riscos da sua análise, da sua biblioteca, ou da avaliação das "
-"suas tendências, já foram avaliados. Se isto for feito, não poderá editar os "
-"valores das escalas."
-
+msgstr "Alguns dos riscos da sua análise, da sua biblioteca, ou da avaliação das suas tendências, já foram avaliados. Como tal, não poderá editar os valores das escalas."
 #: ../ng_anr/views/_oprisk_sheet.html:10
 #: ../ng_anr/views/_table_risks_op.html:100
 #: ../ng_anr/views/_table_risks_op.html:107
@@ -4121,7 +4104,7 @@ msgstr "Ordenar"
 
 #: ../ng_anr/views/_table_risks.html:67 ../ng_anr/views/_table_risks_op.html:63
 msgid "Sort direction"
-msgstr "Ordenar direção"
+msgstr "Direção da ordenação"
 
 #: ../ng_anr/views/create.specriskop.html:16 views/dialogs/create.anr.html:16
 msgid "Source"
@@ -4199,7 +4182,7 @@ msgstr "Avaliação sumária das tendências e ameaças"
 
 #: ../ng_anr/src/GuideService.js:79
 msgid "Summary of assets / impacts"
-msgstr "Resumo dos bens / impactos"
+msgstr "Resumo dos ativos / impactos"
 
 #: ../ng_anr/views/deliverable.evalcontext.html:60
 msgid "Summary of risk evaluation:"
@@ -4207,7 +4190,7 @@ msgstr "Resumo da avaliação de risco:"
 
 #: src/ClientApp.js:106
 msgid "Sun"
-msgstr "Sol"
+msgstr "Dom"
 
 #: src/ClientApp.js:97
 msgid "Sunday"
@@ -4219,7 +4202,7 @@ msgstr "Fornecedores, agências de crédito, departamentos governamentais"
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:1176
 msgid "Synthesis of assets / impacts"
-msgstr "Síntese de bens / impactos"
+msgstr "Síntese de ativos / impactos"
 
 #: ../ng_anr/views/_anr.evalscales.html:279
 msgid "T"
@@ -4268,54 +4251,54 @@ msgstr ""
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:2062
 msgid "The asset has been added to the library."
-msgstr "O bem foi acrescentado à biblioteca."
+msgstr "O ativo foi acrescentado à biblioteca."
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1879 ../ng_anr/src/AnrObjectCtrl.js:283
 msgid "The asset has been created successfully."
-msgstr "O bem foi criado com sucesso."
+msgstr "O ativo foi criado com sucesso."
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1927
 msgid "The asset has been deleted."
-msgstr "O bem foi eliminado."
+msgstr "O ativo foi eliminado."
 
 #: ../ng_anr/src/AnrObjectCtrl.js:143 ../ng_anr/src/AnrObjectCtrl.js:217
 msgid "The asset has been detached from the library."
-msgstr "O bem foi destacado da biblioteca."
+msgstr "O ativo foi destacado da biblioteca."
 
 #: ../ng_anr/src/AnrObjectCtrl.js:101 ../ng_anr/src/AnrObjectCtrl.js:582
 msgid "The asset has been detached successfully"
-msgstr "O bem foi destacado com sucesso"
+msgstr "O ativo foi destacado com sucesso"
 
 #: ../ng_anr/src/AnrObjectCtrl.js:389
 msgid "The asset has been duplicated successfully."
-msgstr "O bem tem sido duplicado com sucesso."
+msgstr "O ativo foi duplicado com sucesso."
 
 #: ../ng_anr/src/AnrObjectInstanceCtrl.js:153
 msgid "The asset has been edited"
-msgstr "O bem foi editado"
+msgstr "O ativo foi editado"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1862 ../ng_anr/src/AnrObjectCtrl.js:276
 msgid "The asset has been edited successfully."
-msgstr "O bem foi editado com sucesso."
+msgstr "O ativo foi editado com sucesso."
 
 #: ../ng_anr/src/AnrObjectCtrl.js:335
 #: ../ng_anr/src/AnrObjectInstanceCtrl.js:193
 msgid "The asset has been exported successfully."
-msgstr "O bem foi exportado com sucesso."
+msgstr "O ativo foi exportado com sucesso."
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:2895 ../ng_anr/src/AnrLayoutCtrl.js:3825
 #: ../ng_anr/src/AnrLayoutCtrl.js:3884
 msgid "The asset has been imported successfully"
-msgstr "O bem foi importado com sucesso"
+msgstr "O ativo foi importado com sucesso"
 
 #: ../ng_anr/src/AnrObjectCtrl.js:372
 msgid "The asset has been published in MOSP successfully."
-msgstr "O bem foi publicado com sucesso no MOSP."
+msgstr "O ativo foi publicado com sucesso no MOSP."
 
 #: ../ng_anr/src/AnrObjectCtrl.js:135 ../ng_anr/src/AnrObjectCtrl.js:171
 #: ../ng_anr/src/AnrObjectCtrl.js:209
 msgid "The asset has been successfully deleted"
-msgstr "O bem foi eliminado com sucesso"
+msgstr "O ativo foi eliminado com sucesso"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:245 ../ng_anr/src/AnrKbMgmtCtrl.js:284
 msgid ""
@@ -4393,15 +4376,15 @@ msgstr "O controlo foi editado com sucesso."
 
 #: ../ng_anr/src/AnrObjectCtrl.js:158 ../ng_anr/src/AnrObjectCtrl.js:193
 msgid "The current asset will be permanently deleted. Are you sure?"
-msgstr "O ativo atual será permanentemente apagado. Tem a certeza?"
+msgstr "O ativo atual será permanentemente eliminado. Tem a certeza?"
 
 #: ../ng_anr/src/AnrObjectCtrl.js:188
 msgid "The current asset will be removed from the library. Are you sure?"
-msgstr "O bem atual será removido da biblioteca. Tem a certeza?"
+msgstr "O ativo atual será removido da biblioteca. Tem a certeza?"
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:1249
 msgid "The deliverable has been generated successfully."
-msgstr "O produto a entregar foi gerado com sucesso."
+msgstr "O entregável foi gerado com sucesso."
 
 #: ../ng_anr/views/publish.object.html:27
 msgid "The description may not be empty"
@@ -4692,10 +4675,7 @@ msgstr "O tema não pode estar vazio"
 msgid ""
 "The threat has been created successfully, however without models, the "
 "element may not be specific."
-msgstr ""
-"A ameaça foi criada com sucesso, mas sem modelos, o elemento pode não ser "
-"específico."
-
+msgstr "A ameaça foi criada com sucesso, mas sem modelos, o elemento não pode ser específico."
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:517 ../ng_anr/src/AnrKbMgmtCtrl.js:556
 msgid "The threat has been created successfully."
 msgstr "A ameaça foi criada com sucesso."
@@ -4718,7 +4698,7 @@ msgstr "A ameaça foi editada com sucesso."
 
 #: ../ng_anr/views/_gettext_caveats.html:72
 msgid "The tuple asset type / threat / vulnerability is invalid"
-msgstr "O tuple tipo de ativo / ameaça / vulnerabilidade é inválido"
+msgstr "O tuplo tipo de ativo / ameaça / vulnerabilidade é inválido"
 
 #: views/client.account.html:89 views/dialogs/create.user.html:79
 msgid "The two passwords are differents."
@@ -4726,7 +4706,7 @@ msgstr "As duas palavras-passe são diferentes."
 
 #: src/ClientLoginCtrl.js:87
 msgid "The two-factor authentication token is not correct."
-msgstr "O token de autenticação de dois factores não está correto."
+msgstr "O token de autenticação de dois fatores não está correto."
 
 #: src/ClientAdminUsersCtrl.js:72
 msgid "The user has been created successfully."
@@ -4757,10 +4737,7 @@ msgstr "O nome de utilizador não pode estar vazio"
 msgid ""
 "The vulnerability has been created successfully, however without models, the "
 "element may not be specific."
-msgstr ""
-"A vulnerabilidade foi criada com sucesso, contudo, sem modelos, o elemento "
-"pode não ser específico."
-
+msgstr "A vulnerabilidade foi criada com sucesso, contudo, sem modelos, o elemento não pode ser específico."
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:771 ../ng_anr/src/AnrKbMgmtCtrl.js:813
 msgid "The vulnerability has been created successfully."
 msgstr "A vulnerabilidade foi criada com sucesso."
@@ -4773,10 +4750,7 @@ msgstr "A vulnerabilidade foi eliminada."
 msgid ""
 "The vulnerability has been edited successfully, however without models, the "
 "element may not be specific."
-msgstr ""
-"A vulnerabilidade foi editada com sucesso, contudo, sem modelos, o elemento "
-"pode não ser específico."
-
+msgstr "A vulnerabilidade foi editada com sucesso, contudo, sem modelos, o elemento não pode ser específico."
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:856
 msgid "The vulnerability has been edited successfully."
 msgstr "A vulnerabilidade foi editada com sucesso."
@@ -4791,7 +4765,7 @@ msgstr "Tema:"
 
 #: ../ng_anr/views/_table_risks_op.html:81
 msgid "There are no operational risks for this asset."
-msgstr "Não existem riscos operacionais para este bem."
+msgstr "Não existem riscos operacionais para este ativo."
 
 #: ../ng_anr/views/_table_risks_op.html:79
 msgid ""
@@ -4823,7 +4797,7 @@ msgstr "Não existe um modelo de documento desta categoria para esta língua."
 msgid ""
 "This actor will be deleted if it is not used anymore in the risk analysis."
 msgstr ""
-"Este actor será eliminado se não for mais utilizado na análise de risco."
+"Este ator será eliminado se não for mais utilizado na análise de risco."
 
 #: ../ng_anr/views/_gettext_caveats.html:21
 msgid "This asset already exists in the current risk analysis"
@@ -4836,22 +4810,22 @@ msgstr "Este ativo não está vinculado à análise de risco"
 #: ../ng_anr/views/_anr.evalscales.html:240
 #: ../ng_anr/views/_anr.evalscales.html:477
 msgid "This cannot be higher than"
-msgstr "Isto não pode ser superior a"
+msgstr "Não pode ser superior a"
 
 #: ../ng_anr/views/_anr.evalscales.html:219
 #: ../ng_anr/views/_anr.evalscales.html:456
 msgid "This cannot be higher than the orange threshold"
-msgstr "Isto não pode ser superior ao limiar laranja"
+msgstr "Não pode ser superior ao limiar laranja"
 
 #: ../ng_anr/views/_anr.evalscales.html:237
 #: ../ng_anr/views/_anr.evalscales.html:474
 msgid "This cannot be lower than the green threshold"
-msgstr "Isto não pode ser inferior ao limiar verde"
+msgstr "Não pode ser inferior ao limiar verde"
 
 #: ../ng_anr/views/_anr.evalscales.html:216
 #: ../ng_anr/views/_anr.evalscales.html:453
 msgid "This cannot be lower than zero"
-msgstr "Isto não pode ser inferior a zero"
+msgstr "Não pode ser inferior a zero"
 
 #: ../ng_anr/views/_gettext_caveats.html:74
 msgid "This code is already used"
@@ -4981,7 +4955,7 @@ msgstr "Avaliação das ameaças"
 
 #: src/ClientApp.js:103
 msgid "Thu"
-msgstr "Thu"
+msgstr "Qui"
 
 #: src/ClientApp.js:94
 msgid "Thursday"
@@ -4993,7 +4967,7 @@ msgstr "Para eliminar ?"
 
 #: views/dialogs/activate.2FA.html:24
 msgid "Token from your two-factor application."
-msgstr "Ficha da sua aplicação de dois factores."
+msgstr "Token da sua app de autenticação."
 
 #: ../ng_anr/views/anr.layout.html:23
 msgid "Tools"
@@ -5044,37 +5018,33 @@ msgstr "Terça-feira"
 #: src/ClientAccountCtrl.js:112 src/ClientAccountCtrl.js:139
 #: views/client.account.html:98
 msgid "Two-factor authentication"
-msgstr "Autenticação de dois factores"
+msgstr "Autenticação de dois fatores"
 
 #: src/ClientAccountCtrl.js:115
 msgid "Two-factor authentication failed"
-msgstr "A autenticação de dois factores falhou"
+msgstr "A autenticação de dois fatores falhou"
 
 #: views/dialogs/activate.2FA.html:15
 msgid ""
 "Two-factor authentication is already set up. If you submit a new token "
 "below, your previous private key will be invalided. This can be an issue if "
 "you are using several OTP devices."
-msgstr ""
-"A autenticação de dois factores já está configurada. Se submeter uma nova "
-"ficha abaixo, a sua chave privada anterior será invalidada. Isto pode ser um "
-"problema se estiver a utilizar vários dispositivos OTP."
-
+msgstr "A autenticação de dois fatores já está configurada. Se submeter um novo token abaixo, a sua chave privada anterior será invalidada. Isto pode ser um problema se estiver a utilizar vários dispositivos OTP."
 #: views/login.html:24
 msgid "Two-factor authentication is enforced on this instance."
-msgstr "A autenticação de dois factores é aplicada neste caso."
+msgstr "A autenticação de dois fatores é aplicada neste caso."
 
 #: src/ClientAccountCtrl.js:112
 msgid "Two-factor authentication is now activated."
-msgstr "A autenticação de dois factores está agora ativada."
+msgstr "A autenticação de dois fatores está agora ativada."
 
 #: src/ClientAccountCtrl.js:139
 msgid "Two-factor authentication is now deactivated."
-msgstr "A autenticação de dois factores está agora desativada."
+msgstr "A autenticação de dois fatores está agora desativada."
 
 #: views/login.html:23 views/login.html:32
 msgid "Two-factor verification code"
-msgstr "Código de verificação de dois factores"
+msgstr "Código de verificação de dois fatores"
 
 #: ../ng_anr/views/_anr.evalscales.html:254
 msgid "TxV"
@@ -5132,10 +5102,7 @@ msgstr "Urgente (•••)"
 msgid ""
 "Use a second factor besides your password to increase security for your "
 "account."
-msgstr ""
-"Use um segundo factor para além da sua palavra-passe para aumentar a "
-"segurança da sua conta."
-
+msgstr "Use um segundo fator para além da sua palavra-passe para aumentar a segurança da sua conta."
 #: ../ng_anr/views/create.specriskop.html:19
 msgid "Use an existing risk"
 msgstr "Utilizar um risco existente"
@@ -5183,7 +5150,7 @@ msgstr "O valor para L não é válido"
 #: ../ng_anr/views/_gettext_caveats.html:82
 #: ../ng_anr/views/_gettext_caveats.html:88
 msgid "Value for O is not valid"
-msgstr "Valor para O não é válido"
+msgstr "O valor para O não é válido"
 
 #: ../ng_anr/views/_gettext_caveats.html:85
 #: ../ng_anr/views/_gettext_caveats.html:91
@@ -5282,7 +5249,7 @@ msgstr "Vulnerabilidades"
 
 #: src/ClientApp.js:102
 msgid "Wed"
-msgstr "Wed"
+msgstr "Qua"
 
 #: src/ClientApp.js:93
 msgid "Wednesday"
@@ -5326,8 +5293,7 @@ msgstr ""
 
 #: ../ng_anr/views/_anr.infosnapshot.html:4
 msgid "You are currently on a snapshot, no changes will be possible."
-msgstr ""
-"Está atualmente num instantâneo, não será possível qualquer alteração."
+msgstr "Está atualmente num instantâneo, não é possível qualquer alteração."
 
 #: ../ng_anr/views/object.html:66
 msgid "You are in the knowledge base. No evaluation may be set in this space."
@@ -5343,70 +5309,61 @@ msgstr "Não está autorizado a duplicar esta análise"
 msgid ""
 "You can not make this change. The level of integrity between the model and "
 "its assets would corrupt"
-msgstr ""
-"Não se pode fazer esta mudança. O nível de integridade entre o modelo e os "
-"seus ativos corromperia"
-
+msgstr "Não pode efetuar esta mudança. O nível de integridade entre o modelo e os seus ativos iriam ficar corrompidos"
 #: ../ng_anr/views/import.soa.html:21
 msgid "You can select which fields of the SOA you want to import."
 msgstr "Pode selecionar quais os campos do SOA que pretende importar."
 
 #: ../ng_anr/views/_gettext_caveats.html:22
 msgid "You can't delete yourself"
-msgstr "Não se pode apagar"
+msgstr "Não pode eliminar-se a si próprio"
 
 #: ../ng_anr/views/_gettext_caveats.html:68
 msgid "You can't have a generic asset based on a specific asset"
-msgstr "Não se pode ter um bem genérico baseado num bem específico"
+msgstr "Não pode ter um ativo genérico baseado num ativo específico"
 
 #: ../ng_anr/views/_gettext_caveats.html:42
 msgid "You cannot add a specific asset to a generic model"
-msgstr "Não se pode acrescentar um bem específico a um modelo genérico"
+msgstr "Não pode acrescentar um ativo específico a um ativo genérico"
 
 #: ../ng_anr/views/_gettext_caveats.html:19
 #: ../ng_anr/views/_gettext_caveats.html:32
 msgid "You cannot add a specific asset to a generic parent"
-msgstr "Não se pode acrescentar um bem específico a um progenitor genérico"
+msgstr "Não pode acrescentar um ativo específico a um ativo genérico"
 
 #: ../ng_anr/views/_gettext_caveats.html:31
 msgid "You cannot add yourself as a component"
-msgstr "Não se pode adicionar a si próprio como um componente"
+msgstr "Não pode adicionar-se a si próprio como um componente"
 
 #: ../ng_anr/views/_gettext_caveats.html:39
 msgid "You cannot change the asset type of an existing asset."
-msgstr "Não se pode alterar o tipo de ativo de um ativo existente."
+msgstr "Não pode alterar o tipo de ativo de um ativo existente."
 
 #: ../ng_anr/views/_gettext_caveats.html:38
 msgid "You cannot change the scope of an existing asset."
-msgstr "Não se pode alterar o âmbito de um bem existente."
+msgstr "Não pode alterar o âmbito de um ativo existente."
 
 #: ../ng_anr/views/_gettext_caveats.html:40
 msgid "You cannot create a cyclic dependency"
-msgstr "Não se pode criar uma dependência cíclica"
+msgstr "Não pode criar uma dependência cíclica"
 
 #: ../ng_anr/views/_gettext_caveats.html:69
 msgid "You cannot create an asset that is both global and primary"
-msgstr "Não se pode criar um bem que seja simultaneamente global e primário"
+msgstr "Não pode criar um ativo que seja simultaneamente global e primário"
 
 #: ../ng_anr/views/_gettext_caveats.html:34
 msgid ""
 "You cannot set this asset to generic mode because one of its children is in "
 "specific mode."
-msgstr ""
-"Não se pode definir este ativo para modo genérico porque um dos seus filhos "
-"está em modo específico."
-
+msgstr "Não pode definir este ativo para modo genérico porque um dos seus filhos está em modo específico."
 #: ../ng_anr/views/_gettext_caveats.html:33
 msgid ""
 "You cannot set this asset to specific mode because one of its parents is in "
 "generic mode."
-msgstr ""
-"Não se pode definir este ativo para modo específico porque um dos seus pais "
-"está em modo genérico."
-
+msgstr "Não pode definir este ativo para modo específico porque um dos seus pais está em modo genérico."
 #: views/dialogs/create.anr.html:22
 msgid "You don't have any risk analysis to clone from"
-msgstr "Não tem nenhuma análise de risco para clonar de"
+msgstr "Não tem nenhuma análise de risco a partir da qual efetuar clonagem"
 
 #: views/client.project.html:37
 msgid "You don't have any risk analysis yet."
@@ -5416,7 +5373,7 @@ msgstr "Ainda não tem nenhuma análise de risco."
 #: ../ng_anr/views/export.objlibs.html:20
 #: ../ng_anr/views/export.objlibs.html:22
 msgid "You may enter a password to protect your asset"
-msgstr "Pode introduzir uma palavra-passe para proteger o seu bem"
+msgstr "Pode introduzir uma palavra-passe para proteger o seu ativo"
 
 #: ../ng_anr/views/export.record.html:16
 msgid "You may enter a password to protect your processing activities record"
@@ -5430,16 +5387,13 @@ msgstr "Pode introduzir uma palavra-passe para proteger a sua análise de risco"
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:1788
 msgid "You may not change scales anymore"
-msgstr "Já não pode alterar as escalas"
+msgstr "Já não pode efetuar alteração de escalas"
 
 #: ../ng_anr/views/detach.objlibs.html:15
 msgid ""
 "You may not delete this asset because it is currently instanced. Please "
 "clear the existing dependencies before deleting it."
-msgstr ""
-"Não se pode apagar este bem porque é atualmente instanciado. Por favor, "
-"elimine as dependências existentes antes de o apagar."
-
+msgstr "Não pode eliminar este ativo porque atualmente encontra-se instanciado. Por favor, elimine as dependências existentes antes de o eliminar."
 #: ../ng_anr/views/_gettext_caveats.html:60
 msgid "You may only move a root-level instance"
 msgstr "Só se pode mover uma instância ao nível da raiz"
@@ -5674,7 +5628,7 @@ msgstr "específico"
 
 #: ../ng_anr/src/ImportFileDialogCtrl.js:195
 msgid "the asset type code does not exist. Create it before import"
-msgstr "o código do tipo de bens não existe. Crie-o antes de ser importado"
+msgstr "o código do tipo de ativos não existe. Crie-o antes de ser importado"
 
 #: ../ng_anr/src/ImportFileDialogCtrl.js:205
 msgid "the operational risk tag does not exist. Create it before import"
@@ -5697,7 +5651,7 @@ msgstr "ano(s)"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1707
 msgid "{{ count }} risks have been deleted."
-msgstr "{{ count }} Os riscos foram eliminados."
+msgstr "{{ count }} riscos foram eliminados."
 
 #: ../ng_anr/views/object.html:63
 msgid "{{ object.risks.length }} information risks"
@@ -5721,7 +5675,7 @@ msgstr "{{ risks_total }} riscos de informação"
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1957 ../ng_anr/src/AnrKbMgmtCtrl.js:380
 msgid "{{count}} assets have been deleted."
-msgstr "{{count}} os bens foram eliminados."
+msgstr "{{count}} ativos foram eliminados."
 
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:1376
 msgid "{{count}} controls have been deleted."
