@@ -1642,7 +1642,7 @@ msgstr "Concorda em partilhar as estatísticas?"
 msgid "Do you want to create new {{externalItem}} ?"
 msgid_plural "Do you want to create {{count}} new {{pluralExtItem}} ?"
 msgstr[0] "Quer criar um novo {{externalItem}} ?"
-msgstr[1] "Quer criar {{count}} novo {{pluralExtItem}} ?"
+msgstr[1] "Quer criar {{count}} novos {{pluralExtItem}} ?"
 
 #: ../ng_anr/views/deliverable.evalcontext.html:45
 msgid "Document name"
@@ -2973,7 +2973,7 @@ msgstr "Novos códigos de recuperação"
 msgid "New {{externalItem}}"
 msgid_plural "New {{pluralExtItem}}"
 msgstr[0] "Novo {{externalItem}}"
-msgstr[1] "Novo {{pluralExtItem}}"
+msgstr[1] "Novos {{pluralExtItem}}"
 
 #: ../ng_anr/views/_oprisk_sheet.html:188 ../ng_anr/views/_risk_sheet.html:198
 #: ../ng_anr/views/trends.evalcontext.html:128
