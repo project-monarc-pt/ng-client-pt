@@ -5704,3 +5704,19 @@ msgstr "{{count}} ameaças foram eliminadas."
 #: ../ng_anr/src/AnrKbMgmtCtrl.js:915
 msgid "{{count}} vulnerabilities have been deleted."
 msgstr "{{count}} vulnerabilidades foram eliminadas."
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "Data subject"
+msgstr "Titular dos dados"
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "Personal data categories"
+msgstr "Categorias de dados pessoais"
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "Retention period"
+msgstr "Período de retenção"
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "Retention period description"
+msgstr "Descrição do período de retenção"
