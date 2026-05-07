@@ -5720,3 +5720,31 @@ msgstr "Período de retenção"
 #: ../ng_anr/src/DeliverableGenerationService.php
 msgid "Retention period description"
 msgstr "Descrição do período de retenção"
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "Activities"
+msgstr "Atividades"
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "internal"
+msgstr "interno"
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "external"
+msgstr "externo"
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "Validation date"
+msgstr "Data de validação"
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "Treatment type"
+msgstr "Tipo de tratamento"
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "Tend."
+msgstr "Tend."
+
+#: ../ng_anr/src/DeliverableGenerationService.php
+msgid "Owner"
+msgstr "Responsável"
