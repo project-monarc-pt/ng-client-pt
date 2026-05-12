@@ -1132,9 +1132,13 @@
 		// UPDATE CHART FUNCTIONS ======================================================
 
 		function updateCartoRisks() {
+			let lowRisksLabel = gettextCatalog.getString('Low risks');
+			let mediumRisksLabel = gettextCatalog.getString('Medium risks');
+			let highRisksLabel = gettextCatalog.getString('High risks');
+
 			if (Object.keys(cartoCurrent.riskInfo.distrib).length > 0) {
 				dataCurrentRisksByLevel = [{
-						category: "Low risks",
+						category: lowRisksLabel,
 						value: (cartoCurrent.riskInfo.distrib[0]) ?
 							cartoCurrent.riskInfo.distrib[0] : null,
 						sum: cartoCurrent.riskInfo.riskMaxSum[0],
@@ -1145,7 +1149,7 @@
 						]
 					},
 					{
-						category: "Medium risks",
+						category: mediumRisksLabel,
 						value: (cartoCurrent.riskInfo.distrib[1]) ?
 							cartoCurrent.riskInfo.distrib[1] : null,
 						sum: cartoCurrent.riskInfo.riskMaxSum[1],
@@ -1153,7 +1157,7 @@
 						threshold: [anr.seuil1 + 1, anr.seuil2]
 					},
 					{
-						category: "High risks",
+						category: highRisksLabel,
 						value: (cartoCurrent.riskInfo.distrib[2]) ?
 							cartoCurrent.riskInfo.distrib[2] : null,
 						sum: cartoCurrent.riskInfo.riskMaxSum[2],
@@ -1187,7 +1191,7 @@
 
 			if (Object.keys(cartoTarget.riskInfo.distrib).length > 0) {
 				dataTargetRisksByLevel = [{
-						category: "Low risks",
+						category: lowRisksLabel,
 						value: (cartoTarget.riskInfo.distrib[0]) ?
 							cartoTarget.riskInfo.distrib[0] : null,
 						sum: cartoTarget.riskInfo.riskMaxSum[0],
@@ -1198,7 +1202,7 @@
 						]
 					},
 					{
-						category: "Medium risks",
+						category: mediumRisksLabel,
 						value: (cartoTarget.riskInfo.distrib[1]) ?
 							cartoTarget.riskInfo.distrib[1] : null,
 						sum: cartoTarget.riskInfo.riskMaxSum[1],
@@ -1206,7 +1210,7 @@
 						threshold: [anr.seuil1 + 1, anr.seuil2]
 					},
 					{
-						category: "High risks",
+						category: highRisksLabel,
 						value: (cartoTarget.riskInfo.distrib[2]) ?
 							cartoTarget.riskInfo.distrib[2] : null,
 						sum: cartoTarget.riskInfo.riskMaxSum[2],
@@ -1234,7 +1238,7 @@
 
 			if (Object.keys(cartoCurrent.riskOp.distrib).length > 0) {
 				dataCurrentOpRisksByLevel = [{
-						category: "Low risks",
+						category: lowRisksLabel,
 						value: (cartoCurrent.riskOp.distrib[0]) ?
 							cartoCurrent.riskOp.distrib[0] : null,
 						sum: cartoCurrent.riskOp.riskOpMaxSum[0],
@@ -1245,7 +1249,7 @@
 						]
 					},
 					{
-						category: "Medium risks",
+						category: mediumRisksLabel,
 						value: (cartoCurrent.riskOp.distrib[1]) ?
 							cartoCurrent.riskOp.distrib[1] : null,
 						sum: cartoCurrent.riskOp.riskOpMaxSum[1],
@@ -1253,7 +1257,7 @@
 						threshold: [anr.seuilRolf1 + 1, anr.seuilRolf2]
 					},
 					{
-						category: "High risks",
+						category: highRisksLabel,
 						value: (cartoCurrent.riskOp.distrib[2]) ?
 							cartoCurrent.riskOp.distrib[2] : null,
 						sum: cartoCurrent.riskOp.riskOpMaxSum[2],
@@ -1287,7 +1291,7 @@
 
 			if (Object.keys(cartoTarget.riskOp.distrib).length > 0) {
 				dataTargetOpRisksByLevel = [{
-						category: "Low risks",
+						category: lowRisksLabel,
 						value: (cartoTarget.riskOp.distrib[0]) ?
 							cartoTarget.riskOp.distrib[0] : null,
 						sum: cartoTarget.riskOp.riskOpMaxSum[0],
@@ -1299,7 +1303,7 @@
 
 					},
 					{
-						category: "Medium risks",
+						category: mediumRisksLabel,
 						value: (cartoTarget.riskOp.distrib[1]) ?
 							cartoTarget.riskOp.distrib[1] : null,
 						sum: cartoTarget.riskOp.riskOpMaxSum[1],
@@ -1307,7 +1311,7 @@
 						threshold: [anr.seuilRolf1 + 1, anr.seuilRolf2]
 					},
 					{
-						category: "High risks",
+						category: highRisksLabel,
 						value: (cartoTarget.riskOp.distrib[2]) ?
 							cartoTarget.riskOp.distrib[2] : null,
 						sum: cartoTarget.riskOp.riskOpMaxSum[2],
@@ -1336,6 +1340,15 @@
 		};
 
 		function updateRisksbyTreatment() {
+			let mapTreatmentCodeToLabel = {
+				all: gettextCatalog.getString('All (unfiltered)'),
+				treated: gettextCatalog.getString('Treated'),
+				not_treated: gettextCatalog.getString('Not treated'),
+				reduction: gettextCatalog.getString('Reduction'),
+				denied: gettextCatalog.getString('Denied'),
+				accepted: gettextCatalog.getString('Accepted'),
+				shared: gettextCatalog.getString('Shared')
+			};
 			let dataSetTemplate = {
 				category: null,
 				value: null,
@@ -1344,9 +1357,7 @@
 			};
 			if (Object.keys(cartoCurrent.riskInfo.distrib).length > 0) {
 				for (var kindOfTreatment in cartoCurrent.riskInfo.byTreatment.all) {
-					let categoryLabel = (kindOfTreatment == 'not_treated') ?
-						'Not treated' :
-						kindOfTreatment.charAt(0).toUpperCase() + kindOfTreatment.slice(1);
+					let categoryLabel = mapTreatmentCodeToLabel[kindOfTreatment] || kindOfTreatment;
 
 					let dataSet = angular.copy(dataSetTemplate);
 
@@ -1365,9 +1376,7 @@
 
 			if (Object.keys(cartoTarget.riskInfo.distrib).length > 0) {
 				for (var kindOfTreatment in cartoTarget.riskInfo.byTreatment.all) {
-					let categoryLabel = (kindOfTreatment == 'not_treated') ?
-						'Not treated' :
-						kindOfTreatment.charAt(0).toUpperCase() + kindOfTreatment.slice(1);
+					let categoryLabel = mapTreatmentCodeToLabel[kindOfTreatment] || kindOfTreatment;
 
 					let dataSet = angular.copy(dataSetTemplate);
 
@@ -1386,9 +1395,7 @@
 
 			if (Object.keys(cartoCurrent.riskOp.distrib).length > 0) {
 				for (var kindOfTreatment in cartoCurrent.riskOp.byTreatment.all) {
-					let categoryLabel = (kindOfTreatment == 'not_treated') ?
-						'Not treated' :
-						kindOfTreatment.charAt(0).toUpperCase() + kindOfTreatment.slice(1);
+					let categoryLabel = mapTreatmentCodeToLabel[kindOfTreatment] || kindOfTreatment;
 
 					let dataSet = angular.copy(dataSetTemplate);
 
@@ -1405,9 +1412,7 @@
 
 			if (Object.keys(cartoTarget.riskOp.distrib).length > 0) {
 				for (var kindOfTreatment in cartoTarget.riskOp.byTreatment.all) {
-					let categoryLabel = (kindOfTreatment == 'not_treated') ?
-						'Not treated' :
-						kindOfTreatment.charAt(0).toUpperCase() + kindOfTreatment.slice(1);
+					let categoryLabel = mapTreatmentCodeToLabel[kindOfTreatment] || kindOfTreatment;
 
 					let dataSet = angular.copy(dataSetTemplate);
 
@@ -2662,12 +2667,59 @@
 
 		// EXPORT FUNCTIONS  ===========================================================
 
-		$scope.generateXlsxData = function() {
+			$scope.generateXlsxData = function() {
 
-			let wb = XLSX.utils.book_new();
-			let mergedCellsRisks = [{
-					s: {
-						r: 0,
+				let wb = XLSX.utils.book_new();
+				let usedSheetNames = {};
+				let mapTreatmentCodeToLabel = {
+					all: gettextCatalog.getString('All (unfiltered)'),
+					treated: gettextCatalog.getString('Treated'),
+					not_treated: gettextCatalog.getString('Not treated'),
+					reduction: gettextCatalog.getString('Reduction'),
+					denied: gettextCatalog.getString('Denied'),
+					accepted: gettextCatalog.getString('Accepted'),
+					shared: gettextCatalog.getString('Shared')
+				};
+				let sheetLabels = {
+					'Info. Risks - Level': gettextCatalog.getString('Information risks') + ' - ' + gettextCatalog.getString('Level'),
+					'Info. Risks - Treatment': gettextCatalog.getString('Information risks') + ' - ' + gettextCatalog.getString('Treatment'),
+					'Info. Risks - All assets': gettextCatalog.getString('Information risks') + ' - ' + gettextCatalog.getString('All assets'),
+					'Info. Risks - Parent asset': gettextCatalog.getString('Information risks') + ' - ' + gettextCatalog.getString('Parent asset'),
+					'Oper. Risks - Level': gettextCatalog.getString('Operational risks') + ' - ' + gettextCatalog.getString('Level'),
+					'Oper. Risks - Treatment': gettextCatalog.getString('Operational risks') + ' - ' + gettextCatalog.getString('Treatment'),
+					'Oper. Risks - All assets': gettextCatalog.getString('Operational risks') + ' - ' + gettextCatalog.getString('All assets'),
+					'Oper. Risks - Parent asset': gettextCatalog.getString('Operational risks') + ' - ' + gettextCatalog.getString('Parent asset'),
+					'Threats': gettextCatalog.getString('Threats'),
+					'Threats by parent asset - current': gettextCatalog.getString('Threats') + ' - ' + gettextCatalog.getString('Parent asset') + ' - ' + gettextCatalog.getString('Current risks'),
+					'Threats by parent asset - residual': gettextCatalog.getString('Threats') + ' - ' + gettextCatalog.getString('Parent asset') + ' - ' + gettextCatalog.getString('Residual risks'),
+					'Vulnerabilities': gettextCatalog.getString('Vulnerabilities'),
+					'Vulns by parent asset - current': gettextCatalog.getString('Vulnerabilities') + ' - ' + gettextCatalog.getString('Parent asset') + ' - ' + gettextCatalog.getString('Current risks'),
+					'Vulns by parent asset - residual': gettextCatalog.getString('Vulnerabilities') + ' - ' + gettextCatalog.getString('Parent asset') + ' - ' + gettextCatalog.getString('Residual risks'),
+					'Cartography - Info. Risks': gettextCatalog.getString('Cartography') + ' - ' + gettextCatalog.getString('Information risks'),
+					'Cartography - Oper. Risks': gettextCatalog.getString('Cartography') + ' - ' + gettextCatalog.getString('Operational risks'),
+					'Recs. - Occurrence': gettextCatalog.getString('Recommendations') + ' - ' + gettextCatalog.getString('Occurrence'),
+					'Recs. - Asset': gettextCatalog.getString('Recommendations') + ' - ' + gettextCatalog.getString('Asset'),
+					'Recs. - Importance': gettextCatalog.getString('Recommendations') + ' - ' + gettextCatalog.getString('Importance'),
+				};
+				let getUniqueSheetName = function(sheetKey) {
+					let translatedLabel = sheetLabels[sheetKey] || sheetKey;
+					let normalizedBaseName = translatedLabel.substring(0, 31).replace(/[:?*/[\]\\]+/g, '');
+					let uniqueName = normalizedBaseName;
+					let suffixIndex = 1;
+
+					while (usedSheetNames[uniqueName]) {
+						let suffix = ' (' + suffixIndex + ')';
+						uniqueName = normalizedBaseName.substring(0, 31 - suffix.length) + suffix;
+						suffixIndex++;
+					}
+
+					usedSheetNames[uniqueName] = true;
+
+					return uniqueName;
+				};
+				let mergedCellsRisks = [{
+						s: {
+							r: 0,
 						c: 0
 					},
 					e: {
@@ -2696,59 +2748,74 @@
 					}
 				}
 			];
-			let kindOfTreatment = ["all"].concat(Object.keys(dataCurrentRisksByLevelAndTreatment));
-			let risksLabels = [
-				"Low risks",
-				"Max. risk average",
-				"Medium risks",
-				"Max. risk average",
-				"High risks",
-				"Max. risk average"
-			];
-			let firstLevelHeadings = ['Asset', 'Current risks']
-				.concat(new Array(risksLabels.length * kindOfTreatment.length - 1).fill(null))
-				.concat(['Residual risks'])
-				.concat(new Array(risksLabels.length * kindOfTreatment.length - 1).fill(null));
+				let kindOfTreatment = ["all"].concat(Object.keys(dataCurrentRisksByLevelAndTreatment));
+				let risksCurrentLabels = [
+					gettextCatalog.getString('Low risks'),
+					gettextCatalog.getString('Max. current risk average'),
+					gettextCatalog.getString('Medium risks'),
+					gettextCatalog.getString('Max. current risk average'),
+					gettextCatalog.getString('High risks'),
+					gettextCatalog.getString('Max. current risk average')
+				];
+				let risksResidualLabels = [
+					gettextCatalog.getString('Low risks'),
+					gettextCatalog.getString('Max. residual risk average'),
+					gettextCatalog.getString('Medium risks'),
+					gettextCatalog.getString('Max. residual risk average'),
+					gettextCatalog.getString('High risks'),
+					gettextCatalog.getString('Max. residual risk average')
+				];
+				let riskColumnsByType = risksCurrentLabels.length * kindOfTreatment.length;
+				let firstLevelHeadings = [
+					gettextCatalog.getString('Asset'),
+					gettextCatalog.getString('Current risks')
+				]
+					.concat(new Array(riskColumnsByType - 1).fill(null))
+					.concat([gettextCatalog.getString('Residual risks')])
+					.concat(new Array(riskColumnsByType - 1).fill(null));
 
-			let secondLevelHeadings = [];
-			let thirdLevelHeadings = [];
+				let secondLevelHeadings = [];
+				let currentThirdLevelHeadings = [];
+				let residualThirdLevelHeadings = [];
 
-			kindOfTreatment.forEach(treatment => {
-				mergedCellsRisks.push({
-					s: {
-						r: 1,
-						c: secondLevelHeadings.length + 1
-					},
-					e: {
-						r: 1,
-						c: secondLevelHeadings.length + risksLabels.length
-					}
-				})
-				mergedCellsRisks.push({
-					s: {
-						r: 1,
-						c: secondLevelHeadings.length + 43
-					},
-					e: {
-						r: 1,
-						c: secondLevelHeadings.length + risksLabels.length + 42
-					}
-				})
+				kindOfTreatment.forEach(treatment => {
+					mergedCellsRisks.push({
+						s: {
+							r: 1,
+							c: secondLevelHeadings.length + 1
+						},
+						e: {
+							r: 1,
+							c: secondLevelHeadings.length + risksCurrentLabels.length
+						}
+					})
+					mergedCellsRisks.push({
+						s: {
+							r: 1,
+							c: secondLevelHeadings.length + riskColumnsByType + 1
+						},
+						e: {
+							r: 1,
+							c: secondLevelHeadings.length + risksCurrentLabels.length + riskColumnsByType
+						}
+					})
 
-				secondLevelHeadings = secondLevelHeadings
-					.concat([treatment])
-					.concat(new Array(risksLabels.length - 1).fill(null));
+					secondLevelHeadings = secondLevelHeadings
+						.concat([mapTreatmentCodeToLabel[treatment] || treatment])
+						.concat(new Array(risksCurrentLabels.length - 1).fill(null));
 
-				thirdLevelHeadings = thirdLevelHeadings
-					.concat(risksLabels);
+					currentThirdLevelHeadings = currentThirdLevelHeadings
+						.concat(risksCurrentLabels);
+					residualThirdLevelHeadings = residualThirdLevelHeadings
+						.concat(risksResidualLabels);
 
-			});
+				});
 
-			let headingsRisks = [
-				firstLevelHeadings,
-				[null].concat(secondLevelHeadings.concat(secondLevelHeadings)),
-				[null].concat(thirdLevelHeadings.concat(thirdLevelHeadings))
-			];
+				let headingsRisks = [
+					firstLevelHeadings,
+					[null].concat(secondLevelHeadings.concat(secondLevelHeadings)),
+					[null].concat(currentThirdLevelHeadings.concat(residualThirdLevelHeadings))
+				];
 
 			let xlsxData = {
 				['Info. Risks - Level']: {
@@ -3056,7 +3123,7 @@
 						[gettextCatalog.getString('Applicable target level')]: dataCompliance[ref.uuid][1].series[i].value
 					})
 				});
-				xlsxData['Compliance' + " - " + ref['label' + anr.language]] = {
+				xlsxData[gettextCatalog.getString('Compliance') + " - " + ref['label' + anr.language]] = {
 					data: byCompliance[ref.uuid],
 					headings: [],
 					mergedCells: []
@@ -3088,20 +3155,20 @@
 			);
 			xlsxData['Recs. - Importance'].data = byRecsImportance;
 
-			/* Add sheets on workbook*/
-			for (data in xlsxData) {
-				let params = {};
-				let sheet = XLSX.utils.aoa_to_sheet(xlsxData[data].headings);
-				sheet['!merges'] = xlsxData[data].mergedCells;
+				/* Add sheets on workbook*/
+				for (data in xlsxData) {
+					let params = {};
+					let sheet = XLSX.utils.aoa_to_sheet(xlsxData[data].headings);
+					sheet['!merges'] = xlsxData[data].mergedCells;
 				if (xlsxData[data].headings.length > 1) {
 					params = {
 						origin: 3,
 						skipHeader: true
 					};
+					}
+					XLSX.utils.sheet_add_json(sheet, xlsxData[data].data, params);
+					XLSX.utils.book_append_sheet(wb, sheet, getUniqueSheetName(data));
 				}
-				XLSX.utils.sheet_add_json(sheet, xlsxData[data].data, params);
-				XLSX.utils.book_append_sheet(wb, sheet, data.substring(0, 31).replace(/[:?*/[\]\\]+/g, ''));
-			}
 
 			/* write workbook and force a download */
 			XLSX.writeFile(wb, "dashboard.xlsx");
