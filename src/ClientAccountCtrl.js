@@ -3,7 +3,7 @@
     angular
         .module('ClientApp')
         .controller('ClientAccountCtrl', [
-            '$scope', '$rootScope', '$state', '$q', '$mdMedia', '$mdDialog', 'gettext', 'gettextCatalog',
+            '$scope', '$rootScope', '$state', '$q', '$mdMedia', '$mdDialog', 'gettextCatalog',
             'toastr', '$http', 'UserService', 'UserProfileService',
             ClientAccountCtrl
         ]);
@@ -11,7 +11,7 @@
     /**
      * Account Controller for the Client module
      */
-    function ClientAccountCtrl($scope, $rootScope, $state, $q, $mdMedia, $mdDialog, gettext, gettextCatalog,
+    function ClientAccountCtrl($scope, $rootScope, $state, $q, $mdMedia, $mdDialog, gettextCatalog,
                               toastr, $http, UserService, UserProfileService) {
         $scope.password = {
             old: '',
@@ -41,10 +41,10 @@
 
         $scope.updateProfile = function () {
             validateMospApiKey().then(function(data){
-              $scope.acceptMospApiKey = data;
+                $scope.acceptMospApiKey = data;
               if (data !== false) {
                 UserProfileService.updateProfile($scope.user, function (data) {
-                    toastr.success(gettextCatalog.getString('Your profile has been edited successfully'), gettext('Profile edited'));
+                    toastr.success(gettextCatalog.getString('Your profile has been edited successfully'), gettextCatalog.getString('Profile edited'));
                 });
               }
             });

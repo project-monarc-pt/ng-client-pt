@@ -2,14 +2,14 @@
   angular
     .module('ClientApp')
     .controller('ClientLoginCtrl', [
-      '$scope', '$state', '$http', 'toastr', 'gettextCatalog', 'gettext', 'UserService', 'ClientThemeConfig',
+      '$scope', '$state', '$http', 'toastr', 'gettextCatalog', 'UserService', 'ClientThemeConfig',
       ClientLoginCtrl
     ]);
 
   /**
    * Login Controller for the Client module
    */
-  function ClientLoginCtrl($scope, $state, $http, toastr, gettextCatalog, gettext, UserService, ClientThemeConfig) {
+  function ClientLoginCtrl($scope, $state, $http, toastr, gettextCatalog, UserService, ClientThemeConfig) {
     $scope.isLoggingIn = false;
     $scope.pwForgotMode = false;
     $scope.brandLogo = ClientThemeConfig.branding.logo;
@@ -33,7 +33,7 @@
 
     $scope.passwordForgottenImpl = function () {
       $http.post('api/admin/passwords', {email: $scope.user.email}).then(function (data) {
-        toastr.success(gettext(
+        toastr.success(gettextCatalog.getString(
           "The password reset request has been sent successfully. You will receive a mail shortly with information on" +
           "how to reset your account password."
         ));
@@ -69,12 +69,12 @@
           if (response.data.isCaptchaValid) {
             $scope.performAuth();
           } else {
-            toastr.warning(gettext('Invalid CAPTCHA. Please try again.'));
+            toastr.warning(gettextCatalog.getString('Invalid CAPTCHA. Please try again.'));
             $scope.refreshCaptcha();
           }
         }).catch(function (error) {
           console.error('CAPTCHA validation failed:', error);
-          toastr.warning(gettext('Error of the CAPTCHA validation.'));
+          toastr.warning(gettextCatalog.getString('Error of the CAPTCHA validation.'));
           // Refresh CAPTCHA on failure
           $scope.refreshCaptcha();
         });
@@ -106,7 +106,7 @@
           if (!revoked) {
             $scope.user.otp = "";
             $scope.user.recoveryCode = "";
-            toastr.warning(gettext('Your e-mail address or password is invalid, please try again.'));
+            toastr.warning(gettextCatalog.getString('Your e-mail address or password is invalid, please try again.'));
             $scope.loadCaptcha();
           } else {
             $scope.isCaptchaActivated = false;
@@ -114,12 +114,12 @@
             $scope.twoFASetUpMode = revoked.includes("2FAToBeConfigured:");
             $scope.twoFANotCorrect = revoked.includes("2FACodeNotCorrect");
             if ($scope.twoFAMode) {
-              toastr.warning(gettext('Please enter your two-factor authentication token.'));
+              toastr.warning(gettextCatalog.getString('Please enter your two-factor authentication token.'));
             } else if ($scope.twoFASetUpMode) {
-              toastr.warning(gettext('Please configure two-factor authentication.'));
+              toastr.warning(gettextCatalog.getString('Please configure two-factor authentication.'));
               $scope.user.qrcode = revoked.split(":", 3).slice(1).join(":");
             } else if ($scope.twoFANotCorrect) {
-              toastr.warning(gettext('The two-factor authentication token is not correct.'));
+              toastr.warning(gettextCatalog.getString('The two-factor authentication token is not correct.'));
             }
           }
         }
@@ -138,7 +138,7 @@
           };
         }
       }).catch(function (error) {
-        toastr.warning(gettext('Error loading CAPTCHA.'));
+        toastr.warning(gettextCatalog.getString('Error loading CAPTCHA.'));
         console.error('Error loading CAPTCHA:', error);
       });
     };
