@@ -2,14 +2,14 @@
   angular
     .module('ClientApp')
     .controller('ClientLoginCtrl', [
-      '$scope', '$state', '$http', 'toastr', 'gettextCatalog', 'UserService', 'ClientThemeConfig',
+      '$scope', '$state', '$http', 'toastr', 'gettextCatalog', 'UserService', 'ConfigService', 'ClientThemeConfig',
       ClientLoginCtrl
     ]);
 
   /**
    * Login Controller for the Client module
    */
-  function ClientLoginCtrl($scope, $state, $http, toastr, gettextCatalog, UserService, ClientThemeConfig) {
+  function ClientLoginCtrl($scope, $state, $http, toastr, gettextCatalog, UserService, ConfigService, ClientThemeConfig) {
     $scope.isLoggingIn = false;
     $scope.pwForgotMode = false;
     $scope.brandLogo = ClientThemeConfig.branding.logo;
@@ -27,12 +27,32 @@
     $scope.captcha = {};
     $scope.isCaptchaActivated = false;
 
+    var getActiveUiLanguage = function () {
+      var uiLanguage = UserService.getUiLanguage();
+      if (uiLanguage !== undefined && uiLanguage !== null) {
+        return uiLanguage;
+      }
+
+      var currentLanguage = gettextCatalog.getCurrentLanguage();
+      var languages = ConfigService.getLanguages();
+      for (var index in languages) {
+        if (Object.prototype.hasOwnProperty.call(languages, index) && languages[index].code === currentLanguage) {
+          return index;
+        }
+      }
+
+      return ConfigService.getDefaultLanguageIndex();
+    };
+
     $scope.passwordForgotten = function () {
       $scope.pwForgotMode = true;
     };
 
     $scope.passwordForgottenImpl = function () {
-      $http.post('api/admin/passwords', {email: $scope.user.email}).then(function (data) {
+      $http.post('api/admin/passwords', {
+        email: $scope.user.email,
+        language: getActiveUiLanguage()
+      }).then(function (data) {
         toastr.success(gettextCatalog.getString(
           "The password reset request has been sent successfully. You will receive a mail shortly with information on" +
           "how to reset your account password."

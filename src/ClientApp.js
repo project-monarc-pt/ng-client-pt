@@ -489,13 +489,11 @@ function ($mdThemingProvider, $stateProvider, $urlRouterProvider, $resourceProvi
       $rootScope.currentYear = new Date().getFullYear();
 
       var uiLang = UserService.getUiLanguage();
-      if (uiLang === undefined || uiLang === null) {
-        gettextCatalog.setCurrentLanguage('en');
-        $rootScope.uiLanguage = 'gb';
-      } else {
-        gettextCatalog.setCurrentLanguage($rootScope.languages[uiLang].code);
-        $rootScope.uiLanguage = $rootScope.languages[uiLang].flag;
+      if (uiLang === undefined || uiLang === null || !$rootScope.languages[uiLang]) {
+        uiLang = ConfigService.getDefaultLanguageIndex();
       }
+      gettextCatalog.setCurrentLanguage($rootScope.languages[uiLang].code);
+      $rootScope.uiLanguage = $rootScope.languages[uiLang].flag;
 
       $rootScope.updatePaginationLabels();
     });
