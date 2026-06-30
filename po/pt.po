@@ -1294,7 +1294,7 @@ msgstr "Zona de perigo"
 #: ../ng_anr/views/anr.layout.html:58 src/ClientApp.js:221
 #: src/ClientDashboardCtrl.js:3833
 msgid "Dashboard"
-msgstr "Painel de instrumentos"
+msgstr "Dashboard"
 
 #: ../ng_anr/views/_gettext_caveats.html:24
 msgid "Data missing"
@@ -3790,7 +3790,7 @@ msgstr "Contexto de gestão de risco"
 
 #: ../ng_anr/views/_oprisk_sheet.html:65 ../ng_anr/views/_risk_sheet.html:70
 msgid "Risk owner"
-msgstr "Proprietário de risco"
+msgstr "Dono do risco"
 
 #: ../ng_anr/views/_oprisk_sheet.html:94
 msgid "Risk probability"
@@ -4056,7 +4056,7 @@ msgstr "Instantâneo restaurado"
 
 #: ../ng_anr/views/anr.layout.html:49 ../ng_anr/views/snapshots.html:4
 msgid "Snapshots"
-msgstr "Instantâneos"
+msgstr "Snapshots"
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:2899 ../ng_anr/src/AnrLayoutCtrl.js:3823
 #: ../ng_anr/src/AnrLayoutCtrl.js:4012 ../ng_anr/src/AnrRopaCtrl.js:1706
