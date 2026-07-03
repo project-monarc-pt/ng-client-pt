@@ -3525,7 +3525,7 @@ msgstr "R: Risco, I: Impacto, P: Probabilidade"
 
 #: ../ng_anr/views/_anr.evalscales.html:282
 msgid "R: Risk, I: Impact, T: Threat, V: Vulnerability"
-msgstr "R: Risco, I: Impacto, T: Ameaça, V: Vulnerabilidade"
+msgstr "R: Risco, I: Impacto, A: Ameaça, V: Vulnerabilidade"
 
 #: ../ng_anr/views/anr.soa.html:93
 msgid "RRA"
@@ -4206,7 +4206,7 @@ msgstr "Síntese de ativos / impactos"
 
 #: ../ng_anr/views/_anr.evalscales.html:279
 msgid "T"
-msgstr "T"
+msgstr "A"
 
 #: ../ng_anr/views/_anr.kbmgmt.html:519
 msgid "Tag"
