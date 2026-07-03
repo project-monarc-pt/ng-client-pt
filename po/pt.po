@@ -6201,6 +6201,9 @@ msgstr "O utilizador com o e-mail \"{{email}}\" não existe"
 msgid "Entity of type \"{{entityType}}\", with ID {{id}} was not found in analysis ID {{anrId}}"
 msgstr "A entidade do tipo \"{{entityType}}\", com ID {{id}}, não foi encontrada na análise de risco com ID {{anrId}}"
 
+msgid "Entity of type '{{entityType}}' for IDs {{ids}} was not found"
+msgstr "A entidade do tipo '{{entityType}}' com os IDs {{ids}} não foi encontrada"
+
 msgid "One of the CIA criteria is required to be set for the threat \"{{threat}}\"."
 msgstr "É necessário definir pelo menos um dos critérios CID para a ameaça \"{{threat}}\"."
 
