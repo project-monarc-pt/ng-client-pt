@@ -3326,7 +3326,7 @@ msgstr "Página:"
 #: ../ng_anr/views/anr.dashboard.html:346 ../ng_anr/views/anr.dashboard.html:61
 #: ../ng_anr/views/anr.dashboard.html:99
 msgid "Parent asset"
-msgstr "Ativo ascendente"
+msgstr "Ativo principal"
 
 #: ../ng_anr/views/create.objlibs.categories.html:37
 msgid "Parent category"
