@@ -39,7 +39,7 @@
 				bottom: 50,
 				left: 30
 			},
-			color: ClientThemeConfig.charts.riskScale,
+			color: ClientThemeConfig.charts.riskLevelScale,
 			showLegend: false,
 			multipleYaxis: true,
 			forceDomainY: {
@@ -151,7 +151,7 @@
 			},
 			showValues: true,
 			multipleYaxis: true,
-			color: ClientThemeConfig.charts.riskScale,
+			color: ClientThemeConfig.charts.riskLevelScale,
 			forceChartMode: 'stacked',
 			rotationXAxisLabel: 45,
 			offsetXAxisLabel: 0.9,
@@ -484,7 +484,7 @@
 		const optionsCartography = {
 			xLabel: 'Likelihood',
 			yLabel: 'Impact',
-			color: ClientThemeConfig.charts.riskScale,
+			color: ClientThemeConfig.charts.riskLevelScale,
 			threshold: [],
 			onClickFunction: function(d) {
 				let field = null;

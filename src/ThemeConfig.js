@@ -11,6 +11,7 @@
 
           categoryScale: ['#308AA1', '#231F20', '#BCBEC0', '#78909C', '#6D6F71'],
           riskScale: ['#BCBEC0', '#78909C', '#231F20'],
+          riskLevelScale: ['#2FA36B', '#F1B800', '#C0392B'],
           riskScaleBinary: ['#BCBEC0', '#231F20'],
 
           export: {
