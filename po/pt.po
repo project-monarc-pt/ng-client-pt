@@ -3785,7 +3785,7 @@ msgstr "Análises de risco"
 #: ../ng_anr/views/anr.layout.html:28 ../ng_anr/views/anr.layout.html:54
 #: src/ClientMainCtrl.js:1359
 msgid "Risk analysis"
-msgstr "Análise de risco"
+msgstr "Análise do risco"
 
 #: ../ng_anr/src/GuideService.js:76
 msgid "Risk analysis context"
@@ -3814,7 +3814,7 @@ msgstr "Risco anterior"
 
 #: ../ng_anr/views/_oprisk_sheet.html:86 ../ng_anr/views/_risk_sheet.html:91
 msgid "Risk context"
-msgstr "Contexto de risco"
+msgstr "Contexto do risco"
 
 #: ../ng_anr/src/AnrRisksPlanHistoryCtrl.js:59
 #: ../ng_anr/src/AnrRisksPlanSheetCtrl.js:133
@@ -3845,7 +3845,7 @@ msgstr "Dono do risco"
 
 #: ../ng_anr/views/_oprisk_sheet.html:94
 msgid "Risk probability"
-msgstr "Probabilidade de risco"
+msgstr "Probabilidade do risco"
 
 #: ../ng_anr/views/_gettext_caveats.html:98 src/ClientApp.js:245
 #: src/ClientApp.js:253 src/ClientApp.js:278 src/ClientApp.js:286
