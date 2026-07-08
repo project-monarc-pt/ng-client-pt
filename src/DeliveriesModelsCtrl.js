@@ -169,7 +169,9 @@
 
                     if ($scope.deliveryModel['description' + i] == undefined) {
                         hasErrors = true;
-                        toastr.error($scope.file.$error, gettextCatalog.getString('Missing description for ') + $rootScope.languages[i].name);
+                        $scope.file.$error = gettextCatalog.getString('Missing description for {{language}}', {
+                            language: gettextCatalog.getString($rootScope.languages[i].name)
+                        });
                         break;
                     }
                 }

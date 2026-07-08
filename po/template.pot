@@ -3274,6 +3274,13 @@ msgstr ""
 msgid "Max risk"
 msgstr ""
 
+#: src/ClientDashboardCtrl.js:2400
+#: src/ClientDashboardCtrl.js:2408
+#: src/ClientDashboardCtrl.js:2483
+#: src/ClientDashboardCtrl.js:2490
+msgid "Max. risk value"
+msgstr ""
+
 #: ../ng_anr/views/anr.dashboard.html:309
 #: ../ng_anr/views/anr.dashboard.html:345
 #: src/ClientDashboardCtrl.js:3447
@@ -3313,6 +3320,10 @@ msgstr ""
 
 #: src/DeliveriesModelsCtrl.js:172
 msgid "Missing description for"
+msgstr ""
+
+#: src/DeliveriesModelsCtrl.js:172
+msgid "Missing description for {{language}}"
 msgstr ""
 
 #: ../ng_anr/views/create.assets.html:65

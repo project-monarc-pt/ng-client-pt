@@ -686,6 +686,29 @@ function ($mdThemingProvider, $stateProvider, $urlRouterProvider, $resourceProvi
             return gettextCatalog.getString(message);
           }
 
+          function translateValidationField(field) {
+            const fieldLabels = {
+              code: gettext('Code'),
+              label: gettext('Label'),
+              description: gettext('Description'),
+              proxyAlias: gettext('proxyAlias'),
+              ipAddress: gettext('ipAddress')
+            };
+
+            if (/^label\d+$/.test(field)) {
+              return gettextCatalog.getString(gettext('Label'));
+            }
+            if (/^description\d+$/.test(field)) {
+              return gettextCatalog.getString(gettext('Description'));
+            }
+
+            if (fieldLabels[field]) {
+              return gettextCatalog.getString(fieldLabels[field]);
+            }
+
+            return gettextCatalog.getString(field.replace(/([a-z])([A-Z])/g, '$1 $2'));
+          }
+
           if (response.status === 400) {
             for (i = 0; i < response.data.errors.length; ++i) {
               const messages = response.data.errors[i];
@@ -698,7 +721,7 @@ function ($mdThemingProvider, $stateProvider, $urlRouterProvider, $resourceProvi
               }
               if (messages.hasOwnProperty('validationErrors')) {
                 for (const [field, fieldMessage] of Object.entries(messages.validationErrors)) {
-                  validationErrors += '[' + gettextCatalog.getString(field) + "] :\r\n";
+                  validationErrors += '[' + translateValidationField(field) + "] :\r\n";
                   for (const message of fieldMessage) {
                     validationErrors += '- ' + translateKnownErrorMessage(message) + "\r\n";
                   }

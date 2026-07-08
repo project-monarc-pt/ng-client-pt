@@ -611,6 +611,10 @@ msgstr "Valor ascendente"
 msgid "Asset"
 msgstr "Ativo"
 
+#: ../ng_anr/src/AnrKbMgmtCtrl.js:2962
+msgid "Assets"
+msgstr "Ativos"
+
 #: ../ng_anr/views/anr.instance.html:16 ../ng_anr/views/object.html:22
 msgid "Asset actions"
 msgstr "Ações do ativo"
@@ -914,6 +918,10 @@ msgstr "Categorias de dados pessoais"
 #: views/dialogs/create.deliverymodel.html:16
 msgid "Category"
 msgstr "Categoria"
+
+#: ../ng_anr/src/AnrKbMgmtCtrl.js:2955
+msgid "Categories"
+msgstr "Categorias"
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:2067
 msgid "Category added successfully"
@@ -1251,6 +1259,10 @@ msgstr "Data de criação"
 #: src/ClientMainCtrl.js:140 src/DeliveriesModelsCtrl.js:39
 msgid "Creation successful"
 msgstr "Criação bem sucedida"
+
+#: ../ng_anr/src/AnrKbMgmtCtrl.js:2935
+msgid "Creation completed successfully: {{count}} {{entityName}}"
+msgstr "Criação concluída com sucesso: {{count}} {{entityName}}"
 
 #: src/ClientDashboardCtrl.js:3054
 msgid "Current level"
@@ -2843,6 +2855,14 @@ msgstr "Março"
 msgid "Match referentials"
 msgstr "Correspondência de referenciais"
 
+#: ../ng_anr/src/AnrKbMgmtCtrl.js:2960
+msgid "Match"
+msgstr "Correspondência"
+
+#: ../ng_anr/src/AnrKbMgmtCtrl.js:2960
+msgid "Matches"
+msgstr "Correspondências"
+
 #: ../ng_anr/views/import.soa.html:18
 msgid ""
 "Match the controls between the two referentials on knowledge base "
@@ -2860,6 +2880,11 @@ msgstr "Max"
 #: src/ClientDashboardCtrl.js:2996 src/ClientDashboardCtrl.js:3011
 msgid "Max risk"
 msgstr "Risco máximo"
+
+#: src/ClientDashboardCtrl.js:2400 src/ClientDashboardCtrl.js:2408
+#: src/ClientDashboardCtrl.js:2483 src/ClientDashboardCtrl.js:2490
+msgid "Max. risk value"
+msgstr "Valor máx. do risco"
 
 #: ../ng_anr/views/anr.dashboard.html:309
 #: ../ng_anr/views/anr.dashboard.html:345 src/ClientDashboardCtrl.js:3447
@@ -2893,6 +2918,10 @@ msgstr "Etapas do método"
 #: src/DeliveriesModelsCtrl.js:172
 msgid "Missing description for"
 msgstr "Descrição em falta para"
+
+#: src/DeliveriesModelsCtrl.js:172
+msgid "Missing description for {{language}}"
+msgstr "Descrição em falta para {{language}}"
 
 #: ../ng_anr/views/create.assets.html:65 ../ng_anr/views/create.objlibs.html:74
 #: ../ng_anr/views/create.threats.html:110 ../ng_anr/views/create.vulns.html:65
@@ -3249,6 +3278,10 @@ msgstr "Operação bem sucedida"
 #: ../ng_anr/views/create.objlibs.html:180
 msgid "Operational risk Tag"
 msgstr "Etiqueta de risco operacional"
+
+#: ../ng_anr/src/AnrKbMgmtCtrl.js:2958
+msgid "Operational risk"
+msgstr "Risco operacional"
 
 #: ../ng_anr/views/_anr.evalscales.html:289
 #: ../ng_anr/views/_anr.kbmgmt.html:500 ../ng_anr/views/_anr.kbmgmt.html:503
