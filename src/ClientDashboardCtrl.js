@@ -27,6 +27,48 @@
 		var vulnerabilityScale = null;
 		var firstRefresh = true;
 
+		var getLocalizedPngFilename = function(name) {
+			var currentLanguage = gettextCatalog.currentLanguage || '';
+			if (currentLanguage.indexOf('pt') !== 0) {
+				return name + '.png';
+			}
+
+			var names = {
+				currentRisksChartBylevel: 'grafico_riscos_atuais_por_nivel',
+				currentRisksChartBytreatment: 'grafico_riscos_atuais_por_tratamento',
+				currentRisksChartByasset: 'grafico_riscos_atuais_por_ativo',
+				currentRisksChartByparentAsset: 'grafico_riscos_atuais_por_ativo_principal',
+				targetRisksChartBylevel: 'grafico_riscos_residuais_por_nivel',
+				targetRisksChartBytreatment: 'grafico_riscos_residuais_por_tratamento',
+				targetRisksChartByasset: 'grafico_riscos_residuais_por_ativo',
+				targetRisksChartByparentAsset: 'grafico_riscos_residuais_por_ativo_principal',
+				currentOpRisksChartBylevel: 'grafico_riscos_operacionais_atuais_por_nivel',
+				currentOpRisksChartBytreatment: 'grafico_riscos_operacionais_atuais_por_tratamento',
+				currentOpRisksChartByasset: 'grafico_riscos_operacionais_atuais_por_ativo',
+				currentOpRisksChartByparentAsset: 'grafico_riscos_operacionais_atuais_por_ativo_principal',
+				targetOpRisksChartBylevel: 'grafico_riscos_operacionais_residuais_por_nivel',
+				targetOpRisksChartBytreatment: 'grafico_riscos_operacionais_residuais_por_tratamento',
+				targetOpRisksChartByasset: 'grafico_riscos_operacionais_residuais_por_ativo',
+				targetOpRisksChartByparentAsset: 'grafico_riscos_operacionais_residuais_por_ativo_principal',
+				threatsChartByoccurrence: 'grafico_ameacas_por_ocorrencia',
+				threatsChartByprobability: 'grafico_ameacas_por_probabilidade',
+				threatsChartBymax_associated_risk: 'grafico_ameacas_por_risco_associado_maximo',
+				vulnerabilitiesChartByoccurrence: 'grafico_vulnerabilidades_por_ocorrencia',
+				vulnerabilitiesChartByqualification: 'grafico_vulnerabilidades_por_qualificacao',
+				vulnerabilitiesChartBymax_associated_risk: 'grafico_vulnerabilidades_por_risco_associado_maximo',
+				cartographyChartCurrentByinfo_risks: 'grafico_cartografia_riscos_atuais_informacao',
+				cartographyChartCurrentByop_risks: 'grafico_cartografia_riscos_operacionais_atuais',
+				cartographyChartTargetByinfo_risks: 'grafico_cartografia_riscos_residuais_informacao',
+				cartographyChartTargetByop_risks: 'grafico_cartografia_riscos_operacionais_residuais',
+				ComplianceChart: 'grafico_conformidade',
+				recommendationsChartByoccurrence: 'grafico_recomendacoes_por_ocorrencia',
+				recommendationsChartByasset: 'grafico_recomendacoes_por_ativo',
+				recommendationsChartByimportance: 'grafico_recomendacoes_por_importancia'
+			};
+
+			return (names[name] || name) + '.png';
+		};
+
 		// OPTIONS CHARTS ==============================================================
 
 		//Options of the chart that displays current risks by level
@@ -3170,8 +3212,8 @@
 					XLSX.utils.book_append_sheet(wb, sheet, getUniqueSheetName(data));
 				}
 
-			/* write workbook and force a download */
-			XLSX.writeFile(wb, "dashboard.xlsx");
+				/* write workbook and force a download */
+				XLSX.writeFile(wb, 'dashboard.xlsx');
 
 			function formattingData(kindOfRisk, chart) {
 				let [risksCurrentData, risksCurrentDataByTreatment] = getDataModel('current' + kindOfRisk, chart);
@@ -4021,7 +4063,7 @@
 			}
 
 			$scope.loadingPptx = false;
-			pptx.writeFile();
+			pptx.writeFile({ fileName: 'dashboard.pptx' });
 
 			function addChart(chart) {
 				let promise = $q.defer();
@@ -4072,7 +4114,7 @@
 			backgroundColor: ClientThemeConfig.charts.export.background
 		}) {
 			let node = d3.select('#' + idOfGraph).select("svg");
-			saveSvgAsPng(node.node(), name + '.png', parametersAction);
+			saveSvgAsPng(node.node(), getLocalizedPngFilename(name), parametersAction);
 		}
 
 		// MISC FUNCTIONS  ===========================================================

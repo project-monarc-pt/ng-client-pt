@@ -43,6 +43,42 @@
   */
   function ClientMainCtrl($scope, $rootScope, $state, $mdSidenav, $mdMedia, $mdDialog, $timeout, gettextCatalog, UserService,
     UserProfileService, ClientAnrService, StatsService, SystemMessageService, ChartService, ClientThemeConfig, toastr, $http, $interval ) {
+      var getLocalizedFilename = function(defaultFilename, portugueseFilename) {
+        var currentLanguage = gettextCatalog.currentLanguage || '';
+        return currentLanguage.indexOf('pt') === 0 ? portugueseFilename : defaultFilename;
+      };
+
+      var getLocalizedPngFilename = function(name) {
+        var currentLanguage = gettextCatalog.currentLanguage || '';
+        if (currentLanguage.indexOf('pt') !== 0) {
+          return name + '.png';
+        }
+
+        var names = {
+          currentRisksChartvertical: 'grafico_riscos_atuais_vertical',
+          currentRisksCharthorizontal: 'grafico_riscos_atuais_horizontal',
+          currentRisksChartline: 'grafico_riscos_atuais_linha',
+          residualRisksChartvertical: 'grafico_riscos_residuais_vertical',
+          residualRisksCharthorizontal: 'grafico_riscos_residuais_horizontal',
+          residualRisksChartline: 'grafico_riscos_residuais_linha',
+          threatsChartByaverageRateoverview: 'grafico_ameacas_por_probabilidade',
+          threatsChartByaverageRateline: 'grafico_ameacas_por_probabilidade_linha',
+          threatsChartBycountoverview: 'grafico_ameacas_por_ocorrencia',
+          threatsChartBycountline: 'grafico_ameacas_por_ocorrencia_linha',
+          threatsChartBymaxRiskoverview: 'grafico_ameacas_por_risco_associado_maximo',
+          threatsChartBymaxRiskline: 'grafico_ameacas_por_risco_associado_maximo_linha',
+          vulnerabilitiesChartByaverageRate: 'grafico_vulnerabilidades_por_qualificacao',
+          vulnerabilitiesChartBycount: 'grafico_vulnerabilidades_por_ocorrencia',
+          vulnerabilitiesChartBymaxRisk: 'grafico_vulnerabilidades_por_risco_associado_maximo',
+          cartographyChartCurrentByinfo_risks: 'grafico_cartografia_riscos_atuais_informacao',
+          cartographyChartCurrentByop_risks: 'grafico_cartografia_riscos_operacionais_atuais',
+          cartographyChartResidualByinfo_risks: 'grafico_cartografia_riscos_residuais_informacao',
+          cartographyChartResidualByop_risks: 'grafico_cartografia_riscos_operacionais_residuais'
+        };
+
+        return (names[name] || name) + '.png';
+      };
+
       if (!UserService.isAuthenticated() && !UserService.reauthenticate()) {
         setTimeout(function () {
           $state.transitionTo('login');
@@ -1396,7 +1432,7 @@
 
         $scope.exportAsPNG = function(idOfGraph, name, parametersAction = {backgroundColor: ClientThemeConfig.charts.export.background}) {
           let node = d3.select('#' + idOfGraph).select("svg");
-          saveSvgAsPng(node.node(), name + '.png', parametersAction);
+          saveSvgAsPng(node.node(), getLocalizedPngFilename(name), parametersAction);
         }
 
         $scope.generateXlsxData = function() {
@@ -1581,7 +1617,7 @@
           }
 
           /* write workbook and force a download */
-          XLSX.writeFile(wb, "globalDashboard.xlsx");
+          XLSX.writeFile(wb, getLocalizedFilename('globalDashboard.xlsx', 'dashboard_global.xlsx'));
         }
 
         function getParentWidth(id,rate = 1) {
