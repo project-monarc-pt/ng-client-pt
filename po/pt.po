@@ -226,7 +226,7 @@ msgstr "Adicionar uma escala"
 
 #: ../ng_anr/views/snapshots.html:13
 msgid "Add a snapshot"
-msgstr "Adicionar um instantâneo"
+msgstr "Adicionar um Snapshot"
 
 #: ../ng_anr/views/create.specrisk.html:5
 msgid "Add a specific information risk"
@@ -1195,7 +1195,7 @@ msgstr "Criar uma análise de risco"
 
 #: ../ng_anr/views/snapshots.html:21
 msgid "Create a snapshot"
-msgstr "Criar um instantâneo"
+msgstr "Criar um Snapshot"
 
 #: ../ng_anr/views/_table_risks.html:142
 #: ../ng_anr/views/_table_risks_op.html:214
@@ -2744,7 +2744,7 @@ msgstr "Escala de probabilidade:"
 
 #: ../ng_anr/views/snapshots.html:25
 msgid "List of available snapshots"
-msgstr "Lista de instantâneos disponíveis"
+msgstr "Lista de Snapshots disponíveis"
 
 #: ../ng_anr/views/import.file.html:163 ../ng_anr/views/import.file.html:167
 msgid "List of categories:"
@@ -4103,7 +4103,7 @@ msgstr "Mostrar os riscos operacionais inerentes"
 
 #: ../ng_anr/src/AnrLayoutCtrl.js:3587
 msgid "Snapshot restored"
-msgstr "Instantâneo restaurado"
+msgstr "Snapshot restaurado"
 
 #: ../ng_anr/views/anr.layout.html:49 ../ng_anr/views/snapshots.html:4
 msgid "Snapshots"
@@ -4252,7 +4252,7 @@ msgstr "Etiquetas"
 
 #: ../ng_anr/views/import.soa.html:19
 msgid "Take a snapshot of risk analysis if necessary."
-msgstr "Efetue um instantâneo da análise de risco, se necessário."
+msgstr "Efetue um Snapshot da análise de risco, se necessário."
 
 #: ../ng_anr/views/deliverable.evalcontext.html:23
 msgid "Template"
@@ -5323,7 +5323,7 @@ msgstr ""
 
 #: ../ng_anr/views/_anr.infosnapshot.html:4
 msgid "You are currently on a snapshot, no changes will be possible."
-msgstr "Está atualmente num instantâneo, não é possível qualquer alteração."
+msgstr "Está atualmente num Snapshot, não é possível qualquer alteração."
 
 #: ../ng_anr/views/object.html:66
 msgid "You are in the knowledge base. No evaluation may be set in this space."
@@ -5853,7 +5853,7 @@ msgid "Cannot use \"t\" as a table alias"
 msgstr "Não é possível usar \"t\" como alias da tabela"
 
 msgid "Create a snapshot before importing"
-msgstr "Criar um instantâneo antes de importar"
+msgstr "Criar um Snapshot antes de importar"
 
 msgid "Default Scale Impact Types can't be removed."
 msgstr "Os tipos de impacto de escala predefinidos não podem ser removidos."
@@ -6024,7 +6024,7 @@ msgid "The ANR has no model linked to validate the object."
 msgstr "A análise de risco não tem nenhum modelo associado para validar o objeto."
 
 msgid "The analysis associated with the snapshot matches the requested one."
-msgstr "A análise associada ao instantâneo corresponde à análise solicitada."
+msgstr "A análise associada ao Snapshot corresponde à análise solicitada."
 
 msgid "The analysis can not be created due to the logic error."
 msgstr "A análise não pode ser criada devido a um erro lógico."
@@ -6090,7 +6090,7 @@ msgid "There are no clients exist."
 msgstr "Não existem clientes."
 
 msgid "There is an import error (Restore a snapshot or remove analysis)"
-msgstr "Existe um erro de importação (restaure um instantâneo ou remova a análise)"
+msgstr "Existe um erro de importação (restaure um Snapshot ou remova a análise)"
 
 msgid "This risk already exists in this instance"
 msgstr "Este risco já existe nesta instância"
