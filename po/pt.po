@@ -3536,7 +3536,7 @@ msgstr "Finalidade(s)"
 #: ../ng_anr/views/anr.dashboard.risks.html:33
 #: ../ng_anr/views/anr.soa.sheet.html:36 src/ClientMainCtrl.js:1516
 msgid "Qualif."
-msgstr "Qualif."
+msgstr "Classif."
 
 #: ../ng_anr/views/anr.dashboard.html:344 src/ClientDashboardCtrl.js:2978
 #: src/ClientDashboardCtrl.js:2997 src/ClientDashboardCtrl.js:3012
@@ -3850,7 +3850,7 @@ msgstr "Probabilidade do risco"
 #: ../ng_anr/views/_gettext_caveats.html:98 src/ClientApp.js:245
 #: src/ClientApp.js:253 src/ClientApp.js:278 src/ClientApp.js:286
 msgid "Risk sheet"
-msgstr "Ficha de risco"
+msgstr "Ficha do Risco"
 
 #: ../ng_anr/views/_table_risks.html:15
 msgid "Risk threshold (on max CIA)"
@@ -5262,7 +5262,7 @@ msgstr "Vulnerabilidade"
 
 #: ../ng_anr/views/_risk_sheet.html:63 ../ng_anr/views/_table_risks.html:60
 msgid "Vulnerability qualification"
-msgstr "Qualificação de vulnerabilidades"
+msgstr "Classificação de vulnerabilidades"
 
 #: ../ng_anr/views/_risk_sheet.html:162
 msgid "Vulnerability reduction"
