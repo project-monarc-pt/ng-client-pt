@@ -81,7 +81,7 @@
 				bottom: 50,
 				left: 30
 			},
-			color: ClientThemeConfig.charts.riskLevelScale,
+			color: ClientThemeConfig.charts.riskScale,
 			showLegend: false,
 			multipleYaxis: true,
 			forceDomainY: {
@@ -129,6 +129,7 @@
 		const optionsRisksByTreatment = {
 			height: 500,
 			width: 500,
+			color: ClientThemeConfig.charts.categoryScale,
 			margin: {
 				top: 40,
 				right: 50,
@@ -193,7 +194,7 @@
 			},
 			showValues: true,
 			multipleYaxis: true,
-			color: ClientThemeConfig.charts.riskLevelScale,
+			color: ClientThemeConfig.charts.riskScale,
 			forceChartMode: 'stacked',
 			rotationXAxisLabel: 45,
 			offsetXAxisLabel: 0.9,
@@ -224,7 +225,7 @@
 		//Options for the chart that displays the current risks by treatment and assets
 		const optionsRisksByTreatmentAndAsset = angular.extend(
 			angular.copy(optionsRisksByAsset), {
-				color: undefined,
+				color: ClientThemeConfig.charts.categoryScale,
 				onClickFunction: undefined
 			}
 		);
@@ -526,7 +527,7 @@
 		const optionsCartography = {
 			xLabel: 'Likelihood',
 			yLabel: 'Impact',
-			color: ClientThemeConfig.charts.riskLevelScale,
+			color: ClientThemeConfig.charts.riskScale,
 			threshold: [],
 			onClickFunction: function(d) {
 				let field = null;

@@ -381,7 +381,7 @@
         height: 400,
         legendSize: 0,
         positionLegend: 'top',
-        color: d3.interpolateRgbBasis(ClientThemeConfig.charts.categoryScale),
+        color: ClientThemeConfig.charts.riskScaleReversed,
         xTicks: 5
       };
 
